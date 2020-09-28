@@ -1,7 +1,7 @@
 # proyectoSeries - Sara Solera
 
 ## ¿QUÉ PROBLEMA QUIERO RESOLVER?
-Mi idea principal, es realizar un microservicio que nos tenga al día de proximas series o temporadas a estrenas en diferentes plataformas. Más adelante me gustaría añadir eventos de los actores y actrices de algunas series. 
+Mi idea principal, es realizar un microservicio que nos tenga al día de proximas series o temporadas que se van a estrenar Más adelante me gustaría añadir eventos de los actores y actrices de algunas series. 
 
 ## DOCUMENTACIÓN
 En la carpeta documentación he incluido:
