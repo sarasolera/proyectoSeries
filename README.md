@@ -19,6 +19,7 @@ En la carpeta docs he incluido:
 - Justificación de las [herramientas](https://github.com/sarasolera/proyectoSeries/blob/master/docs/herramientas.md) elegidas.
 - Explicación de la configuración inicial de [github](https://github.com/sarasolera/proyectoSeries/blob/master/docs/inicio_git.md).
 - [Detalles](https://github.com/sarasolera/proyectoSeries/blob/master/docs/md_manual.md) de dónde estoy consultando la sintaxis de Markdown.
+- [Pasos](https://github.com/sarasolera/proyectoSeries/blob/master/docs/pasos.md) a seguir.
 
 ### AUTORA
 Sara Solera Linares
