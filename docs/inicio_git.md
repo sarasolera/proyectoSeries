@@ -1,4 +1,4 @@
-## Inicio git
+## Configuración git
 
 #### ¿Qué teniamos que hacer?
 ![](pic/configuracion1.png)
