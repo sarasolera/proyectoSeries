@@ -1,0 +1,22 @@
+{
+  "name": "proyectoseries",
+  "version": "1.0.0",
+  "description": "Microservicio para estar al dia de las series que se van a estrenar, y poder hacer consultas sobre ellas.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarasolera/proyectoSeries.git"
+  },
+  "author": "Sara Solera Linares",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/sarasolera/proyectoSeries/issues"
+  },
+  "homepage": "https://github.com/sarasolera/proyectoSeries#readme"
+}
