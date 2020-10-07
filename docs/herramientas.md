@@ -1,7 +1,7 @@
 # HERRAMIENTAS
 
 **Lenguaje de programación** ~
-Realizaré el proyecto en **Javascript**, más concretamete vamos a utilizar **Node.js** como entorno de ejecución, con él se recomienda la utilización de **NPM** como gestor de versiones.
+Realizaré el proyecto en **Javascript**, más concretamete vamos a utilizar **Node.js** como entorno de ejecución, con él se recomienda la utilización de **NPM** como gestor de paquetes.
 
 Justificación lenguaje:
 - Dispone de una documentación amplia --> [Guía de JavaSccript](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide).
