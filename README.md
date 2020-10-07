@@ -10,7 +10,7 @@ El objetivo es crear un microservicio que almacene información sobre series, co
 ## HERRAMIENTAS
 - Lenguaje: JavaScript con entorno de ejecución NodeJS.
 - Base de Datos: MariaDB.
-- Framework web: Express.
+- Framework web: hapijs
 - Test: Jest.
 - Sistema de log: Winston.
 
