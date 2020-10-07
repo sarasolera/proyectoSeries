@@ -2,11 +2,6 @@
 
 **Lenguaje de programación** ~
 Realizaré el proyecto en **Javascript**, más concretamete vamos a utilizar **Node.js** como entorno de ejecución, con él se recomienda la utilización de **NPM** como gestor de versiones.
-Al iniciar npm tendremos el fichero *package.json* que almacena información sobre le proyecto, se irá completando.
-
-  *Generando package.json:*
-
-    - npm init 
 
 Justificación lenguaje:
 - Dispone de una documentación amplia --> [Guía de JavaSccript](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide).
@@ -20,10 +15,9 @@ Justificación lenguaje:
  - Almacenamiento organizado.
 
 **Framework Web** ~
-Consultando información sobre framework web favoritos podemos encontrar Express.js, Meteor.js y Koa.js.
+Consultando información sobre framework web favoritos podemos encontrar Express.js, Hapi.js, Meteor.js y Koa.js.
 
-Me decantaré por **Express.js** porque hay bastante información, y es bastante utilizado, así que si tengo alguna duda o error será más fácil encontrar solución.
-
+Voy a utilizar **HapiJS**, ya que, aporta flexibilidad pero también tiene plugins creados por ellos y algunas librerias que resuelve problemas comunes, está entre express y meteor.
 
 
 **Test** ~ 
