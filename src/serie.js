@@ -7,7 +7,7 @@ class Serie {
         var reparto = new Array();
     
     }
-
+    //métodos GET
     mostrarNombre(){
         return nombre;
     }
