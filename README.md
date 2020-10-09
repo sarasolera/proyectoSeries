@@ -12,6 +12,9 @@ En la carpeta docs he incluido:
 - [Detalles](https://github.com/sarasolera/proyectoSeries/blob/master/docs/md_manual.md) de dónde estoy consultando la sintaxis de Markdown.
 - [Pasos](https://github.com/sarasolera/proyectoSeries/blob/master/docs/pasos.md) a seguir.
 
+## ENLACES
+- [Avance de código](https://github.com/sarasolera/proyectoSeries/tree/master/src)
+- [Historias de usuario](https://github.com/sarasolera/proyectoSeries/issues)
 
 ### AUTORA
 Sara Solera Linares
