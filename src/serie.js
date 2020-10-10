@@ -1,3 +1,4 @@
+
 class Serie {
 
     //constructor
@@ -94,20 +95,20 @@ console.log("Prueba de la clase: ");
 var serie1 = new Serie("La casa de papel", "Una banda organizada de ladrones tiene el objetivo de cometer el atraco del siglo en la Fábrica Nacional de Moneda y Timbre. Cinco meses de preparación quedarán reducidos a once días para poder llevar a cabo con éxito el gran golpe.",4)
 console.log(serie1.getNombre());
 console.log("Sinopsis: " + serie1.getSinopsis());
-console.log("Número temporadas: actualmente tiene " + serie1.getTemporadas() + " temporadas" );
+console.log("Nº temporadas: actualmente tiene " + serie1.getTemporadas() + " temporadas." );
 serie1.mostrarFechaP();
+serie1.mostrarReparto();
 
 console.log("\nEditando atributos:")
+console.log("\nActualizando fecha....");
+console.log("Actualizando reparto...\n");
+
 fecha = new Date(2021,2,25);
 serie1.setFechaProxima(fecha);
-console.log("\nActualizando fecha....");
+
 serie1.mostrarFechaP();
 
 //actualizamos reparto
-
-serie1.mostrarReparto();
-
-console.log("\nActualizando reparto...\n");
 
 serie1.incorporarAct("Ursula Corberó");
 serie1.mostrarReparto();
