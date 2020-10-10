@@ -15,6 +15,8 @@ En la carpeta docs he incluido:
 ## ENLACES
 - [Avance de código](https://github.com/sarasolera/proyectoSeries/tree/master/src)
 - [Historias de usuario](https://github.com/sarasolera/proyectoSeries/issues)
+- [Milestones](https://github.com/sarasolera/proyectoSeries/milestones)
+- [Issues cerrados](https://github.com/sarasolera/proyectoSeries/issues?q=is%3Aissue+is%3Aclosed) 
 
 ### AUTORA
 Sara Solera Linares
