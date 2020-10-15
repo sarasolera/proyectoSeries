@@ -1,5 +1,5 @@
 {
-    "name": "proyectoSerie",
+    "name": "proyectoSeries",
     "version": "1.0.0",
     "descripcion": "Microservicio sobre series",
     "main": "src/catalogo.js",
