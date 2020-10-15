@@ -1,77 +1,135 @@
 
-class Serie {
+/**
+ * @author sara solera
+ */
+
+class Serie{
 
     //constructor
-    constructor(nombre,sinopsis, temporadas){
-         this.nombre = nombre;
-         this.sinopsis = sinopsis;
+    constructor(n,s, temporadas, genero){
+        //atributos que no se vamos a  modificar
+         this.nombre = n;
+         this.sinopsis = s;
          this.temporadas_act = temporadas;
+         this.genero = genero;
          // al inicializar la fecha a null la fecha es 4/0/1970, por lo que cuando mostremos fecha, comprobamos que el año no sea 1970, si lo es, es que la fecha es desconocida.
          this.fecha_prox_temp = new Date(null); 
-         
          this.reparto = new Array();
-    
+         this.puntuacion = new Array();
     }
     
-    //métodos get para las variables más simples
+    /**
+     * Muestra el valor del atributo nombre
+     * @returns {string} el nombre
+     */
     getNombre(){
         return this.nombre;
     }
 
+    /**
+     * Muestra el valor del atributo sinopsis
+     * @returns {string} la sinopsis
+     */
     getSinopsis(){
         return this.sinopsis;
     }
 
+    /**
+     * Muestra el valor del atributo temporadas
+     * @returns {number} el nº de temporadas
+     */
     getTemporadas(){
         return this.temporadas_act;
     }
 
+    /**
+     * Muestra el genero de la serie
+     * @returns {string} genero;
+     */
+    getGenero(){
+        return this.genero;
+    }
 
     /**
-     * Mostrando fecha. 
-     * Si la conocemos el formato es dia/mes/año
-     * Si no la conocemos (es decir que sigue con 1970, es la fecha cuando inicializamos a null) mostramos desconocido.
+     * Muestra el valor de fecha_prox_temp
+     * @returns {Date} la fecha
      */
-    mostrarFechaP(){
-        if(this.fecha_prox_temp.getFullYear() != 1970){
-           
-            console.log("Fecha proximo estreno: " + this.fecha_prox_temp.getDate() + "/" + this.fecha_prox_temp.getMonth() + "/" + this.fecha_prox_temp.getFullYear());
-        }
-        else{
-            console.log("Fecha estreno proxima temporada: Desconocida ");
-        }
+    getFecha_prox(){
+        return this.fecha_prox_temp;
     }
+
     /**
-     * Mostrando el reparto actual si existe.
+     * Muestra el valor del atributo reparto
+     * @returns {array} nombres actores
      */
+    getReparto(){
+        return this.reparto;
+    }
     
-    mostrarReparto(){
-        if(this.reparto.length == 0){
-            console.log("Reparto desconocido");
+    /**
+     * Muestra la puntuacion de la serie
+     * @returns {number} puntos
+     */
+    getMediaPuntuacion(){
+        
+        if(this.puntuacion.length > 0){
+            var puntos = 0;
+             this.puntuacion.forEach(element => {
+                 puntos = puntos+element;
+             });
+
+            var media = puntos/this.puntuacion.length;
+           
+            return media;
         }
-        else{
-             console.log("Reparto: ")
-             this.reparto.forEach(elemento => console.log(elemento))
-        }
+        else return 0;
     }
 
-    /** 
-     * Método para modificar la fecha, se comprueba que esa fecha sea posterior a la actual, en año.
-     */
+    
+    /** METODOS SET */
 
+    /**
+     * Este metodo es llamado cuando se confirma una fecha de estreno.
+     */
+    setTemporada(){
+        
+        this.temporadas_act++; 
+    }
+    
+    /**
+     * Modifica el valor del atributo fecha_prox_temp
+     * @param {Date} fecha 
+     */
     setFechaProxima(fecha){
         var actualidad = new Date(Date.now());
+        
         if(fecha.getFullYear() > actualidad.getFullYear() ){
-           
+           if(this.fecha_prox_temp.setFullYear()  == 1970){
+               //si se añade una fecha de proximo estreno es que esta confirmada y se suma uno al numero de temporadas.
+               this.setTemporada();
+           }
             this.fecha_prox_temp.setFullYear(fecha.getFullYear());
             this.fecha_prox_temp.setMonth(fecha.getMonth());
             this.fecha_prox_temp.setDate(fecha.getDate());
+
         }
         else{
-            console.log("Fecha invalida");
+            
+            var err = "Fecha invalida";
+            return err;
+        
         }
+
+        
         
 
+    }
+
+    setGenero(gen){
+        if(gen != "MIEDO" && gen!="ACCION" && gen!="COMEDIA" && gen!="DRAMA")
+            return "Genero invalido";
+        else
+            this.genero = gen;
     }
 
     /**
@@ -84,36 +142,67 @@ class Serie {
             this.reparto.unshift(nombre_act);
         }
         else{
-            this.reparto.push(nombre_act);
+            //Comprobamos que no esta repetido
+            var repetido = false;
+            this.reparto.forEach(element => {
+                if(element == nombre_act){
+                    repetido =true;
+                }
+            });
+            if(repetido == false)
+                this.reparto.push(nombre_act);
+            else{
+                var err = "repetido";
+                return err;
+            }
         }
     }
+
+    sumarPuntos(puntos){
+        
+        this.puntuacion.push(puntos);
+        
+    }
+
+
+    
+    mostrarFechaP(){
+        var fecha;
+        if(this.getFecha_prox().getFullYear() != 1970){
+            var dia = this.getFecha_prox().getDate();
+            var mes = this.getFecha_prox().getMonth();
+            var an  = this.getFecha_prox().getFullYear();
+            fecha = "Fecha proximo estreno: " + dia + "/" + mes + "/" + an;
+            
+        }
+        else{
+            fecha = "Fecha estreno proxima temporada: Desconocida ";
+        }
+
+        return fecha;
+    }
+    /**
+     * Mostrando el reparto actual si existe.
+     */
+    
+    mostrarReparto(){
+        var act = "Reparto: ";
+        if(this.reparto.length == 0){
+            act = act + " Desconocido";
+        }
+        else{
+            for(var i=0; i < this.reparto.length;i++){
+                act = act + this.reparto[i] + " ";
+            }
+             //para acceder al nombre hacemos elemento.nombre
+        }
+        
+        return act;
+    }
+
+    
+
+    
 }
 
-//probando clase y metodos
-
-console.log("Prueba de la clase: ");
-var serie1 = new Serie("La casa de papel", "Una banda organizada de ladrones tiene el objetivo de cometer el atraco del siglo en la Fábrica Nacional de Moneda y Timbre. Cinco meses de preparación quedarán reducidos a once días para poder llevar a cabo con éxito el gran golpe.",4)
-console.log(serie1.getNombre());
-console.log("Sinopsis: " + serie1.getSinopsis());
-console.log("Nº temporadas: actualmente tiene " + serie1.getTemporadas() + " temporadas." );
-serie1.mostrarFechaP();
-serie1.mostrarReparto();
-
-console.log("\nEditando atributos:")
-console.log("\nActualizando fecha....");
-console.log("Actualizando reparto...\n");
-
-fecha = new Date(2021,2,25);
-serie1.setFechaProxima(fecha);
-
-serie1.mostrarFechaP();
-
-//actualizamos reparto
-
-serie1.incorporarAct("Ursula Corberó");
-serie1.mostrarReparto();
-
-console.log("\nIncorporando actor...\n");
-serie1.incorporarAct("Jaime Lorente");
-
-serie1.mostrarReparto();
+module.exports = Serie;
