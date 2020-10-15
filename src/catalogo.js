@@ -82,14 +82,7 @@ class Catalogo{
         return listaNueva;
     }
 
-    incorporarAct(nombre_act , ind){
-        this.series[ind].incorporarAct(nombre_act);
-    }
-
-    mostrarReparto(ind){
-        var reparto_seleccionado = this.series[ind].mostrarReparto();
-        return reparto_seleccionado;
-    }
+    
 
     
 }
