@@ -103,31 +103,29 @@ class Serie{
     setFechaProxima(fecha){
         var actualidad = new Date(Date.now());
         
-        if(fecha.getFullYear() > actualidad.getFullYear() ){
-           if(this.fecha_prox_temp.setFullYear()  == 1970){
-               //si se añade una fecha de proximo estreno es que esta confirmada y se suma uno al numero de temporadas.
-               this.setTemporada();
-           }
-            this.fecha_prox_temp.setFullYear(fecha.getFullYear());
-            this.fecha_prox_temp.setMonth(fecha.getMonth());
-            this.fecha_prox_temp.setDate(fecha.getDate());
-
-        }
-        else{
-            
-            var err = "Fecha invalida";
-            return err;
-        
-        }
-
-        
-        
-
+            if(fecha.getFullYear() > actualidad.getFullYear() ){
+                if(this.fecha_prox_temp.setFullYear()  == 1970){
+                    //si se añade una fecha de proximo estreno es que esta confirmada y se suma uno al numero de temporadas.
+                    this.setTemporada();
+                }
+                 this.fecha_prox_temp.setFullYear(fecha.getFullYear());
+                 this.fecha_prox_temp.setMonth(fecha.getMonth());
+                 this.fecha_prox_temp.setDate(fecha.getDate());
+                
+               
+     
+             }
+             else {
+                throw new Error("Fecha invalida");
+             }
+               
+             
+    
     }
 
     setGenero(gen){
         if(gen != "MIEDO" && gen!="ACCION" && gen!="COMEDIA" && gen!="DRAMA")
-            return "Genero invalido";
+            throw new Error("Genero invalido");
         else
             this.genero = gen;
     }
@@ -152,11 +150,12 @@ class Serie{
             if(repetido == false)
                 this.reparto.push(nombre_act);
             else{
-                var err = "repetido";
-                return err;
+                throw new Error("Actor o actriz ya incorporados al reparto");
             }
         }
     }
+
+    
 
     sumarPuntos(puntos){
         
