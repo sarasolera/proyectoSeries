@@ -74,8 +74,11 @@ describe('Testeando clase Serie' , ()=>{
 
         test('setFechaProxima',()=>{
             var f = new Date(2010,9,7);
+            var errorD = () => serie_nueva.setFechaProxima(f);
             
-            expect(serie_nueva.setFechaProxima(f)).toBe("Fecha invalida");
+
+            expect(errorD).toThrow();
+            
 
             var f = new Date(2021,9,9);
             serie_nueva.setFechaProxima(f);
@@ -91,7 +94,8 @@ describe('Testeando clase Serie' , ()=>{
             serie_nueva.setGenero(genC);
             expect(serie_nueva.getGenero()).toBe("MIEDO");
 
-            expect(serie_nueva.setGenero(genI)).toBe("Genero invalido");
+            var errorD = () => serie_nueva.setGenero(genI);
+            expect(errorD).toThrow();
 
         });
     });
@@ -99,8 +103,8 @@ describe('Testeando clase Serie' , ()=>{
     describe("Testeando resto funciones",()=>{
         test("Incorporar actor o actriz",()=>{
             var actriz = "Ursula Corberó";
-            
-            expect(serie_nueva.incorporarAct(actriz)).toBe("repetido");
+            var errorD = () => serie_nueva.incorporarAct(actriz);
+            expect(errorD).toThrow();
 
             serie_nueva.incorporarAct("Jaime Lorente");   
             expect(serie_nueva.getReparto()[0]).toBe("Ursula Corberó");
@@ -129,6 +133,7 @@ describe('Testeando clase Serie' , ()=>{
 
         
 })
+
 
 
  
