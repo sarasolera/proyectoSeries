@@ -172,11 +172,11 @@ class Serie{
             var dia = this.getFecha_prox().getDate();
             var mes = this.getFecha_prox().getMonth();
             var an  = this.getFecha_prox().getFullYear();
-            fecha = "Fecha proximo estreno: " + dia + "/" + mes + "/" + an;
+            fecha = dia + "/" + mes + "/" + an;
             
         }
         else{
-            fecha = "Fecha estreno proxima temporada: Desconocida ";
+            fecha = "Desconocida ";
         }
 
         return fecha;
@@ -186,9 +186,9 @@ class Serie{
      */
     
     mostrarReparto(){
-        var act = "Reparto: ";
+        var act="";
         if(this.reparto.length == 0){
-            act = act + " Desconocido";
+            act ="Desconocido";
         }
         else{
             for(var i=0; i < this.reparto.length;i++){
