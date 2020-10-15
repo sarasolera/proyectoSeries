@@ -45,12 +45,17 @@ class Catalogo{
     }
 
     consultarSerie(indice){
+        var serie_mostrar;
         if(this.existeSerie(indice)){
-            console.log("La serie que quiere consultar es: "+ this.series[indice].getNombre());
+           
+            serie_mostrar = "Nombre Serie: "+ this.series[indice].getNombre() + "\nSinopsis: "+ this.series[indice].getSinopsis() +"\nNº Temporadas: "+this.series[indice].getTemporadas()+ "\nGénero: "+this.series[indice].getGenero()+"\nFecha proximo estreno: "+this.series[indice].mostrarFechaP()+"\nReparto: "+this.series[indice].mostrarReparto() + "\nMedia puntuacion: " + this.series[indice].getMediaPuntuacion();
+            
         }
         else{
-            console.log("No tenemos esa serie en nuestro catalogo. Lo sentimos");
+            serie_mostrar = "No existe indice";
+            
         }
+        return serie_mostrar;
     }
 
     /**
@@ -76,7 +81,7 @@ class Catalogo{
         listaNueva = ordenacionBurbuja(this.series);
         return listaNueva;
     }
-/*
+
     incorporarAct(nombre_act , ind){
         this.series[ind].incorporarAct(nombre_act);
     }
@@ -84,11 +89,17 @@ class Catalogo{
     mostrarReparto(ind){
         var reparto_seleccionado = this.series[ind].mostrarReparto();
         return reparto_seleccionado;
-    }*/
+    }
 
     
 }
 /*
+var cat = new Catalogo();
+var serie_nueva = new Serie('La casa de papel', 'Una banda organizada de ladrones tiene el objetivo de cometer el atraco del siglo en la Fábrica Nacional de Moneda y Timbre. Cinco meses de preparación quedarán reducidos a once días para poder llevar a cabo con éxito el gran golpe.',4,"ACCION");
+cat.aniadirSerie(serie_nueva);
+cat.series[0].incorporarAct("Ursula Corberó");
+console.log(cat.consultarSerie(0));
+
 //Pruebas
 var cat = new Catalogo();
 //GENERAMOS UNAS CUANTAS SERIES CON NOMBRE SINOPSIS NUMERO TEMP Y GENERO
