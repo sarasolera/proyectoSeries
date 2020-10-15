@@ -1,6 +1,6 @@
 entidad: src/serie.js
 lenguaje: JavaScript
 test:
-    tests/serie.test.js
-    tests/catalogo.test.js
+    - tests/serie.test.js
+    - tests/catalogo.test.js
 taskfile: package.json
