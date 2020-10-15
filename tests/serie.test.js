@@ -118,11 +118,11 @@ describe('Testeando clase Serie' , ()=>{
             var f = new Date(2021,9,9);
             serie_nueva.setFechaProxima(f);
 
-            expect(serie_nueva.mostrarFechaP()).toBe("Fecha proximo estreno: 9/9/2021");
+            expect(serie_nueva.mostrarFechaP()).toBe("9/9/2021");
         });
 
         test("Formato mostrando reparto es correcto",()=>{
-            var f_reparto = "Reparto: Ursula Corberó Jaime Lorente ";
+            var f_reparto = "Ursula Corberó Jaime Lorente ";
             expect(serie_nueva.mostrarReparto()).toBe(f_reparto);
         });
     });
