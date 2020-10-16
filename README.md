@@ -38,7 +38,7 @@ Una vez instaladas las dependencias necesarias, para realizar los test ejecutamo
 En la carpeta docs he incluido:
 - Explicación de la configuración inicial de [github](https://github.com/sarasolera/proyectoSeries/blob/master/docs/inicio_git.md).
 - [Detalles](https://github.com/sarasolera/proyectoSeries/blob/master/docs/md_manual.md) de dónde estoy consultando la sintaxis de Markdown.
-- [Pasos](https://github.com/sarasolera/proyectoSeries/blob/master/docs/pasos.md) a seguir.
+- [Pasos actualizados](https://github.com/sarasolera/proyectoSeries/blob/master/docs/pasos.md), incluyen la descripción de los códigos.
 
 
 
