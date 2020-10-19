@@ -1,6 +1,6 @@
 var Catalogo = require('../src/catalogo.js'),
 Serie = require('../src/serie.js'),
-assert = require("assert");
+
 
 const enumG = ["MIEDO" , "ACCION","COMEDIA","DRAMA"];
 

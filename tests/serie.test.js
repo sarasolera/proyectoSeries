@@ -1,6 +1,6 @@
 
 var Serie = require('../src/serie.js'),
-assert = require("assert");
+
 
 
 //Creo el objeto serie para testear.
