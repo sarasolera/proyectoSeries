@@ -105,4 +105,22 @@ describe('Testeando clase Catalogo' , ()=>{
             }
         }
     });
+
+    describe('Mostrar series según un genero',()=>{
+        test('Captando series de un genero',()=>{
+            enumG.forEach(element=>{
+                var s = cat.mostrarSeriesGenero(element);
+                
+                s.forEach(ser =>{
+                    expect(ser.getGenero()).toBe(element);
+                })
+                
+            })
+            
+            var errorD = () => cat.mostrarSeriesGenero("TERROR");
+            expect(errorD).toThrow();
+ 
+           
+        })
+    });
 });
