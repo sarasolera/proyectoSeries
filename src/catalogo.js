@@ -44,6 +44,16 @@ class Catalogo{
             return true;
     }
 
+    mostrarSeries(){
+        var catalogo_completo="";
+        var n;
+        this.series.forEach(element => {
+            catalogo_completo += element.getNombre()+"\n";
+            
+        });
+        return catalogo_completo;
+    }
+
     consultarSerie(indice){
         var serie_mostrar;
         if(this.existeSerie(indice)){
@@ -99,4 +109,7 @@ class Catalogo{
 
     
 }
+
+
+
 module.exports = Catalogo;
