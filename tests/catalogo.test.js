@@ -68,4 +68,18 @@ describe('Testeando clase Catalogo' , ()=>{
         })
     });
 
+    describe('Mostrar catalogo completo',()=>{
+        test("mostrarSeries()",()=>{
+            var com = cat.mostrarSeries();  
+            var cadenaEsperada="";
+            var series_cat = cat.series;
+            series_cat.forEach(element => {
+                cadenaEsperada+=element.getNombre()+"\n";
+            });
+        
+            expect(cadenaEsperada).toBe(com);
+
+        })
+    });
+
 });
