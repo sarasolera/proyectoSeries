@@ -82,4 +82,16 @@ describe('Testeando clase Catalogo' , ()=>{
         })
     });
 
+
+    describe('Consultar serie dando un indice',()=>{
+        test('consultarSerie(indice)',()=>{
+             var errorD = () => cat.consultarSerie(15);
+             expect(errorD).toThrow();
+             var indice  = 0;
+             var esperado = "Nombre Serie: "+ cat.series[indice].getNombre() + "\nSinopsis: "+ cat.series[indice].getSinopsis() +"\nNº Temporadas: "+cat.series[indice].getTemporadas()+ "\nGénero: "+cat.series[indice].getGenero()+"\nFecha proximo estreno: "+cat.series[indice].mostrarFechaP()+"\nReparto: "+cat.series[indice].mostrarReparto() + "\nMedia puntuacion: " + cat.series[indice].getMediaPuntuacion();
+ 
+             expect(cat.consultarSerie(0)).toBe(esperado);
+ 
+        })
+    });
 });
