@@ -15,6 +15,8 @@ Una vez instaladas las dependencias necesarias, para realizar los test ejecutamo
 
     - npm test
 
+[EXPLICACIÓN TEST](https://github.com/sarasolera/proyectoSeries/blob/master/docs/jest.md)
+
 ## HERRAMIENTA DE CONSTRUCCIÓN :wrench:
  - La justificación y configuración de la herramienta de construcción que he elegido se encuentra en el fichero de [herramientas](https://github.com/sarasolera/proyectoSeries/blob/master/docs/herramientas.md)
  - El [fichero con información del proyecto](https://github.com/sarasolera/proyectoSeries/blob/master/package.json) lo encontramos en la carpeta raíz.
