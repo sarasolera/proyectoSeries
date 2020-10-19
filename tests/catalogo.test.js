@@ -94,4 +94,15 @@ describe('Testeando clase Catalogo' , ()=>{
  
         })
     });
+
+    describe('Mostrar series por puntuación (de mayor a menor)',()=>{
+        listaOrd = cat.mostrarSeriesPuntuacion();
+        for(var i =0 ; i < listaOrd.length ; i++) {
+            j = i+1;
+            if(j < listaOrd.length){
+               
+                expect(listaOrd[i].getMediaPuntuacion() >= listaOrd[j].getMediaPuntuacion()).toBe(true);
+            }
+        }
+    });
 });
