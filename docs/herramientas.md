@@ -44,12 +44,6 @@ Necesitamos una base de datos para almacenar las series que tendremos en nuestro
  - Almacenamiento organizado.
 
 
-**Test** ~ 
-Un buen código siempre debe ser testeado, debemos garantizar que nuestros programas son fiables, y hacen realmente lo que queremos. Testear garantiza la calidad de nuestro programa. 
-
-En este caso buscando marcos de prueba he encontrado que hay dos grandes utilizados con node.js. Mocha y Jest, sin embargo la recomendación es utilizar Mocha para proyectos grandes y Jest para proyectos más pequeños, por lo que, utilizaré **Jest**.
-Jest tiene una buena documentación, y ejemplos de como testear en nodejs.
-
 
 **Sistema de log** ~ 
 También necesitaremos un registro de tareas de nuestro sistema, para guardar incidencias, errores, accesos, etc.
