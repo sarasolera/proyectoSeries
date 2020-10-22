@@ -1,5 +1,5 @@
 var Catalogo = require('../src/catalogo.js'),
-Serie = require('../src/serie.js'),
+Serie = require('../src/serie.js');
 
 
 const enumG = ["MIEDO" , "ACCION","COMEDIA","DRAMA"];
