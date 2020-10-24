@@ -3,10 +3,6 @@ FROM node:10-alpine
 # indicando autor
 LABEL maintainer="Sara Solera"
 
-WORKDIR /test
-
-
-
 # copiamos los archivos package.json y packege-lock.json que son necesarios para node
 COPY package*.json ./
 
@@ -24,6 +20,12 @@ RUN npm install --save-dev jest
 COPY src/* ./src/
 # copiamos codigo test
 COPY tests/* ./tests/
+
+
+WORKDIR /test
+
+
+
 
 # con copy . ./app copia todos los archivos directamente
 
