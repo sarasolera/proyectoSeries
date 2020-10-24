@@ -4,10 +4,10 @@ FROM node:10-alpine
 LABEL maintainer="Sara Solera"
 
 WORKDIR /test
-
+WORKDIR /series
 
 # copiamos los archivos package.json y packege-lock.json que son necesarios para node
-COPY package*.json ./test/
+COPY package*.json ./series/
 
 
 # Instalamos jest para ejecutar los test
@@ -21,9 +21,9 @@ RUN npm install
 #RUN npm install 
 
 # copiamos codigo fuente de las clases
-COPY src/* ./test/src/
+COPY src/* ./test/series/
 # copiamos codigo test
-COPY tests/* ./test/tests/
+COPY tests/* ./test/series/
 
 
 
