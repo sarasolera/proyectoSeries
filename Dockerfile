@@ -7,7 +7,7 @@ WORKDIR /test
 
 
 # copiamos los archivos package.json y packege-lock.json que son necesarios para node
-COPY package*.json ./
+COPY package*.json ./test/
 
 
 # Instalamos jest para ejecutar los test
@@ -21,9 +21,9 @@ RUN npm install
 #RUN npm install 
 
 # copiamos codigo fuente de las clases
-COPY src/* ./src/
+COPY src/* ./test/src/
 # copiamos codigo test
-COPY tests/* ./tests/
+COPY tests/* ./test/tests/
 
 
 
