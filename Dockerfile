@@ -22,4 +22,4 @@ COPY tests/* ./tests/
 # con copy . ./app copia todos los archivos directamente
 
 # para ejecutar los test
-RUN  npm test
+CMD ["npm","test"]
