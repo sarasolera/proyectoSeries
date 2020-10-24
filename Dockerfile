@@ -3,9 +3,6 @@ FROM node:10-alpine
 # indicando autor
 LABEL maintainer="Sara Solera"
 
-WORKDIR /test
-WORKDIR /series
-
 # copiamos los archivos package.json y packege-lock.json que son necesarios para node
 COPY package*.json ./series/
 
@@ -21,9 +18,13 @@ RUN npm install
 #RUN npm install 
 
 # copiamos codigo fuente de las clases
-COPY src/* ./test/series/
+COPY src/* ./src/
 # copiamos codigo test
-COPY tests/* ./test/series/
+COPY tests/* ./tests/
+
+
+WORKDIR /test
+
 
 
 
