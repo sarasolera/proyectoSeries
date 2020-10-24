@@ -8,7 +8,8 @@ COPY package*.json ./
 
 
 # Instalamos jest para ejecutar los test
-RUN npm install --save-dev jest
+RUN npm install 
+
 
 # ejecutamos npm install que ejecuta el package.json e
 # instala las dependencias
