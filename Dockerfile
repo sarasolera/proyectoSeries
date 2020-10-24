@@ -3,6 +3,8 @@ FROM node:10-alpine
 # indicando autor
 LABEL maintainer="Sara Solera"
 
+WORKDIR /test
+
 # copiamos los archivos package.json y packege-lock.json que son necesarios para node
 COPY package*.json ./
 
