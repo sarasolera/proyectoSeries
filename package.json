@@ -22,5 +22,7 @@
     "homepage": "https://github.com/sarasolera/proyectoSeries#readme",
     "devDependencies": {
         "jest": "^26.5.3"
+        "jest-cli": "^26.6.0"
+        
     }
 }
