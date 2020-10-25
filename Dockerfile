@@ -15,7 +15,7 @@ RUN npm install
 # copiamos codigo fuente de las clases
 COPY src/* ./src/
 # copiamos codigo test
-COPY tests/* ./tests/
+COPY tests/* ./test/
 
 
 WORKDIR /test
