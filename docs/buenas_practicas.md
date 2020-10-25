@@ -26,13 +26,15 @@ Es importante tener claro el objetivo con el que creamos nuestro Dockerfile, y m
 ## Instrucciones específicas.
     - RUN : debe ser legible y entendible, dividir comandos extensos y complicados en multilíneas, ya que cada comando de Docker crea una capa, y se almacenan en caché, el uso de multilíneas permite reducir esto.
 
+![](pic/RUN.png)
+
     -CMD: es una ejecucuón de comandos por defecto trás crear el contenedor, en mi caso mi objetivo es ejecutar los test.
 ![](pic/cmd.png)
 
-    - ADD y COPY tienen uncionalidades similares, aunque COPY es mas utilizado. COPY soporta el copiado básico de archivos locales al contenedor, mientras que ADD tiene otras funcionalidades como la extracción local de archivos tar. Cuando necesitemos una autoextracción de un archivo hacia el contenedor, la mejor opción es ADD, en mi caso simplemente quiero la copia de los ficheros json y  de códigos fuente y códigos de tests por lo que hice uso de COPY.
+    - ADD y COPY tienen uncionalidades similares, aunque COPY es mas utilizado. COPY soporta el copiado básico de archivos locales al contenedor, mientras que ADD tiene otras funcionalidades como la extracción local de archivos tar. Cuando necesitemos una autoextracción de un archivo hacia el contenedor, la mejor opción es ADD, en mi caso simplemente quiero la copia de los ficheros json por lo que hice uso de COPY.
 ![](pic/COPY.png)
 
-    - WORKDIR cambia el directorio por defecto, donde ejecuttamos nuestros comandos RUN y CMD
+    - WORKDIR cambia el directorio por defecto, donde ejecutamos nuestros comandos RUN y CMD
 
 
 ## Caché de la creación de imágenes.
@@ -43,7 +45,7 @@ Es una buena práctica poner los cambios que se producen con menor frecuencia en
 
 En mi caso, el código puede cambiar, pero no quiero que se me instalen todas las dependencias cada vez, por lo que es buena idea copiar el package.json antes que el resto de código, instalar las dependencias y luego añadir los archivos.
 
-![](pic/package.png)
+![](pic/WORKDIR.png)
 
 ## Añadir metadatos.
 Como vimos en teoría también es bueno añadir información, como información o una descripcion ampliada, en la imágen vemos como me identifico como la autora.
