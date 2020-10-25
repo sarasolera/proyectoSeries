@@ -3,9 +3,6 @@
     "version": "1.0.0",
     "descripcion": "Microservicio sobre series",
     "main": "src/catalogo.js",
-    "directories": {
-        "test": "tests"
-    },
     "scripts": {
         "starts": "node src/catalogo.js",
         "test": "jest"
