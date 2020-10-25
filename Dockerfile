@@ -14,4 +14,4 @@ COPY package*.json ./
 RUN npm install && npm install -g jest-cli
 
 # para ejecutar los test
-CMD ["npm","test"]
+CMD ["grunt","run:test_jest"]
