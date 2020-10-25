@@ -7,11 +7,13 @@ WORKDIR /test
 # copiamos los archivos package.json y packege-lock.json que son necesarios para node
 COPY package*.json ./
 
+COPY Gruntfile.js ./
+
 # ejecutamos npm install que ejecuta el package.json e
 # instala las dependencias
 # usamos RUN para ejecutar comandos 
 # al hacer install se genera la carpeta node_modules
-RUN npm install && npm install -g jest-cli
+RUN npm install && npm install -g grunt && npm install -g jest-cli
 
 # para ejecutar los test
 CMD ["grunt","run:test_jest"]
