@@ -11,7 +11,7 @@ COPY package*.json ./
 # instala las dependencias
 # usamos RUN para ejecutar comandos 
 # al hacer install se genera la carpeta node_modules
-RUN npm install 
+RUN npm install && npm install -g jest-cli
 
 # para ejecutar los test
 CMD ["npm","test"]
