@@ -13,7 +13,7 @@ COPY Gruntfile.js ./
 # instala las dependencias
 # usamos RUN para ejecutar comandos 
 # al hacer install se genera la carpeta node_modules
-RUN apt-get update -y && npm install && npm install -g jest-cli && npm install -g grunt-cli
+RUN npm install && npm install -g jest-cli && npm install -g grunt-cli
 
 VOLUME /test
 WORKDIR /test
