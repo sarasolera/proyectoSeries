@@ -13,10 +13,34 @@ Antes de realizar los test es imprescindible instalar las dependencias, para ell
 ## TEST :heavy_check_mark:
 Una vez instaladas las dependencias necesarias, para realizar los test ejecutamos:
 
-    - npm test
+    - grunt test
 
-[EXPLICACIÓN TEST](https://github.com/sarasolera/proyectoSeries/blob/master/docs/jest.md)
+- [Explicación test](https://github.com/sarasolera/proyectoSeries/blob/master/docs/jest.md)
 
+- [Explicación task runner Grunt](https://github.com/sarasolera/proyectoSeries/blob/master/docs/task_runner.md)
+
+- [Fichero de configuración de Grunt](https://github.com/sarasolera/proyectoSeries/blob/master/Gruntfile.js)
+
+
+
+## DOCKER
+ - Elección correcta de [contenedor base](https://github.com/sarasolera/proyectoSeries/blob/master/docs/contenedorBase.md).
+ - Fichero de configuración docker: [Dockerfile](https://github.com/sarasolera/proyectoSeries/blob/master/Dockerfile).
+ - Documentación [buenas prácticas](https://github.com/sarasolera/proyectoSeries/blob/master/docs/buenas_practicas.md)
+ - Comparación de tiempos/velocidad de las distintas [imágenes](https://github.com/sarasolera/proyectoSeries/blob/master/docs/comparando_tiempos.md)
+
+## DOCKER HUB
+ - Explicación [inicio](https://github.com/sarasolera/proyectoSeries/blob/master/docs/docker_hub.md)  y actualización automática de DockerHub.
+ - Contenedor en dockerhub: [https://hub.docker.com/r/sarasolera/proyectoseries](https://hub.docker.com/r/sarasolera/proyectoseries)
+
+## ¿CÓMO EJECUTAR TEST USANDO CONTENEDOR DOCKER HUB?
+ - Descargamos el repositorio.
+ - Ejecutar:
+    *docker run -t -v `pwd`:/test sarasolera/proyectoseries*
+
+## GITHUB CONTAINER REGISTRY
+ - Documentación explicativa de [GHCR](https://github.com/sarasolera/proyectoSeries/blob/master/docs/github_container_registry.md)
+ - [Contenedor Github](https://github.com/users/sarasolera/packages/container/package/proyectoseries_github_registry).
 ## HERRAMIENTA DE CONSTRUCCIÓN :wrench:
  - La justificación y configuración de la herramienta de construcción que he elegido se encuentra en el fichero de [herramientas](https://github.com/sarasolera/proyectoSeries/blob/master/docs/herramientas.md)
  - El [fichero con información del proyecto](https://github.com/sarasolera/proyectoSeries/blob/master/package.json) lo encontramos en la carpeta raíz.
