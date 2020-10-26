@@ -2,7 +2,7 @@
 var Serie = require('../src/serie.js');
 
 
-
+//Trabajando con constantes
 //Creo el objeto serie para testear.
 const serie_nueva = new Serie('La casa de papel', 'Una banda organizada de ladrones tiene el objetivo de cometer el atraco del siglo en la Fábrica Nacional de Moneda y Timbre. Cinco meses de preparación quedarán reducidos a once días para poder llevar a cabo con éxito el gran golpe.',4,"ACCION");
 
