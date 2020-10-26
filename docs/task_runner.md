@@ -33,13 +33,17 @@ Se compone de las siguientes partes:
 
 ![](pic/funcion_env.png)
 
- - La configuración de proyectos y tareas -- La mayoría de tareas se basan en los datos de configuración definidos en un objeto que se para al método grunt.initConfig() en nuestro caso el package.json. Si indicamos este fichero se importan los metadas almacenamos en package.
+ - La configuración de proyectos -- La mayoría de tareas se basan en los datos de configuración definidos en un objeto que se para al método grunt.initConfig() en nuestro caso el package.json. Si indicamos este fichero se importan los metadas almacenamos en package. 
 
  ![](pic/grunt_p.png)
 
+ - Configuración de tareas -- Despues indicamos la tarea a ejecutar en mi caso quiero ejecutar los test, por lo que la tarea es run y en test indicamos cómo se hace, en mi caso npm test.
+
+ ![](pic/run_grunt.png)
 
 
- - Carga de complementos y tareas - Carga el plugin de grunt para ejecutar la tarea
+
+ - Carga de complementos y tareas -- Carga el plugin de grunt para ejecutar la tarea
  ![](pic/grunt-run.png)
 
 
