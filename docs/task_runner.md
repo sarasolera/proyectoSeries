@@ -23,7 +23,7 @@ Para instalar y añadir dichas dependencias ejecutamos:
 Indicamos grunt y grunt-run que se usa para ejecutar.
 
 
-## GRUNTFILE
+## Gruntfile.js
 ¿Qué es el gruntfile?
 
 Como ya he dicho, grunt automatiza tareas, pero... ¿Dónde indicamos esta automatización?
