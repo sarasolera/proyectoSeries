@@ -1,4 +1,4 @@
-## Alpine
+# Alpine
     -Tiempo construcción:
     
 ![](pic/cons_alpine.png)
@@ -11,7 +11,7 @@
 
 ![](pic/tam_alpine.png)
 
-## Node:10
+#  Node:10
     -Tiempo construcción:
 ![](pic/cons_node_version.png)
 
@@ -22,7 +22,7 @@
 ![](pic/tam_node_version.png)
 
 
-## Node:10-slim
+# Node:10-slim
     -Tiempo construcción:
 ![](pic/cons_node_slim.png)
 
@@ -33,7 +33,7 @@
 ![](pic/tam_node_slim.png)
 
 
-## Node:10-alpine
+# Node:10-alpine
     -Tiempo construcción:
 ![](pic/cons_node_alpine.png)
 
@@ -44,6 +44,7 @@
 ![](pic/tam_node_alpine.png)
 
 
+# Comparación
 **¿Mejor en tiempo de construcción?** 
 Los mejores son node:10 y node:slim aunque con una diferencia en 0.03s con el resto, la construcción solo se realiza una vez por lo que no es algo determinante.
 
@@ -55,4 +56,5 @@ Le sigue node:alpine con una diferencia de 25MB
 El mejor es node:alpine, seuido de node:Version, node:slim y despues alpine.
 Entre node:alpine y alpine hay una diferencia de 0.66s
 
-Como podemos ver el más equilibrado es node:alpine, en tema de tamaño es el segundo menor con una diferencia mínima con alpine, y en velocidad es el mejor. Además realizando los test me he dado cuenta de que efectivamente como indique en la justificación de la elección, con alpine tengo que controlar node de manera externa.
+Como podemos ver el más equilibrado es node:alpine, en tamaño es el segundo menor con una diferencia mínima con alpine, y en velocidad es el mejor. 
+Además realizando los test me he dado cuenta de que, como indique en la justificación de la elección, con alpine tengo que controlar node de manera externa, lo que puede complicar las cosas.
