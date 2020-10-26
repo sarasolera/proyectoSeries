@@ -15,5 +15,10 @@ COPY Gruntfile.js /test/
 # al hacer install se genera la carpeta node_modules
 RUN npm install && npm install -g grunt && npm install -g jest-cli
 
+# Node modules es un directorio que se crea al instalar las dependencias, sin embargo no deberia estar en nuestro repositorio
+# por lo que se introduce en gitignore. 
+# Esta carpeta nos permite importar paquetes extenos instalados mediante npm a nuestro proyecto local
+# si no lo tenemos no se encontrará grunt 
+COPY node_modules /test
 # para ejecutar los test
 CMD ["grunt","test"]
