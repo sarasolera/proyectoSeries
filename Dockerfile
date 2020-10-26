@@ -17,7 +17,7 @@ COPY Gruntfile.js ./
 RUN npm install && npm install -g jest-cli && npm install -g grunt-cli
 
 # Pra ejecutar los test no hace falta permisos superusuario
-USER nuevo_usuario
+USER node
 
 
 VOLUME /test
