@@ -11,10 +11,10 @@ De ambos tipos podemos encontrar en la página [Docker Hub](https://hub.docker.c
     - centos
     - debian
     - etc
-Para compararlas estuve investignado, y pense sobre todo en NODEJS, los dos grandes elegidos estaban entre alpine y debian. 
+Para compararlas estuve investignado, y pense sobretodo en mi entorno de ejecución node, los dos grandes elegidos estaban entre alpine y debian. 
 
 ¿Qué ventajas encontramos en Alpine?
-    - La más importante, ligereza. Alapina Linux es una distribución ligera, sencilla y segura, ordientada a la seguridad.
+    - La más importante, ligereza. Alpine Linux es una distribución ligera, sencilla y segura, ordientada a la seguridad.
     - Ademas alpine es rápido.
     - Crea unas imagenes muy pequeñas.
     - Seguridad
@@ -31,13 +31,13 @@ Aunque Debian está mas desarrollado, y tiene grandes ventajas. Creo que es una 
 En la misma página de docker hub citada anteriormente si buscamos node, podemos encontrar variantes de la imagen:
 
     - node:<version> ~ Es la imagen de facto, cuando no estamos seguros de que elegir, esta puede ser una opción correcta. Está diseñado tanto para usarse de contenedor base como de contenedor desechable.
-Si nuestra aplicación necesita unas deendencias más allá de las que trae la imágen, lo más adecuado será la imagen con las etiquetas buildpack-deps.
+Si nuestra aplicación necesita unas dependencias más allá de las que trae la imágen, lo más adecuado será la imagen con las etiquetas buildpack-deps.
 
 
     - node:<version>-alpine Esta imágen se basa en el ya citado Alpine Linux. Alpine es mucho más pequeño que las imagenes base, como ya hemos dicho, y genera imágenes mucho menos pesadas en general.
-Es la imagen recomendable cuando deseaos que el tamaño final de la imágen sea lo más pequeño posible.
+Es la imagen recomendable cuando deseamos que el tamaño final de la imágen sea lo más pequeño posible.
 
-    - node:<version>-slim  Esta imágen solo contiene los paquetes mínimos neesarios para ejecutarse node.
+    - node:<version>-slim  Esta imágen solo contiene los paquetes mínimos necesarios para ejecutarse node.
 
 
 ## Elección y por qué
