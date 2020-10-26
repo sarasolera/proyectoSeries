@@ -13,8 +13,7 @@ COPY Gruntfile.js /test/
 # instala las dependencias
 # usamos RUN para ejecutar comandos 
 # al hacer install se genera la carpeta node_modules
-RUN npm install cache clear \
-    npm cache clean \
+RUN npm cache clean \
     sudo npm install grunt --save-dev \
     npm install \
     npm install -g jest-cli 
