@@ -45,11 +45,11 @@ Es una buena práctica poner los cambios que se producen con menor frecuencia en
 
 En mi caso, el código puede cambiar, pero no quiero que se me instalen todas las dependencias cada vez, por lo que es buena idea copiar el package.json antes que el resto de código, instalar las dependencias y luego añadir los archivos.
 
-![](pic/WORKDIR.png)
 
 ## Añadir metadatos.
 Como vimos en teoría también es bueno añadir información, como información o una descripcion ampliada, en la imágen vemos como me identifico como la autora.
 
+![](pic/label.png)
 
 
 
