@@ -15,7 +15,7 @@ COPY Gruntfile.js ./
 # usamos RUN para ejecutar comandos 
 # al hacer install se genera la carpeta node_modules
 # instalo jest y grunt que son herramientas que necesito
-RUN npm install && npm install -g jest-cli && npm install -g grunt-cli
+RUN npm install && npm install -g jest-cli && npm install -g grunt-cli && useradd -D series
 
 # Pra ejecutar los test no hace falta permisos superusuario
 USER series
