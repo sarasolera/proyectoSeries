@@ -2,7 +2,8 @@
 Grunt es una herramientas que nos permite hacer más simple el proceso de construcción de proyecto en Javascript, con él podemos automatizar una serie de pasos y procesos.
 
 ¿Por qué usar grunt?
-Cada vez los proyectos que se realizan son más grandes e inviables de tratar directamente, por eso debemos hacer uso de tecnicas como concatenar varos archivos en un único archivo para optimizar la operacion.
+Cada vez los proyectos que se realizan son más grandes e inviables de tratar directamente, por eso debemos hacer uso de herramientas como grunt, que nos permiten realizar varias tareas de manera automatica. 
+Como alternativa tenemos gulp, pero está más dedicada a proyectos grandes, y se basa más en programación. Además grunt me permite perfectamente trabajar con jest, y tiene una amplia documentación.
 
 ## Instalación
 
@@ -26,6 +27,7 @@ Indicamos grunt y grunt-run que se usa para ejecutar.
 ¿Qué es el gruntfile?
 
 Como ya he dicho, grunt automatiza tareas, pero... ¿Dónde indicamos esta automatización?
+
 La respuesta es en el gruntfile, básicamente aqui declararemos todas las tareas que vamos a invocar.
 Se compone de las siguientes partes:
 
@@ -33,11 +35,11 @@ Se compone de las siguientes partes:
 
 ![](pic/funcion_env.png)
 
- - La configuración de proyectos -- La mayoría de tareas se basan en los datos de configuración definidos en un objeto que se para al método grunt.initConfig() en nuestro caso el package.json. Si indicamos este fichero se importan los metadas almacenamos en package. 
+ - La configuración de proyectos -- La mayoría de tareas se basan en los datos de configuración definidos en un objeto que se pasa al método grunt.initConfig(), en mi caso el package.json. Si indicamos este fichero se importan los metadas almacenamos en package. 
 
  ![](pic/grunt_p.png)
 
- - Configuración de tareas -- Despues indicamos la tarea a ejecutar en mi caso quiero ejecutar los test, por lo que la tarea es run y en test indicamos cómo se hace, en mi caso npm test.
+ - Configuración de tareas -- Despues indicamos la tarea a ejecutar en mi caso quiero ejecutar los test, por lo que la tarea es run y en test indicamos cómo se hace, en mi caso *npm test*.
 
  ![](pic/run_grunt.png)
 
