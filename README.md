@@ -41,6 +41,9 @@ Una vez instaladas las dependencias necesarias, para realizar los test ejecutamo
 ## GITHUB CONTAINER REGISTRY
  - Documentación explicativa de [GHCR](https://github.com/sarasolera/proyectoSeries/blob/master/docs/github_container_registry.md)
  - [Contenedor Github](https://github.com/users/sarasolera/packages/container/package/proyectoseries_github_registry).
+ - Ejecutar:
+    - *docker run -t -v `pwd`:/test ghcr.io/sarasolera/proyectoseries_github_registry*
+
 ## HERRAMIENTA DE CONSTRUCCIÓN :wrench:
  - La justificación y configuración de la herramienta de construcción que he elegido se encuentra en el fichero de [herramientas](https://github.com/sarasolera/proyectoSeries/blob/master/docs/herramientas.md)
  - El [fichero con información del proyecto](https://github.com/sarasolera/proyectoSeries/blob/master/package.json) lo encontramos en la carpeta raíz.
