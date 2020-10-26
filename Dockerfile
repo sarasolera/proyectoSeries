@@ -7,6 +7,7 @@ LABEL maintainer="Sara Solera"
 # copiamos los archivos package.json y packege-lock.json que son necesarios para node
 COPY package*.json ./
 
+# Copiamos el fichero de configuración de grunt, su documentación se encuentra enlazada en el readme
 COPY Gruntfile.js ./
 
 # ejecutamos npm install que ejecuta el package.json e
@@ -17,13 +18,17 @@ COPY Gruntfile.js ./
 RUN npm install && npm install -g jest-cli && npm install -g grunt-cli
 
 # Pra ejecutar los test no hace falta permisos superusuario
-USER node
+USER seriessara
 
-
+# Marcamos que test va a ser un directorio que se va a montar
+# cuando ejecutemos -v, para saber mas leer apuntes tema 3
 VOLUME /test
 WORKDIR /test
 
-# La carpeta se sobrescribe con el volumen y no es más accesible e el contenedor.
+# En node es necesario node_modules para que se reconozca grunt
+# Pero al montar montar el volumen, se sobreescribe, por lo que 
+# es necesario esto. 
+# Se explicará en la documentacion de Dockerfile enlazada también
 ENV PATH=/proyecto/node_modules/.bin:$PATH
 
 
