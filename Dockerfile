@@ -5,9 +5,9 @@ LABEL maintainer="Sara Solera"
 WORKDIR /test
 
 # copiamos los archivos package.json y packege-lock.json que son necesarios para node
-COPY package*.json ./
+COPY package*.json /test/
 
-COPY Gruntfile.js ./
+COPY Gruntfile.js /test/
 
 # ejecutamos npm install que ejecuta el package.json e
 # instala las dependencias
@@ -16,4 +16,4 @@ COPY Gruntfile.js ./
 RUN npm install && npm install -g grunt && npm install -g jest-cli
 
 # para ejecutar los test
-CMD ["grunt","run:test_jest"]
+CMD ["grunt","test"]
