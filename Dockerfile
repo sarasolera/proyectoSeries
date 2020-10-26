@@ -13,9 +13,11 @@ COPY Gruntfile.js /test/
 # instala las dependencias
 # usamos RUN para ejecutar comandos 
 # al hacer install se genera la carpeta node_modules
-RUN npm install \
-    npm install -g jest-cli \
-    npm install -g grunt-cli
+RUN npm install cache clear \
+    npm cache clean \
+    sudo npm install grunt --save-dev \
+    npm install \
+    npm install -g jest-cli 
 
 # Node modules es un directorio que se crea al instalar las dependencias, sin embargo no deberia estar en nuestro repositorio
 # por lo que se introduce en gitignore. 
