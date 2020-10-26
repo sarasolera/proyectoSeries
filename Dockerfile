@@ -2,12 +2,12 @@
 FROM node:10-alpine
 # indicando autor
 LABEL maintainer="Sara Solera"
-WORKDIR /test
+WORKDIR /proyecto
 
 # copiamos los archivos package.json y packege-lock.json que son necesarios para node
-COPY package*.json /test/
+COPY package*.json /proyecto/
 
-COPY Gruntfile.js /test/
+COPY Gruntfile.js /proyecto/
 
 # ejecutamos npm install que ejecuta el package.json e
 # instala las dependencias
@@ -16,9 +16,9 @@ COPY Gruntfile.js /test/
 RUN npm install && npm install -g jest-cli 
 
 # La carpeta se sobrescribe con el volumen y no es más accesible e el contenedor.
-ENV PATH=/test/node_modules/.bin:$PATH
+ENV PATH=/proyecto/node_modules/.bin:$PATH
 # para ejecutar los test
-COPY . /test/app
-WORKDIR /test/app
+VOLUME /test
+WORKDIR /test
 
 CMD ["grunt","test"]
