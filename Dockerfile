@@ -19,6 +19,9 @@ RUN npm install && npm install -g grunt && npm install -g jest-cli
 # por lo que se introduce en gitignore. 
 # Esta carpeta nos permite importar paquetes extenos instalados mediante npm a nuestro proyecto local
 # si no lo tenemos no se encontrará grunt 
-COPY node_modules /test
+# Cuando se monta lo elimina 
+# Por lo que debemos reubica nodemodules  para que pueda desarrollar node fuera y dentro
+
+ENV PATH /test/node_modules/.bin:$PATH
 # para ejecutar los test
 CMD ["grunt","test"]
