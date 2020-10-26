@@ -53,7 +53,7 @@ Se compone de las siguientes partes:
 
 Y por último para ejecutarlo serie:
 
-    - grunt run:test
+    - grunt test
 
 Y ya hemos automátizado una tarea con el Task Runner: Grunt.
 El resto del código Gruntfile.js se encuentra el la raíz de mi proyecto.

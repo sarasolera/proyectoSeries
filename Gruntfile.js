@@ -19,5 +19,5 @@ module.exports = function(grunt) {
     //Carga el plugin de grunt para hacer la tarea
     grunt.loadNpmTasks('grunt-run');
     //Tarea por omisión: generar la documentación
-    grunt.registerTask('default',['run:test']);
+    grunt.registerTask('test',["run"]);
 };
