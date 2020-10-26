@@ -51,6 +51,14 @@ Como vimos en teoría también es bueno añadir información, como información 
 
 ![](pic/label.png)
 
+## Especificar variable de entorno y volumenes predeterminados
+Probablemente necesitemos algunas variables de entorno para ejecutar nuestro contenedor.
+En mi caso he tenido que hacer una variable de entorno, ya que tenía errores con grunt, buscando errores parecidos encontré en esta [página](https://stackoverflow.com/questions/39165918/error-running-grunt-in-docker-fatal-error-unable-to-find-local-grunt) que podía ser provocado por la falta de node_modules, ya que se elimina. Un compañero pasó un enlace de la página de [docker](https://www.docker.com/blog/keep-nodejs-rockin-in-docker/) en el que explicaba como mover los módulos para que nodejs se puede ejecutar dentro y fuera del contenedor.
+
+
+![](pic/node_modules.png)
 
 
 
+## ¿Dónde he encontrado la documentación? 
+He mirado varias páginas, pero en gran parte mire la página de [abatic](https://www.abatic.es/docker-buenas-practicas-en-dockerfile/)
