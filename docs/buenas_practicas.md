@@ -16,7 +16,7 @@ Lo más recomendable es basarse en las imágenes oficiales, ya que es más fáci
 ## Directorio y dockerignore.
 Otra buena práctica es siempre trabajar sobre un directorio vacío, solo con el Dockerfile y los archivos minimos necesarios para la imágen. Si tenemos archivos que no queremos que se incluyan al ejecutar build podemos hacer un fichero .dockerignore.
 
-En el caso de usar node, al ejecutar npm install, se crea la carpeta node_modules, esta carpeta no es necesaria, por lo que podemos hacer un fichero dockerignore así:
+En el caso de usar node, al ejecutar npm install, se crea la carpeta node_modules, esta carpeta debe estar en el contenedor, por lo que podemos hacer un fichero dockerignore así:
 
 ![](pic/dockerig.png)
 
