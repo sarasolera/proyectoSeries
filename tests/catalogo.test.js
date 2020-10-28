@@ -133,6 +133,27 @@ describe('Testeando clase Catalogo' , ()=>{
             const esperado = cat.series[0].getComentarios();
 
             expect(esperado[0]).toBe(comentario);
+            var errorD = () => cat.comentarSerie(comentario,12);
+            expect(errorD).toThrow();
+        })
+    });
+
+    describe('Puntuar serie',()=>{
+        test('Puntuando serie',()=>{
+            
+            var errorD = () => cat.puntuarSerie(11,0);
+            expect(errorD).toThrow();
+            errorD = () => cat.puntuarSerie(8,12);
+            expect(errorD).toThrow();
+            errorD = () => cat.puntuarSerie(-4,2);
+            expect(errorD).toThrow();
+
+            // La serie 0 tiene 10 y 9 de puntuacion lo que hace una media de 9.5, si sumamos 8 tenemos 27/3, una media de 9
+            cat.puntuarSerie(8,0);
+
+            var pF = cat.series[0].getMediaPuntuacion();
+            var esperado = 9;
+            expect(pF).toBe(esperado);
         })
     })
 });
