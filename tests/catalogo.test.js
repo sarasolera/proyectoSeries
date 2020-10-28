@@ -39,6 +39,8 @@ cat.series[6].sumarPuntos(6); //PUNTUACION 6.5
 cat.series[7].sumarPuntos(9);
 cat.series[7].sumarPuntos(9); //PUNTUACION 9
 
+const comentario = "Esta serie es muy divertida, pero a veces se me hace pesada";
+const comentario2 = "Es poco creible pero muy entretenida";
 describe('Testeando clase Catalogo' , ()=>{
     describe('Crea objeto Serie', ()=>{
         test('Crea',()=>{
@@ -127,12 +129,12 @@ describe('Testeando clase Catalogo' , ()=>{
 
     describe('Comentar serie',()=>{
         test('Comentando series',()=>{
-            const comentario = "Esta serie es muy divertida, pero a veces se me hace pesada";
+            
             cat.comentarSerie(comentario,0);
 
-            const esperado = cat.series[0].getComentarios();
+            const recibido = cat.series[0].getComentarios();
 
-            expect(esperado[0]).toBe(comentario);
+            expect(recibido[0]).toBe(comentario);
             var errorD = () => cat.comentarSerie(comentario,12);
             expect(errorD).toThrow();
         })
@@ -154,6 +156,18 @@ describe('Testeando clase Catalogo' , ()=>{
             var pF = cat.series[0].getMediaPuntuacion();
             var esperado = 9;
             expect(pF).toBe(esperado);
+        })
+    });
+
+    describe('Consultando comentarios de una serie',()=>{
+        test('Consultar comentarios',()=>{
+            cat.comentarSerie(comentario2,0);
+
+            const esperado = "" + cat.series[0].comentarios[0] + "\n" +cat.series[0].comentarios[1] + "\n";
+
+            const recibido = cat.mostrarComentarios(0);
+
+            expect(recibido).toBe(esperado);
         })
     })
 });
