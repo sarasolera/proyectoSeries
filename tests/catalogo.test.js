@@ -124,4 +124,15 @@ describe('Testeando clase Catalogo' , ()=>{
            
         })
     });
+
+    describe('Comentar serie',()=>{
+        test('Comentando series',()=>{
+            const comentario = "Esta serie es muy divertida, pero a veces se me hace pesada";
+            cat.comentarSerie(comentario,0);
+
+            const esperado = cat.series[0].getComentarios();
+
+            expect(esperado[0]).toBe(comentario);
+        })
+    })
 });

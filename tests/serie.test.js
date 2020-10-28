@@ -17,6 +17,9 @@ const nombre_creado = 'La casa de papel';
 const sin_creada ='Una banda organizada de ladrones tiene el objetivo de cometer el atraco del siglo en la Fábrica Nacional de Moneda y Timbre. Cinco meses de preparación quedarán reducidos a once días para poder llevar a cabo con éxito el gran golpe.';
 const numero_temporadas = 4;
 const genero_creado = "ACCION";
+const comentario1 = "Es una serie escelente, me encanta!";
+serie_nueva.aniadirComentario(comentario1);
+const comentario2 = "Es un poco subrealista pero muy entretenida.";
 
 describe('Testeando clase Serie' , ()=>{
     describe('Crea objeto Serie', ()=>{
@@ -69,6 +72,13 @@ describe('Testeando clase Serie' , ()=>{
         test('Media de puntos correcta',()=>{
             expect(serie_nueva.getMediaPuntuacion()).toBe(5);
         });
+
+        test('Consultar comentario',()=>{
+            var esperado = new Array();
+            esperado = serie_nueva.getComentarios();
+            expect(esperado.length).toBe(1);
+            expect(esperado[0]).toBe(comentario1);
+        })
 
     });
 
@@ -137,6 +147,15 @@ describe('Testeando clase Serie' , ()=>{
             const f_reparto = "Ursula Corberó Jaime Lorente ";
             expect(serie_nueva.mostrarReparto()).toBe(f_reparto);
         });
+
+        test("Añadiendo comentario a una serie",()=>{
+            serie_nueva.aniadirComentario(comentario2);
+            const esperado =  new Array();
+            esperado.push(comentario1);
+            esperado.push(comentario2);
+
+            expect(serie_nueva.getComentarios()).toStrictEqual(esperado);
+        })
     });
 
         
