@@ -26,7 +26,7 @@ USER node
 # usamos RUN para ejecutar comandos 
 # al hacer install se genera la carpeta node_modules
 # instalo jest y grunt que son herramientas que necesito y elimino package porque ya lo he utilizado
-RUN npm install && npm install -g jest-cli && npm install -g grunt-cli  && rm package.json
+RUN npm install && npm install -g jest-cli && npm install -g grunt-cli 
 
 
 
