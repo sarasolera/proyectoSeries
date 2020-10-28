@@ -16,6 +16,8 @@ Lo más recomendable es basarse en las imágenes oficiales, ya que es más fáci
 ## Directorio y dockerignore.
 Otra buena práctica es siempre trabajar sobre un directorio vacío, solo con el Dockerfile y los archivos minimos necesarios para la imágen. Si tenemos archivos que no queremos que se incluyan al ejecutar build podemos hacer un fichero .dockerignore.
 
+![](pic/directorio_vacio.png)
+
 En el caso de usar node, al ejecutar npm install, se crea la carpeta node_modules, esta carpeta debe estar en el contenedor, por lo que podemos hacer un fichero dockerignore así:
 
 ![](pic/dockerig.png)
@@ -43,7 +45,7 @@ Hay que tener en cuenta que durante el proceso de creación de imagenes, Docker 
 ## Optimizar COPY y RUN.
 Es una buena práctica poner los cambios que se producen con menor frecuencia en la parte superior de nuestros Dockerfiles para aprovechar el almacenamiento en caché.
 
-En mi caso, el código puede cambiar, pero no quiero que se me instalen todas las dependencias cada vez, por lo que es buena idea copiar el package.json antes que el resto de código, instalar las dependencias y luego añadir los archivos.
+En mi caso, el código puede cambiar, pero no quiero que se me instalen todas las dependencias cada vez, por lo que es buena idea copiar el package.json antes que el resto de código, instalar las dependencias y luego añadir los archivos. Tras ser utilizado, el package.json lo podemos eliminar, recordemos que es mejor quitar todo lo innecesario.
 
 
 ## Añadir metadatos.
@@ -58,7 +60,30 @@ En mi caso he tenido que hacer una variable de entorno, ya que tenía errores co
 ![](pic/node_modules.png)
 
 
+## UTILIZAR UN USUARIO SIN PERMISOS ROOT
+De forma predeterminada, Docker ejecuta el contenedor como raíz, lo que dentro del contenedor puede resultar algo peligroso, para poder ejecutar el contenedor como un usuario sin privilegios, node nos proporciona el usuario "node", valga la redundancia, por lo que nos evitamos crear un usuario, que también es posible.
+
+En mi caso intenté ejecutar poniendo USER node tras copiar los archivos package.json y Gruntfile.js y antes de ejecutar npm install... ¿y que pasó? 
+![](pic/intento1.png)
 
 
+![](pic/permisos1.png)
+Pues lo obvio, no tenía permisos sobre el directorio, por lo que buscando encontre como dar permisos en [stackoverflow](https://stackoverflow.com/questions/48910876/error-eacces-permission-denied-access-usr-local-lib-node-modules)
+
+Por lo que dí permisos a mi carpeta antes de poner USER node, con el comando:
+
+    - RUN chown -R node ./
+
+![](pic/permisos2.png)
+
+Parecía bueno el intento pero me dió otro error, y es que no tenia permisos en la carpeta node_modules, es entendible ya que es necesaria para hacer npm por lo que añadi permisos y me quedaba:
+
+    - RUN chown -R node ./ && chown -R node /usr/local/lib/node_modules
+![](pic/permisos3.png)
+
+Y otra vez pareía que era muy bueno el intento, pero faltaba una cosa y es tener en cuenta mis herramientas, jest y grunt las cuales se encuentra en /usr/local/bin, finalmente el comando queda como lo tengo en mi dockerfile.
+
+![](pic/permisosCorrectos.png)
+Una vez dados los permisos necesarios a nuestro usuario, todo funciona a la perfección y evitamos el peligro de ser superusuario.
 ## ¿Dónde he encontrado la documentación? 
 He mirado varias páginas, pero en gran parte mire la página de [abatic](https://www.abatic.es/docker-buenas-practicas-en-dockerfile/)
