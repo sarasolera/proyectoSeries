@@ -87,6 +87,14 @@ class Serie{
     }
 
     /**
+     * *Muesta el array de puntos
+     * @returns puntuaciones
+     */
+    getPuntos(){
+        return this.puntuacion;
+    }
+
+    /**
      * getComentarios
      * @return devuelve el array de los comentarios
      */

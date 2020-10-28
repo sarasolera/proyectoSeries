@@ -111,10 +111,22 @@ class Catalogo{
             this.series[indice].aniadirComentario(comentario);
         }
         else
-            throw new Error("Serie no valida");
+            throw new Error("Serie no válida");
     }
     
+    puntuarSerie(puntuacion,indice){
 
+        if(this.existeSerie(indice)){
+            if(puntuacion<11 && puntuacion >= 0){
+                this.series[indice].sumarPuntos(puntuacion);
+            }
+            else
+                throw new Error("Puntuación no válida");
+            
+        }
+        else
+            throw new Error("Serie no válida");
+    }
     
 }
 
