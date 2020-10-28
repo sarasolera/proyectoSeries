@@ -68,6 +68,7 @@ class Catalogo{
         return serie_mostrar;
     }
 
+    
     /**
      * Devuelve un array de todos los titulos de series de ese genero
      * @param {*} genero 
@@ -105,6 +106,13 @@ class Catalogo{
         return listaNueva;
     }
 
+    comentarSerie(comentario,indice){
+        if(this.existeSerie(indice)){
+            this.series[indice].aniadirComentario(comentario);
+        }
+        else
+            throw new Error("Serie no valida");
+    }
     
 
     

@@ -16,6 +16,7 @@ class Serie{
          this.fecha_prox_temp = new Date(null); 
          this.reparto = new Array();
          this.puntuacion = new Array();
+         this.comentarios = new Array();
     }
     
     /**
@@ -85,6 +86,13 @@ class Serie{
         else return 0;
     }
 
+    /**
+     * getComentarios
+     * @return devuelve el array de los comentarios
+     */
+    getComentarios(){
+        return this.comentarios;
+    }
     
     /** METODOS SET */
 
@@ -197,6 +205,14 @@ class Serie{
         }
         
         return act;
+    }
+
+    /**
+     * Añadimos un comentario de un usurio a una serie
+     * @param {string} com
+     */
+    aniadirComentario(com){
+        this.comentarios.push(com);
     }
 
     
