@@ -128,6 +128,20 @@ class Catalogo{
             throw new Error("Serie no válida");
     }
     
+    mostrarComentarios(indice){
+        if(this.existeSerie(indice)){
+            var comentariosAlmacenados = "";
+            var c = this.series[indice].getComentarios();
+            c.forEach(element=>{
+                comentariosAlmacenados +=  element +  "\n";
+            })
+
+            return comentariosAlmacenados;
+
+        }
+        else
+            throw new Error("Serie no válida");
+    }
 }
 
 
