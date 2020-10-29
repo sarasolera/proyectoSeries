@@ -32,9 +32,7 @@ Es importante tener claro el objetivo con el que creamos nuestro Dockerfile, y m
     -CMD: es una ejecucuón de comandos por defecto trás crear el contenedor, en mi caso mi objetivo es ejecutar los test.
 ![](pic/cmd.png)
 
-    - ADD y COPY tienen uncionalidades similares, aunque COPY es mas utilizado. COPY soporta el copiado básico de archivos locales al contenedor, mientras que ADD tiene otras funcionalidades como la extracción local de archivos tar. Cuando necesitemos una autoextracción de un archivo hacia el contenedor, la mejor opción es ADD, en mi caso simplemente quiero la copia deL fichero package.json por lo que hice uso de COPY. Recordad que si vamos a usar una usuario sin privilegios, y después queremos borrar algun archivo, estos ficheros debemos copiarlos dandole permiso al usuario.
-    
-Esto lo encontré en una [pagina de git](https://github.com/nodejs/docker-node/issues/740)
+    - ADD y COPY tienen uncionalidades similares, aunque COPY es mas utilizado. COPY soporta el copiado básico de archivos locales al contenedor, mientras que ADD tiene otras funcionalidades como la extracción local de archivos tar. Cuando necesitemos una autoextracción de un archivo hacia el contenedor, la mejor opción es ADD, en mi caso simplemente quiero la copia deL fichero package.json por lo que hice uso de COPY. 
 
 ![](pic/COPY.png)
 
@@ -66,9 +64,6 @@ En mi caso he tenido que hacer una variable de entorno, ya que tenía errores co
 De forma predeterminada, Docker ejecuta el contenedor como raíz, lo que dentro del contenedor puede resultar algo peligroso, para poder ejecutar el contenedor como un usuario sin privilegios, node nos proporciona el usuario "node", valga la redundancia, por lo que nos evitamos crear un usuario, que también es posible.
 
 En mi caso intenté ejecutar poniendo USER node tras copiar los archivos package.json y Gruntfile.js y antes de ejecutar npm install... ¿y que pasó? 
-![](pic/intento1.png)
-
-
 ![](pic/permisos1.png)
 
 Pues lo obvio, no tenía permisos sobre el directorio,lo que hice para evitar darle permisos a todo el path / creo una carpeta node_modules que es donde se buscan las dependencias,  buscando encontre como dar permisos en [stackoverflow](https://stackoverflow.com/questions/48910876/error-eacces-permission-denied-access-usr-local-lib-node-modules)
