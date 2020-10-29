@@ -1,5 +1,5 @@
 #node y alpine
-FROM node:10-alpine
+FROM node:14-alpine3.10
 # indicando autor
 LABEL maintainer="Sara Solera"
 
@@ -39,7 +39,7 @@ WORKDIR /test
 # Pero al montar montar el volumen, se sobreescribe, por lo que 
 # es necesario esto. 
 # Se explicará en la documentacion de Dockerfile enlazada también
-ENV PATH=/proyecto/node_modules/.bin:$PATH
+ENV PATH=/node_modules/.bin:$PATH
 
 
 # para ejecutar los test
