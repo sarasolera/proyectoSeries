@@ -3,7 +3,7 @@ FROM node:10-alpine
 # indicando autor
 LABEL maintainer="Sara Solera"
 
-# Creo un directorio de trabajo 
+# Creo un directorio de node_modules al que vamos a dar permisos
 RUN mkdir /node_modules
 
 # copiamos los archivos package.json y packege-lock.json que son necesarios para node
@@ -26,9 +26,9 @@ USER node
 # usamos RUN para ejecutar comandos 
 # al hacer install se genera la carpeta node_modules
 # instalo jest y grunt que son herramientas que necesito y elimino package porque ya lo he utilizado
-RUN npm install && npm install -g jest-cli && npm install -g grunt-cli
+RUN npm install && npm install -g jest-cli && npm install -g grunt-cli && rm package*.json
 
-ENV PATH /node_modules/.bin:$PATH 
+
 
 
 # Marcamos que test va a ser un directorio que se va a montar
@@ -40,7 +40,7 @@ WORKDIR /test
 # Pero al montar montar el volumen, se sobreescribe, por lo que 
 # es necesario esto. 
 # Se explicará en la documentacion de Dockerfile enlazada también
-
+ENV PATH /node_modules/.bin:$PATH 
 
 # para ejecutar los test
 CMD ["grunt","test"]
