@@ -4,15 +4,13 @@ FROM node:10-alpine
 LABEL maintainer="Sara Solera"
 
 # Creo un directorio de trabajo 
-#WORKDIR /proyecto
+WORKDIR /
 
 # copiamos los archivos package.json y packege-lock.json que son necesarios para node
 COPY package*.json ./
 
 #Copiamos el fichero de configuración de grunt, su documentación se encuentra enlazada en el readme
 COPY  Gruntfile.js ./
-
-
 
 ## De forma predeterminada si instalamos paquetes con npm instenta instalarlos en
 ## usr local lib node_modules y jest y grunt los encontramos en bin 
@@ -29,7 +27,7 @@ USER node
 # instalo jest y grunt que son herramientas que necesito y elimino package porque ya lo he utilizado
 RUN npm install && npm install -g jest-cli && npm install -g grunt-cli
 
-ENV PATH ./usr/local/bin:$PATH
+ENV PATH=/node_modules/.bin:$PATH 
 
 
 # Marcamos que test va a ser un directorio que se va a montar
