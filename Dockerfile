@@ -17,7 +17,7 @@ COPY   Gruntfile.js ./
 ## usr local lib node_modules y jest y grunt los encontramos en bin 
 ## por lo que voy a darle permisos al usuario por defecto node
 # Dando los permisos adecuados
-RUN chown -R node /packae.json && chown -R node /node_modules && chown -R node /usr/local/lib/node_modules && chown -R node /usr/local/bin
+RUN chown -R node /package.json && chown -R node /node_modules && chown -R node /usr/local/lib/node_modules && chown -R node /usr/local/bin
 # A partir de aqui todo se ejecutara sin permisos de super usuario
 USER node
 
