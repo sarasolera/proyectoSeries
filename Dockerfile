@@ -27,12 +27,11 @@ USER node
 # instalo jest y grunt que son herramientas que necesito y elimino package porque ya lo he utilizado
 RUN npm install && npm install -g jest-cli && npm install -g grunt-cli
 
-ENV PATH=/node_modules/:$PATH 
+ENV PATH /proyecto/node_modules/.bin:$PATH 
 
 
 # Marcamos que test va a ser un directorio que se va a montar
 # cuando ejecutemos -v, para saber mas leer apuntes tema 3
-VOLUME /test
 WORKDIR /test
 
 
