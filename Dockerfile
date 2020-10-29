@@ -24,14 +24,8 @@ USER node
 # instala las dependencias
 # usamos RUN para ejecutar comandos 
 # al hacer install se genera la carpeta node_modules
-# instalo jest y grunt que son herramientas que necesito y elimino package porque ya lo he utilizado
-RUN cd /p npm install && npm install -g jest-cli && npm install -g grunt-cli 
-
-USER root 
-RUN rm -fv package.json
-
-USER node
-
+# instalo jest y grunt que son herramientas que necesito 
+RUN npm install && npm install -g jest-cli && npm install -g grunt-cli 
 
 # Marcamos que test va a ser un directorio que se va a montar
 # cuando ejecutemos -v, para saber mas leer apuntes tema 3
