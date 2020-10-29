@@ -14,7 +14,7 @@ RUN chown -R node /node_modules && chown -R node /usr/local/lib/node_modules && 
 
 #Copiamos el fichero de configuración de grunt, su documentación se encuentra enlazada en el readme
 COPY  Gruntfile.js ./
-# copiamos los archivos package.json y packege-lock.json que son necesarios para node
+# copiamos los archivos package.json que es necesarios para node
 COPY   package.json ./
 
 # A partir de aqui todo se ejecutara sin permisos de super usuario
