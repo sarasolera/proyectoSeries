@@ -1,5 +1,5 @@
 #node y alpine
-FROM node:14-alpine3.10
+FROM node:10-alpine
 # indicando autor
 LABEL maintainer="Sara Solera"
 
@@ -7,10 +7,10 @@ LABEL maintainer="Sara Solera"
 WORKDIR /proyecto
 
 # copiamos los archivos package.json y packege-lock.json que son necesarios para node
-COPY package*.json ./
+COPY package*.json ./proyecto/
 
 #Copiamos el fichero de configuración de grunt, su documentación se encuentra enlazada en el readme
-COPY  Gruntfile.js ./
+COPY  Gruntfile.js ./proyecto/
 
 
 ## De forma predeterminada si instalamos paquetes con npm instenta instalarlos en
