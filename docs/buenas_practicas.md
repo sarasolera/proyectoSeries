@@ -16,7 +16,6 @@ Lo más recomendable es basarse en las imágenes oficiales, ya que es más fáci
 ## Directorio y dockerignore.
 Otra buena práctica es siempre trabajar sobre un directorio vacío, solo con el Dockerfile y los archivos minimos necesarios para la imágen. Si tenemos archivos que no queremos que se incluyan al ejecutar build podemos hacer un fichero .dockerignore.
 
-![](pic/directorio_vacio.png)
 
 En el caso de usar node, al ejecutar npm install, se crea la carpeta node_modules, esta carpeta debe estar en el contenedor, por lo que podemos hacer un fichero dockerignore así:
 
@@ -33,7 +32,10 @@ Es importante tener claro el objetivo con el que creamos nuestro Dockerfile, y m
     -CMD: es una ejecucuón de comandos por defecto trás crear el contenedor, en mi caso mi objetivo es ejecutar los test.
 ![](pic/cmd.png)
 
-    - ADD y COPY tienen uncionalidades similares, aunque COPY es mas utilizado. COPY soporta el copiado básico de archivos locales al contenedor, mientras que ADD tiene otras funcionalidades como la extracción local de archivos tar. Cuando necesitemos una autoextracción de un archivo hacia el contenedor, la mejor opción es ADD, en mi caso simplemente quiero la copia de los ficheros json por lo que hice uso de COPY.
+    - ADD y COPY tienen uncionalidades similares, aunque COPY es mas utilizado. COPY soporta el copiado básico de archivos locales al contenedor, mientras que ADD tiene otras funcionalidades como la extracción local de archivos tar. Cuando necesitemos una autoextracción de un archivo hacia el contenedor, la mejor opción es ADD, en mi caso simplemente quiero la copia deL fichero package.json por lo que hice uso de COPY. Recordad que si vamos a usar una usuario sin privilegios, y después queremos borrar algun archivo, estos ficheros debemos copiarlos dandole permiso al usuario.
+    
+Esto lo encontré en una [pagina de git](https://github.com/nodejs/docker-node/issues/740)
+
 ![](pic/COPY.png)
 
     - WORKDIR cambia el directorio por defecto, donde ejecutamos nuestros comandos RUN y CMD
@@ -68,11 +70,12 @@ En mi caso intenté ejecutar poniendo USER node tras copiar los archivos package
 
 
 ![](pic/permisos1.png)
-Pues lo obvio, no tenía permisos sobre el directorio, por lo que buscando encontre como dar permisos en [stackoverflow](https://stackoverflow.com/questions/48910876/error-eacces-permission-denied-access-usr-local-lib-node-modules)
 
-Por lo que dí permisos a mi carpeta antes de poner USER node, con el comando:
+Pues lo obvio, no tenía permisos sobre el directorio,lo que hice para evitar darle permisos a todo el path / creo una carpeta node_modules que es donde se buscan las dependencias,  buscando encontre como dar permisos en [stackoverflow](https://stackoverflow.com/questions/48910876/error-eacces-permission-denied-access-usr-local-lib-node-modules)
 
-    - RUN chown -R node ./
+Por lo que dí permisos a mi carpeta, cree la carpeta node_modules, antes de poner USER node, con el comando:
+
+    - RUN chown -R node ./node_modules
 
 ![](pic/permisos2.png)
 
