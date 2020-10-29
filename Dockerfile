@@ -6,11 +6,6 @@ LABEL maintainer="Sara Solera"
 # Creo un directorio de node_modules al que vamos a dar permisos
 RUN mkdir /node_modules
 
-# copiamos los archivos package.json y packege-lock.json que son necesarios para node
-COPY --chown=node:node package*.json ./
-
-#Copiamos el fichero de configuración de grunt, su documentación se encuentra enlazada en el readme
-COPY  --chown=node:node Gruntfile.js ./
 
 ## De forma predeterminada si instalamos paquetes con npm instenta instalarlos en
 ## usr local lib node_modules y jest y grunt los encontramos en bin 
@@ -19,6 +14,12 @@ COPY  --chown=node:node Gruntfile.js ./
 RUN chown -R node /node_modules && chown -R node /usr/local/lib/node_modules && chown -R node /usr/local/bin
 # A partir de aqui todo se ejecutara sin permisos de super usuario
 USER node
+
+# copiamos los archivos package.json y packege-lock.json que son necesarios para node
+COPY   package*.json ./
+
+#Copiamos el fichero de configuración de grunt, su documentación se encuentra enlazada en el readme
+COPY   Gruntfile.js ./
 
 
 # ejecutamos npm install que ejecuta el package.json e
