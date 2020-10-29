@@ -13,6 +13,7 @@ COPY package*.json ./
 COPY  Gruntfile.js ./
 
 
+
 ## De forma predeterminada si instalamos paquetes con npm instenta instalarlos en
 ## usr local lib node_modules y jest y grunt los encontramos en bin 
 ## por lo que voy a darle permisos al usuario por defecto node
@@ -29,11 +30,7 @@ USER node
 RUN npm install && npm install -g jest-cli && npm install -g grunt-cli && rm package*.json
 
 
-# En node es necesario node_modules para que se reconozca grunt
-# Pero al montar montar el volumen, se sobreescribe, por lo que 
-# es necesario esto. 
-# Se explicará en la documentacion de Dockerfile enlazada también
-ENV PATH=./node_modules/.bin:$PATH
+RUN ls proyecto
 
 # Marcamos que test va a ser un directorio que se va a montar
 # cuando ejecutemos -v, para saber mas leer apuntes tema 3
@@ -41,7 +38,11 @@ VOLUME /test
 WORKDIR /test
 
 
-
+# En node es necesario node_modules para que se reconozca grunt
+# Pero al montar montar el volumen, se sobreescribe, por lo que 
+# es necesario esto. 
+# Se explicará en la documentacion de Dockerfile enlazada también
+ENV PATH /node_modules/.bin:$PATH
 
 # para ejecutar los test
 CMD ["grunt","test"]
