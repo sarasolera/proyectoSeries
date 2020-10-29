@@ -4,7 +4,7 @@ FROM node:10-alpine
 LABEL maintainer="Sara Solera"
 
 # Creo un directorio de trabajo 
-WORKDIR /proyecto
+#WORKDIR /proyecto
 
 # copiamos los archivos package.json y packege-lock.json que son necesarios para node
 COPY package*.json ./
@@ -29,7 +29,7 @@ USER node
 # instalo jest y grunt que son herramientas que necesito y elimino package porque ya lo he utilizado
 RUN npm install && npm install -g jest-cli && npm install -g grunt-cli
 
-ENV PATH ./node_modules/.bin:$PATH
+ENV PATH ./usr/local/bin:$PATH
 
 
 # Marcamos que test va a ser un directorio que se va a montar
