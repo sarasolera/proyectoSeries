@@ -2,9 +2,9 @@
 FROM node:10-alpine
 # indicando autor
 LABEL maintainer="Sara Solera"
-
+WORKDIR /p
 # Creo un directorio de node_modules al que vamos a dar permisos
-RUN mkdir /node_modules /p
+RUN mkdir /node_modules 
 
 ## De forma predeterminada si instalamos paquetes con npm instenta instalarlos en
 ## usr local lib node_modules y jest y grunt los encontramos en bin 
