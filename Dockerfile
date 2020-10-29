@@ -2,7 +2,7 @@
 FROM node:10-alpine
 # indicando autor
 LABEL maintainer="Sara Solera"
-WORKDIR /p
+
 # Creo un directorio de node_modules al que vamos a dar permisos
 RUN mkdir /node_modules 
 
@@ -17,10 +17,6 @@ COPY  Gruntfile.js ./
 # copiamos los archivos package.json y packege-lock.json que son necesarios para node
 COPY   package.json ./
 
-#Damos permisos a package.json para que pueda ser eliminado
-RUN chown -R node /p
-
-
 # A partir de aqui todo se ejecutara sin permisos de super usuario
 USER node
 
@@ -29,7 +25,12 @@ USER node
 # usamos RUN para ejecutar comandos 
 # al hacer install se genera la carpeta node_modules
 # instalo jest y grunt que son herramientas que necesito y elimino package porque ya lo he utilizado
-RUN cd /p npm install && npm install -g jest-cli && npm install -g grunt-cli && rm -rf ./p/package.json
+RUN cd /p npm install && npm install -g jest-cli && npm install -g grunt-cli 
+
+USER root 
+RUN rm -fv package.json
+
+USER node
 
 
 # Marcamos que test va a ser un directorio que se va a montar
