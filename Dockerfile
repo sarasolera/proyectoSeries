@@ -7,10 +7,10 @@ LABEL maintainer="Sara Solera"
 RUN mkdir /node_modules
 
 # copiamos los archivos package.json y packege-lock.json que son necesarios para node
-COPY package*.json ./
+COPY --chown=node:node package*.json ./
 
 #Copiamos el fichero de configuración de grunt, su documentación se encuentra enlazada en el readme
-COPY  Gruntfile.js ./
+COPY  --chown=node:node Gruntfile.js ./
 
 ## De forma predeterminada si instalamos paquetes con npm instenta instalarlos en
 ## usr local lib node_modules y jest y grunt los encontramos en bin 
