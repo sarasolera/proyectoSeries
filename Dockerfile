@@ -4,7 +4,7 @@ FROM node:10-alpine
 LABEL maintainer="Sara Solera"
 
 # Creo un directorio de node_modules al que vamos a dar permisos
-RUN mkdir /node_modules 
+RUN mkdir /node_modules /p
 
 ## De forma predeterminada si instalamos paquetes con npm instenta instalarlos en
 ## usr local lib node_modules y jest y grunt los encontramos en bin 
@@ -18,7 +18,7 @@ COPY  Gruntfile.js ./
 COPY   package.json ./
 
 #Damos permisos a package.json para que pueda ser eliminado
-RUN chmod -R 777 ./package.json
+RUN chown -R node /p
 
 
 # A partir de aqui todo se ejecutara sin permisos de super usuario
@@ -29,7 +29,7 @@ USER node
 # usamos RUN para ejecutar comandos 
 # al hacer install se genera la carpeta node_modules
 # instalo jest y grunt que son herramientas que necesito y elimino package porque ya lo he utilizado
-RUN npm install && npm install -g jest-cli && npm install -g grunt-cli && rm -rf packae.json
+RUN cd /p npm install && npm install -g jest-cli && npm install -g grunt-cli && rm -rf ./p/package.json
 
 
 # Marcamos que test va a ser un directorio que se va a montar
