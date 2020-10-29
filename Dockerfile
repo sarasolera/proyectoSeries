@@ -4,19 +4,19 @@ FROM node:10-alpine
 LABEL maintainer="Sara Solera"
 
 # Creo un directorio de trabajo 
-WORKDIR /node_modules
+RUN mkdir /node_modules
 
 # copiamos los archivos package.json y packege-lock.json que son necesarios para node
-COPY package*.json ./node_modules
+COPY package*.json ./
 
 #Copiamos el fichero de configuración de grunt, su documentación se encuentra enlazada en el readme
-COPY  Gruntfile.js ./node_modules
+COPY  Gruntfile.js ./
 
 ## De forma predeterminada si instalamos paquetes con npm instenta instalarlos en
 ## usr local lib node_modules y jest y grunt los encontramos en bin 
 ## por lo que voy a darle permisos al usuario por defecto node
 # Dando los permisos adecuados
-RUN chown -R node ./ && chown -R node /usr/local/lib/node_modules && chown -R node /usr/local/bin
+RUN chown -R node /node_modules && chown -R node /usr/local/lib/node_modules && chown -R node /usr/local/bin
 # A partir de aqui todo se ejecutara sin permisos de super usuario
 USER node
 
