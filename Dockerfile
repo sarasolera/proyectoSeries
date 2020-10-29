@@ -11,18 +11,18 @@ RUN mkdir /node_modules
 ## por lo que voy a darle permisos al usuario por defecto node
 # Dando los permisos adecuados
 RUN chown -R node /node_modules && chown -R node /usr/local/lib/node_modules && chown -R node /usr/local/bin
-COPY   package.json ./
-RUN chmod -R 777 ./package.json
-# A partir de aqui todo se ejecutara sin permisos de super usuario
-USER node
-
-
-# copiamos los archivos package.json y packege-lock.json que son necesarios para node
-
-
 
 #Copiamos el fichero de configuración de grunt, su documentación se encuentra enlazada en el readme
 COPY  Gruntfile.js ./
+# copiamos los archivos package.json y packege-lock.json que son necesarios para node
+COPY   package.json ./
+
+#Damos permisos a package.json para que pueda ser eliminado
+RUN chmod -R 777 ./package.json
+
+
+# A partir de aqui todo se ejecutara sin permisos de super usuario
+USER node
 
 # ejecutamos npm install que ejecuta el package.json e
 # instala las dependencias
@@ -32,10 +32,9 @@ COPY  Gruntfile.js ./
 RUN npm install && npm install -g jest-cli && npm install -g grunt-cli && rm -rf packae.json
 
 
-
-
 # Marcamos que test va a ser un directorio que se va a montar
 # cuando ejecutemos -v, para saber mas leer apuntes tema 3
+VOLUME /test
 WORKDIR /test
 
 
