@@ -39,7 +39,7 @@ WORKDIR /test
 # Pero al montar montar el volumen, se sobreescribe, por lo que 
 # es necesario esto. 
 # Se explicará en la documentacion de Dockerfile enlazada también
-ENV PATH=/home/node_modules/.bin:$PATH
+ENV PATH=/node_modules/.bin:$PATH
 
 
 # para ejecutar los test
