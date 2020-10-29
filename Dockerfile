@@ -16,7 +16,7 @@ RUN chown -R node /node_modules && chown -R node /usr/local/lib/node_modules && 
 USER node
 
 # copiamos los archivos package.json y packege-lock.json que son necesarios para node
-COPY   package*.json ./
+COPY --chown=node:node package.json ./
 
 #Copiamos el fichero de configuración de grunt, su documentación se encuentra enlazada en el readme
 COPY   Gruntfile.js ./
@@ -27,7 +27,7 @@ COPY   Gruntfile.js ./
 # usamos RUN para ejecutar comandos 
 # al hacer install se genera la carpeta node_modules
 # instalo jest y grunt que son herramientas que necesito y elimino package porque ya lo he utilizado
-RUN npm install && npm install -g jest-cli && npm install -g grunt-cli && rm package*.json
+RUN npm install && npm install -g jest-cli && npm install -g grunt-cli && rm package.json
 
 
 
