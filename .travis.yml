@@ -1,7 +1,6 @@
-languaje: node_js
+language: node_js
 node_js:
     -"10"
-    -"11"
 before_install:
     -npm install
     -npm install -g grunt
