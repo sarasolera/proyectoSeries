@@ -1,12 +1,6 @@
 language: node_js
-node_js:
-    - "11"
-    - "12"
-    - "13"
-    - "14"
-    - "15"
+services:
+    -docker
 before_install:
-    - npm install
-    - npm install -g grunt
-    - npm install -g jest
-script: grunt test
+    - docker pull sarasolera/proyectoseries
+script: docker run  -t -v `pwd`:/test sarasolera/proyectoseries
