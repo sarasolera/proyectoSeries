@@ -9,6 +9,7 @@ environment:
 
 # Instalaciones de modulos y software necesarios
 install:
+    - ps: Install-Product node $env:nodejs_version
     - npm install 
     - npm install -g grunt
     - npm install -g jest
@@ -16,6 +17,6 @@ install:
 # Ejeciones
 
 test_script:
-    - grunt test
+    - cmd: grunt test
 
 build: off
