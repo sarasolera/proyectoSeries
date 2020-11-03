@@ -1,5 +1,5 @@
 # Clonación del directorio
-clone_folder: /home/appveyor/projects/proyectoseries
+clone_folder: \home\appveyor\project
 # Entorno que vamos a crear
 environment:
     matrix:
