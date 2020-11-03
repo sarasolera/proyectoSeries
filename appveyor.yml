@@ -1,24 +1,11 @@
 image: Ubuntu
-# Entorno que vamos a crear
-environment:
-    matrix:
-        - nodejs_version: "11"
-        - nodejs_version: "12"
-        - nodejs_version: "13"
-        - nodejs_version: "14"
-        - nodejs_version: "15"    
-
 # Instalaciones de modulos y software necesarios
 install:
-    - sh: nvm install $nodejs_version
-    - npm install 
-    - npm install jest-cli -g
-    - npm install grunt-cli -g
+    - docker pull sarasolera/proyectoseries
     
-
-# Ejecuciones con cmd
+# Ejecuciones
 test_script:
-    - grunt test
+    - docker run -t -v `pwd`:/test sarasolera/proyectoseries
 
 build: off
 
