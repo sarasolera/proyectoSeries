@@ -14,8 +14,9 @@ environment:
 # ps es PowerShell
 install:
     - npm install 
-    - npm install grunt -g
-    - npm install jest -g
+    - npm install jest-cli -g
+    - npm install grunt-cli -g
+    
 
 # Ejecuciones con cmd
 test_script:
