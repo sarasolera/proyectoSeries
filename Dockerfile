@@ -1,5 +1,5 @@
 #node y alpine
-FROM node:10-alpine
+FROM node:11-alpine
 # indicando autor
 LABEL maintainer="Sara Solera"
 
