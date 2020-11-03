@@ -1,7 +1,5 @@
 image: Ubuntu
 
-# Clonación del directorio
-clone_folder: /
 # Entorno que vamos a crear
 environment:
     matrix:
