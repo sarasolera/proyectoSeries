@@ -19,7 +19,7 @@ install:
 
 # Ejecuciones con cmd
 test_script:
-    - grunt test
+    - node_modules\.bin\grunt test
 
 build: off
 
