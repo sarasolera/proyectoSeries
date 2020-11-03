@@ -12,14 +12,11 @@ environment:
 # ps es PowerShell
 install:
     - ps: Install-Product node $env:nodejs_version
-    - npm -g install npm@2.12.1
-    - npm install -g grunt-cli
-    - npm install -g jest-cli
     - npm install 
 
 # Ejecuciones con cmd
 test_script:
-    - node_modules\.bin\grunt test
+    - grunt test
 
 build: off
 
