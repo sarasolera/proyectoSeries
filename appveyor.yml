@@ -1,3 +1,5 @@
+# Clonación del directorio
+clone_folder: /home/appveyor/projects/
 # Entorno que vamos a crear
 environment:
     matrix:
@@ -13,6 +15,7 @@ environment:
 install:
     - ps: Install-Product node $env:nodejs_version
     - npm install 
+    - npm install grunt-cli -g
 
 # Ejecuciones con cmd
 test_script:
