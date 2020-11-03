@@ -8,15 +8,16 @@ environment:
         - nodejs_version: "15"    
 
 # Instalaciones de modulos y software necesarios
+# Install Product para indicar las versiones de node
+# ps es PowerShell
 install:
     - ps: Install-Product node $env:nodejs_version
     - npm install 
-    - npm install -g grunt
-    - npm install -g jest
+    - npm install -g grunt-cli
+    - npm install -g jest-cli
 
-# Ejeciones
-
+# Ejecuciones con cmd
 test_script:
-    - cmd: grunt test
+    - grunt test
 
 build: off
