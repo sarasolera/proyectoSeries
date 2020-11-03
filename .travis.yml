@@ -3,4 +3,5 @@ services:
     - docker
 before_install:
     - docker pull sarasolera/proyectoseries
-script: docker run  -t -v `pwd`:/test sarasolera/proyectoseries
+
+script: docker run -t -v `pwd`:/test sarasolera/proyectoseries
