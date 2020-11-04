@@ -29,10 +29,12 @@ class Temporada{
     }
 
     eliminarCapitulo(index){
-        if(index > this.capitulos.length){
+        if(index < this.capitulos.length){
             this.capitulos.pop(index);
         }
         else
             throw new Error("Indice inválido");
     }
 }
+
+module.exports = Temporada;
