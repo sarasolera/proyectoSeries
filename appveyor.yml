@@ -1,9 +1,9 @@
 image: Ubuntu
-# Instalaciones de modulos y software necesarios
+# Descargamos la imagen
 install:
     - docker pull sarasolera/proyectoseries
     
-# Ejecuciones
+# Ejecucion
 test_script:
     - docker run -t -v `pwd`:/test sarasolera/proyectoseries
 
