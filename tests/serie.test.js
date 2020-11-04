@@ -82,10 +82,10 @@ describe('Testeando clase Serie' , ()=>{
     });
 
     describe('Testeando funciones set:',()=>{
-        test('setTemporada',()=>{
+        test('setNumTemporada',()=>{
             //esta funcion será llamada cuando se confirme fecha de estreno, y incrementa en 1 el nº de temp
             
-            serie_nueva.setTemporada();
+            serie_nueva.setNumTemporada();
             expect(serie_nueva.getNumTemporadas()).toBe(5);
         });
 

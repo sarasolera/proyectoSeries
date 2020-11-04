@@ -103,12 +103,21 @@ class Serie{
         return this.comentarios;
     }
     
+    /**
+     * getTemporadas obtenemos los objetos temporada del array temporadas, recordar que cada temporada se compone de capitulos
+     * @return devuelve el array temporadas
+     */
+    getTemporadas(){
+        return this.temporadas;
+    }
+
+    
     /** METODOS SET */
 
     /**
      * Este metodo es llamado cuando se confirma una fecha de estreno.
      */
-    setTemporada(){
+    setNumTemporada(){
         
         this.numero_temporadas++; 
     }
@@ -173,7 +182,7 @@ class Serie{
     }
 
     
-
+    /* RESTO DE MÉTODOS*/
     sumarPuntos(puntos){
         
         this.puntuacion.push(puntos);
@@ -224,8 +233,22 @@ class Serie{
         this.comentarios.push(com);
     }
 
-    
-
+    /**
+     * Añadir capitulo a una temporada
+     * @param {int} n_temporada 
+     * @param {Capitulo} capitulo 
+     */
+    aniadirCapitulo(capitulo){
+        //Se añaden siempre a la ultima temporada, si se añade fecha de estreno es porque ya se han estrenado todos los de 
+        //la anterior temporada
+        try{
+            this.temporadas[this.numero_temporadas - 1].aniadirCapitulo(capitulo)
+        }
+        catch{
+            throw new Error("No existe esa temporada");
+        }
+    }
+  
     
 }
 
