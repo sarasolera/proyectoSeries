@@ -56,3 +56,5 @@ class Capitulo{
 
 
 }
+
+module.exports = Capitulo;
