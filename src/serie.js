@@ -10,13 +10,14 @@ class Serie{
         //atributos que no se vamos a  modificar
          this.nombre = n;
          this.sinopsis = s;
-         this.temporadas_act = temporadas;
+         this.numero_temporadas = temporadas;
          this.genero = genero;
          // al inicializar la fecha a null la fecha es 4/0/1970, por lo que cuando mostremos fecha, comprobamos que el año no sea 1970, si lo es, es que la fecha es desconocida.
          this.fecha_prox_temp = new Date(null); 
          this.reparto = new Array();
          this.puntuacion = new Array();
          this.comentarios = new Array();
+         this.temporadas = new Array();
     }
     
     /**
@@ -39,8 +40,8 @@ class Serie{
      * Muestra el valor del atributo temporadas
      * @returns {number} el nº de temporadas
      */
-    getTemporadas(){
-        return this.temporadas_act;
+    getNumTemporadas(){
+        return this.numero_temporadas;
     }
 
     /**
@@ -109,7 +110,7 @@ class Serie{
      */
     setTemporada(){
         
-        this.temporadas_act++; 
+        this.numero_temporadas++; 
     }
     
     /**

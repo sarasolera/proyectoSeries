@@ -1,6 +1,6 @@
 
 var Serie = require('../src/serie.js');
-
+var Temporada = require('../src/temporada.js');
 
 //Trabajando con constantes
 //Creo el objeto serie para testear.
@@ -15,7 +15,7 @@ serie_nueva.reparto.push(actriz);
 serie_nueva.puntuacion.push(puntos);
 const nombre_creado = 'La casa de papel';
 const sin_creada ='Una banda organizada de ladrones tiene el objetivo de cometer el atraco del siglo en la Fábrica Nacional de Moneda y Timbre. Cinco meses de preparación quedarán reducidos a once días para poder llevar a cabo con éxito el gran golpe.';
-const numero_temporadas = 4;
+const num_temporadas = 4;
 const genero_creado = "ACCION";
 const comentario1 = "Es una serie escelente, me encanta!";
 serie_nueva.aniadirComentario(comentario1);
@@ -26,10 +26,9 @@ describe('Testeando clase Serie' , ()=>{
         test('Crea',()=>{
             //comprobamos que el objeto creado es de la clase correcta
             expect(new Serie()).toBeInstanceOf(Serie);
-            
             expect(serie_nueva.nombre).toBe(nombre_creado);
             expect(serie_nueva.sinopsis).toBe(sin_creada);
-            expect(serie_nueva.temporadas_act).toBe(numero_temporadas);
+            expect(serie_nueva.numero_temporadas).toBe(num_temporadas);
             expect(serie_nueva.genero).toBe("ACCION");
         });
         
@@ -49,7 +48,7 @@ describe('Testeando clase Serie' , ()=>{
         });
 
         test('Temporadas correctas',()=>{
-            expect(serie_nueva.getTemporadas()).toBe(numero_temporadas);
+            expect(serie_nueva.getNumTemporadas()).toBe(num_temporadas);
 
         });
 
@@ -87,7 +86,7 @@ describe('Testeando clase Serie' , ()=>{
             //esta funcion será llamada cuando se confirme fecha de estreno, y incrementa en 1 el nº de temp
             
             serie_nueva.setTemporada();
-            expect(serie_nueva.getTemporadas()).toBe(5);
+            expect(serie_nueva.getNumTemporadas()).toBe(5);
         });
 
         test('setFechaProxima',()=>{
