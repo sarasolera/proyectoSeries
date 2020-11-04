@@ -43,7 +43,7 @@ class Capitulo{
      */
     setDuracion(duracionNueva)
     {
-        this.duracion = duracion;
+        this.duracion = duracionNueva;
     }
     
     /**
