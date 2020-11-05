@@ -1,4 +1,5 @@
 
+const Capitulo = require('../src/capitulo.js');
 var Serie = require('../src/serie.js');
 var Temporada = require('../src/temporada.js');
 
@@ -77,7 +78,7 @@ describe('Testeando clase Serie' , ()=>{
             esperado = serie_nueva.getComentarios();
             expect(esperado.length).toBe(1);
             expect(esperado[0]).toBe(comentario1);
-        })
+        });
 
     });
 
@@ -154,6 +155,22 @@ describe('Testeando clase Serie' , ()=>{
             esperado.push(comentario2);
 
             expect(serie_nueva.getComentarios()).toStrictEqual(esperado);
+        });
+
+        test("Añadir capitulo a la temporada de una serie",()=>{
+            var capitulo_prueba = new Capitulo("Capitulo uno:La desaparición de Will Byers",48,"Cuando vuelve en bici a su casa, Will ve algo horroroso.Cerca de allí, un siniestro secreto acecha en las profundidades de un laboratorio estatal");
+            //Añadimos a la temporada 2, al no esta la 1 creada debe fallar
+            var errorD = () => serie_nueva.aniadirCapitulo(capitulo_prueba,2);
+            expect(errorD).toThrow();
+            // Si añadimos a una temporada que aun no se ha confirmado debe dar error
+            //es decir stranger thins tiene 4 temporadas confirmadas, no podemos añadir a la 5 o a la 6
+            errorD = () => serie_nueva.aniadirCapitulo(capitulo_prueba,6);
+            expect(errorD).toThrow();
+
+            //Si añdimos a la temporada 1 se creará y no habra problema
+            serie_nueva.aniadirCapitulo(capitulo_prueba,1);
+            expect(serie_nueva.getTemporadas().length).toBe(1);
+
         })
     });
 
