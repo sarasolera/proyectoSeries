@@ -262,7 +262,7 @@ class Serie{
             
         }
         else{
-            throw  new Error("Error al añadir capitulo");
+            throw  new Error("Error al añadir capitulo, temporada inválida");
 
         }
         
