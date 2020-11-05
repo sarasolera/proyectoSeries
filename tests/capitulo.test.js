@@ -1,5 +1,5 @@
 
-var Capitulo = require('../src/capitulo.js')
+var Capitulo = require('../src/capitulo.js');
 //Creamos un objeto capitulo
 //Ejemplo capitulo de la serie Caronte
 const capitulo = new Capitulo('La laguna Estigia',71,'Tras aceptar la peticioón  de su amiga Edurne y animado por su novia, Caronte abandona Gijón por unos dias para iniciar la defensa de Javier Sáez en Madrid.')

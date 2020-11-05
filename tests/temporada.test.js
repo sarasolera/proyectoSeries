@@ -1,4 +1,4 @@
-var Temporada = require('../src/temporada.js');
+var Temporada = require('../src/temporada.js'),
 Capitulo = require('../src/capitulo.js');
 
 //Pruebo a crear una temporada 
