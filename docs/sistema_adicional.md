@@ -11,6 +11,7 @@ He seguido los pasos para iniciar en un sistema de CI:
 
 ## Hablemos del fichero de configuracion en AppVeyor
 Como ya he dicho el fichero de configuración se llama appveyor.yml.
+
 ![](pic/appveyor_final.png)
 
 ¿Qué encontramos aquí?
