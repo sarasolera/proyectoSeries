@@ -1,5 +1,6 @@
 var Catalogo = require('../src/catalogo.js'),
-Serie = require('../src/serie.js');
+Serie = require('../src/serie.js'),
+Capitulo = require('../src/capitulo.js');
 
 
 const enumG = ["MIEDO" , "ACCION","COMEDIA","DRAMA"];
@@ -42,7 +43,6 @@ cat.series[7].sumarPuntos(9); //PUNTUACION 9
 //CAPITULOS DE LA SERIE STRANGER THINGS
 const capitulo = new Capitulo("Capitulo uno:La desaparición de Will Byers",48,"Cuando vuelve en bici a su casa, Will ve algo horroroso.Cerca de allí, un siniestro secreto acecha en las profundidades de un laboratorio estatal")
 const capitulo2 = new Capitulo("Capitulo dos:La chica rara de la calle Maple",55,"Lucas, Mike y Dustin intentan hablar con la niña que encontraron en el bosque.");
-
 
 const comentario = "Esta serie es muy divertida, pero a veces se me hace pesada";
 const comentario2 = "Es poco creible pero muy entretenida";
@@ -163,6 +163,22 @@ describe('Testeando clase Catalogo' , ()=>{
             const recibido = cat.mostrarComentarios(0);
 
             expect(recibido).toBe(esperado);
+        });
+
+        test('Mostrar Lista de los capitulos de una serie',()=>{
+            cat.series[1].aniadirCapitulo(capitulo,1);
+            cat.series[1].aniadirCapitulo(capitulo2,1);
+
+            const string_esperado = capitulo.getNombre() + "\n" + capitulo2.getNombre() + "\n";
+            const obtenido = cat.mostrarListaCapitulos(1,1);
+
+            expect(obtenido).toBe(string_esperado);
+
+            //si buscamos en una serie que no existe
+            var errorD = () => cat.mostrarListaCapitulos(12,1);
+            expect(errorD).toThrow();
+
+            
         });
     });
 

@@ -1,4 +1,3 @@
-
 var Capitulo = require('../src/capitulo.js');
 //Creamos un objeto capitulo
 //Ejemplo capitulo de la serie Caronte
