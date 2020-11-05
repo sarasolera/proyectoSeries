@@ -269,7 +269,10 @@ class Serie{
     }
   
     obtenerListaCapitulos(num_t){
-        
+        if(num_t > this.numero_temporadas){
+            throw new Error("No existe dicha temporada");
+        }
+
         if(this.temporadas.length >= num_t){
             //capturamos los capitulos de los que se compone la temporada
             var capitulos = this.temporadas[num_t-1].getCapitulos();
@@ -280,7 +283,7 @@ class Serie{
                 return -1;
         }
         else{
-            throw new Error("No existe esa temporada");
+            throw new Error("Aun no se ha generado esa temporada");
         }
 
     }

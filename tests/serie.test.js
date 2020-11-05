@@ -21,6 +21,7 @@ const genero_creado = "ACCION";
 const comentario1 = "Es una serie escelente, me encanta!";
 serie_nueva.aniadirComentario(comentario1);
 const comentario2 = "Es un poco subrealista pero muy entretenida.";
+var capitulo_prueba = new Capitulo("Capitulo uno:La desaparición de Will Byers",48,"Cuando vuelve en bici a su casa, Will ve algo horroroso.Cerca de allí, un siniestro secreto acecha en las profundidades de un laboratorio estatal");
 
 describe('Testeando clase Serie' , ()=>{
     describe('Crea objeto Serie', ()=>{
@@ -158,7 +159,6 @@ describe('Testeando clase Serie' , ()=>{
         });
 
         test("Añadir capitulo a la temporada de una serie",()=>{
-            var capitulo_prueba = new Capitulo("Capitulo uno:La desaparición de Will Byers",48,"Cuando vuelve en bici a su casa, Will ve algo horroroso.Cerca de allí, un siniestro secreto acecha en las profundidades de un laboratorio estatal");
             //Añadimos a la temporada 2, al no esta la 1 creada debe fallar
             var errorD = () => serie_nueva.aniadirCapitulo(capitulo_prueba,2);
             expect(errorD).toThrow();
@@ -171,7 +171,18 @@ describe('Testeando clase Serie' , ()=>{
             serie_nueva.aniadirCapitulo(capitulo_prueba,1);
             expect(serie_nueva.getTemporadas().length).toBe(1);
 
-        })
+        });
+
+        test("Obtener lista capitulos de una temporada" , ()=>{
+            //si intentamos acceder a los capitulos de una temporada que aun no se ha generado da error
+            //por ejemplo en stranger thing tenemos 1 capitulo de la temporada 1 en la temporada 2 no hemos puesto nada
+            var errorD = () => serie_nueva.obtenerListaCapitulos(2);
+            expect(errorD).toThrow();
+            //si intento obtenerlo de una temporada no confirmada tambien dará error
+            errorD = ()=> serie_nueva.obtenerListaCapitulos(5);
+            var capitulos_obtenidos = serie_nueva.obtenerListaCapitulos(1);
+            expect(capitulos_obtenidos[0]).toBe(capitulo_prueba);
+        });
     });
 
         
