@@ -162,7 +162,7 @@ class Catalogo{
         
     }
 }
-
+/*
 var cat = new Catalogo();
 var serie_nueva = new Serie('Stranger things','La historia arranca durante la década de los 80, en el pueblo ficticio de Hawkins, Indiana, cuando un niño llamado Will Byers desaparece misteriosamente, hecho que destapa los extraños sucesos que tienen lugar en la zona, producto de una serie de experimentos que realiza el gobierno en un laboratorio científico cercano',4, "ACCION");
 
@@ -178,6 +178,6 @@ cat.series[0].aniadirCapitulo(capitulo,1);
 cat.series[0].aniadirCapitulo(capitulo2,2);
 console.log(cat.mostrarListaCapitulos(0,1));
 console.log(cat.mostrarListaCapitulos(0,2));
-
+*/
 
 module.exports = Catalogo;
