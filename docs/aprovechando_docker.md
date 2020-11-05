@@ -7,6 +7,7 @@ En mi caso el primero fichero dockerfile que cree anteriormente tenia la versió
 Tras esto modifico .travis.yml, para no eliminar el fichero anterior, lo he copiado en una carpeta, podemos encontrar la antigüa configuración [aquí](https://github.com/sarasolera/proyectoSeries/blob/master/docs/ficheros_originales/travis_sin_docker.yml)
 
 Añadiendo docker a nuestra configuración:
+
 ![](pic/travis-docker.png)
 
 Tenemos que recordar que docker ya incluye una versión de node, asi que si indicamos el lenguaje puede provocar errores al mantener diferentes versiones. Una compañera pasó la solución a esto, documentación de la [página oficial](https://docs.travis-ci.com/user/languages/minimal-and-generic/#minimal). Al añadir language: minimal, se activará la compilación de travis, generará un entorno virtual mínimo para poder ejecutar docker  y no producirá errores.
