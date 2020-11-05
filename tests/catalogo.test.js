@@ -39,6 +39,11 @@ cat.series[6].sumarPuntos(6); //PUNTUACION 6.5
 cat.series[7].sumarPuntos(9);
 cat.series[7].sumarPuntos(9); //PUNTUACION 9
 
+//CAPITULOS DE LA SERIE STRANGER THINGS
+const capitulo = new Capitulo("Capitulo uno:La desaparición de Will Byers",48,"Cuando vuelve en bici a su casa, Will ve algo horroroso.Cerca de allí, un siniestro secreto acecha en las profundidades de un laboratorio estatal")
+const capitulo2 = new Capitulo("Capitulo dos:La chica rara de la calle Maple",55,"Lucas, Mike y Dustin intentan hablar con la niña que encontraron en el bosque.");
+
+
 const comentario = "Esta serie es muy divertida, pero a veces se me hace pesada";
 const comentario2 = "Es poco creible pero muy entretenida";
 describe('Testeando clase Catalogo' , ()=>{
@@ -70,7 +75,7 @@ describe('Testeando clase Catalogo' , ()=>{
         })
     });
 
-    describe('Mostrar catalogo completo',()=>{
+    describe('Testeando diferentes funciones',()=>{
         test("mostrarSeries()",()=>{
             var com = cat.mostrarSeries();  
             var cadenaEsperada="";
@@ -81,11 +86,8 @@ describe('Testeando clase Catalogo' , ()=>{
         
             expect(cadenaEsperada).toBe(com);
 
-        })
-    });
-
-
-    describe('Consultar serie dando un indice',()=>{
+        });
+   
         test('consultarSerie(indice)',()=>{
              var errorD = () => cat.consultarSerie(15);
              expect(errorD).toThrow();
@@ -95,21 +97,20 @@ describe('Testeando clase Catalogo' , ()=>{
  
              expect(cat.consultarSerie(0)).toBe(esperado);
  
-        })
-    });
+        });
+    
 
-    describe('Mostrar series por puntuación (de mayor a menor)',()=>{
-        listaOrd = cat.mostrarSeriesPuntuacion();
-        for(var i =0 ; i < listaOrd.length ; i++) {
-            j = i+1;
-            if(j < listaOrd.length){
-               
-                expect(listaOrd[i].getMediaPuntuacion() >= listaOrd[j].getMediaPuntuacion()).toBe(true);
+        test('Mostrar series por puntuación (de mayor a menor)',()=>{
+            listaOrd = cat.mostrarSeriesPuntuacion();
+            for(var i =0 ; i < listaOrd.length ; i++) {
+                j = i+1;
+                if(j < listaOrd.length){
+                
+                    expect(listaOrd[i].getMediaPuntuacion() >= listaOrd[j].getMediaPuntuacion()).toBe(true);
+                }
             }
-        }
-    });
+        });
 
-    describe('Mostrar series según un genero',()=>{
         test('Captando series de un genero',()=>{
             enumG.forEach(element=>{
                 var s = cat.mostrarSeriesGenero(element);
@@ -124,10 +125,8 @@ describe('Testeando clase Catalogo' , ()=>{
             expect(errorD).toThrow();
  
            
-        })
-    });
-
-    describe('Comentar serie',()=>{
+        });
+ 
         test('Comentando series',()=>{
             
             cat.comentarSerie(comentario,0);
@@ -137,10 +136,8 @@ describe('Testeando clase Catalogo' , ()=>{
             expect(recibido[0]).toBe(comentario);
             var errorD = () => cat.comentarSerie(comentario,12);
             expect(errorD).toThrow();
-        })
-    });
-
-    describe('Puntuar serie',()=>{
+        });
+  
         test('Puntuando serie',()=>{
             
             var errorD = () => cat.puntuarSerie(11,0);
@@ -156,10 +153,8 @@ describe('Testeando clase Catalogo' , ()=>{
             var pF = cat.series[0].getMediaPuntuacion();
             var esperado = 9;
             expect(pF).toBe(esperado);
-        })
-    });
+        });
 
-    describe('Consultando comentarios de una serie',()=>{
         test('Consultar comentarios',()=>{
             cat.comentarSerie(comentario2,0);
 
@@ -168,6 +163,8 @@ describe('Testeando clase Catalogo' , ()=>{
             const recibido = cat.mostrarComentarios(0);
 
             expect(recibido).toBe(esperado);
-        })
-    })
+        });
+    });
+
+    
 });
