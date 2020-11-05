@@ -5,6 +5,20 @@ Cuando eres seguidor de varias series, a veces cuesta estar informado de cuándo
 
 El objetivo es crear un microservicio que almacene información sobre series, como puede ser la sinopsis, los actores y actrices, las temporadas, y algunas noticias relacionadas con ellas. Además, éste enviará notificaciones a los clientes para mantenerlos informados de los próximos estrenos.
 
+## INTEGRACIÓN CONTINUA
+- El primer sistema que he utilizado es Travis y aquí podemos encontrar su [explicación y justificación](https://github.com/sarasolera/proyectoSeries/blob/master/docs/integracion_continua.md)
+ - Como sistema adicional he optado por "AppVeyor", también tenemos su [explicación y justificación](https://github.com/sarasolera/proyectoSeries/blob/master/docs/sistema_adicional.md)
+ - Utilizamos grunt para ejecutar los test en todo momento, tanto con docker como sin docker, abajo encontraremos el enlace a los ficheros de configuración.
+ - [Aprovechando docker para CI](https://github.com/sarasolera/proyectoSeries/blob/master/docs/aprovechando_docker.md).
+ - TRAVIS 
+    - [Fichero inicial de configuración sin docker](https://github.com/sarasolera/proyectoSeries/blob/master/docs/ficheros_originales/travis_sin_docker.yml)
+    - [Fichero de configuración con docker](https://github.com/sarasolera/proyectoSeries/blob/master/.travis.yml)
+ - APPVEYOR 
+    - [Fichero inicial de configuración sin docker](https://github.com/sarasolera/proyectoSeries/blob/master/docs/ficheros_originales/appveyor_sin_docker.yml)
+    - [Fichero de configuración con docker](https://github.com/sarasolera/proyectoSeries/blob/master/appveyor.yml)
+ 
+
+
 ## INSTALACIÓN :construction:
 Antes de realizar los test es imprescindible instalar las dependencias, para ello ejecutamos:
 
@@ -52,14 +66,9 @@ Una vez instaladas las dependencias necesarias, para realizar los test ejecutamo
 - [CÓDIGO DE CLASES](https://github.com/sarasolera/proyectoSeries/tree/master/src)
 - [CÓDIGO DE TESTEO](https://github.com/sarasolera/proyectoSeries/tree/master/tests)
 
-## HISTORIAS DE USUARIO :boy: :computer:
-¿Qué debe poder hacer un usuario por ahora?
- - [HU01:Consultar serie de nuestro catálogo](https://github.com/sarasolera/proyectoSeries/issues/7)
- - [HU02:Consultar catálogo](https://github.com/sarasolera/proyectoSeries/issues/18)
- - [HU03:Consultar catálogo según puntuación](https://github.com/sarasolera/proyectoSeries/issues/19)
- - [HU04:Consultar catálogo según género](https://github.com/sarasolera/proyectoSeries/issues/20)
 
-## MILESTONES E ISSUES CERRADOS 
+## HISTORIAS DE USUARIO,  MILESTONES E ISSUES CERRADOS
+- [Historias de usuario](https://github.com/sarasolera/proyectoSeries/issues?q=is%3Aissue+is%3Aopen+label%3Auser-stories) 
 - [Milestones](https://github.com/sarasolera/proyectoSeries/milestones)
 - [Issues cerrados](https://github.com/sarasolera/proyectoSeries/issues?q=is%3Aissue+is%3Aclosed) 
 
