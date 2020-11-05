@@ -180,6 +180,17 @@ describe('Testeando clase Catalogo' , ()=>{
 
             
         });
+        test('Mostrar datos de un capitulo' , () =>{
+            const stringEsperado = "Nombre: " +  capitulo.getNombre() + " \nDuración:"+capitulo.getDuracion() + "\nSinopsis:"+capitulo.getSinopsis();
+            const recibido = cat.mostrarDatosCapitulo(1,1,1);
+
+            expect(stringEsperado).toBe(recibido);
+
+            //si accedemos a un capitulo que no existe debe dar error
+            var errorD = () => cat.mostrarDatosCapitulo(1,1,17);
+            expect(errorD).toThrow();
+
+        })
     });
 
     
