@@ -2,7 +2,7 @@
 /**
  * @author sara solera
  */
-
+var Temporada = require('../src/temporada.js');
 class Serie{
 
     //constructor
@@ -18,6 +18,7 @@ class Serie{
          this.puntuacion = new Array();
          this.comentarios = new Array();
          this.temporadas = new Array();
+         
     }
     
     /**
@@ -235,20 +236,54 @@ class Serie{
 
     /**
      * Añadir capitulo a una temporada
-     * @param {int} n_temporada 
+     * @param {int} num_temporada 
      * @param {Capitulo} capitulo 
      */
-    aniadirCapitulo(capitulo){
-        //Se añaden siempre a la ultima temporada, si se añade fecha de estreno es porque ya se han estrenado todos los de 
-        //la anterior temporada
-        try{
-            this.temporadas[this.numero_temporadas - 1].aniadirCapitulo(capitulo)
+    aniadirCapitulo(capitulo,num_temporada){
+        //Añadir capitulo a una temporada, si no ha sido creada aun la temporada se crea
+        //comprobamos si existe la temporada
+        if(this.temporadas.length >= num_temporada){
+            this.temporadas[num_temporada-1].aniadirCapitulo(capitulo);
         }
-        catch{
-            throw new Error("No existe esa temporada");
+        //si queremos añadir a una nueva temporada comprobamos que exista en num_temporadas y que existan las anteriores
+        else if(num_temporada <= this.numero_temporadas){
+            //si ha sido notificado en el numero de temporadas
+            //comprobamos que las anteriores se hallan creado
+            if(this.temporadas.length == num_temporada - 1){
+                //si voy a crear la tem2, la tem1 debe estar creada, por lo que el tamaño debe ser num_temporada - 1
+                var tem = new Temporada();
+                tem.aniadirCapitulo(capitulo);
+                //creamos la temporada siguiente
+                this.temporadas.push(tem);
+            }
+            else{
+                throw  new Error("No es posible añadir esta temporada,es necesario crear las anteriores");
+            }
+            
         }
+        else{
+            throw  new Error("Error al añadir capitulo");
+
+        }
+        
     }
   
+    obtenerListaCapitulos(num_t){
+        
+        if(this.temporadas.length >= num_t){
+            //capturamos los capitulos de los que se compone la temporada
+            var capitulos = this.temporadas[num_t-1].getCapitulos();
+            if(capitulos.length > 0){
+                return capitulos;
+            }
+            else
+                return -1;
+        }
+        else{
+            throw new Error("No existe esa temporada");
+        }
+
+    }
     
 }
 

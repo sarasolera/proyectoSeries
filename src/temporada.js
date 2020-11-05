@@ -25,7 +25,14 @@ class Temporada{
      * @param {Capitulo} capitulo 
      */
     aniadirCapitulo(capitulo){
-       this.capitulos.push(capitulo);
+        // comprobamos que no exista un capitulo con ese nombre
+        this.capitulos.forEach(element =>{
+            if(element.getNombre() == capitulo.getNombre()){
+                throw new Error("Ya existe ese capitulo");
+            }
+        })
+
+        this.capitulos.push(capitulo);
     }
 
     eliminarCapitulo(index){
