@@ -276,11 +276,8 @@ class Serie{
         if(this.temporadas.length >= num_t){
             //capturamos los capitulos de los que se compone la temporada
             var capitulos = this.temporadas[num_t-1].getCapitulos();
-            if(capitulos.length > 0){
-                return capitulos;
-            }
-            else
-                return -1;
+            return capitulos;
+            
         }
         else{
             throw new Error("Aun no se ha generado esa temporada");
