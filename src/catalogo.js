@@ -144,7 +144,21 @@ class Catalogo{
             throw new Error("Serie no válida");
     }
 
-
+    mostrarListaCapitulos(indice,num_t){
+        var listado = "";
+        if(this.existeSerie(indice)){
+            var cap =  this.series[indice].obtenerListaCapitulos(num_t);
+            
+            cap.forEach(element=>{
+                listado = listado + element.getNombre() + "\n";
+            })
+            
+            return listado;
+        }else{
+            throw new Error("No existe esa serie");
+        }
+        
+    }
 }
 
 
