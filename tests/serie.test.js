@@ -158,8 +158,26 @@ describe('Testeando clase Serie' , ()=>{
             expect(serie_nueva.getComentarios()).toStrictEqual(esperado);
         });
 
+
+        test("Añadir capitulo a la temporada de una serie",()=>{
+            //Añadimos a la temporada 2, al no esta la 1 creada debe fallar
+            var errorD = () => serie_nueva.aniadirCapitulo(capitulo_prueba,2);
+            expect(errorD).toThrow();
+            // Si añadimos a una temporada que aun no se ha confirmado debe dar error
+            //es decir stranger thins tiene 4 temporadas confirmadas, no podemos añadir a la 5 o a la 6
+            errorD = () => serie_nueva.aniadirCapitulo(capitulo_prueba,6);
+            expect(errorD).toThrow();
+
+            //Si añdimos a la temporada 1 se creará y no habra problema
+            serie_nueva.aniadirCapitulo(capitulo_prueba,1);
+            expect(serie_nueva.getTemporadas().length).toBe(1);
+
+        });
+
        
     });
+
+
 
         
 })
