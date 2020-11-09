@@ -158,31 +158,7 @@ describe('Testeando clase Serie' , ()=>{
             expect(serie_nueva.getComentarios()).toStrictEqual(esperado);
         });
 
-        test("Añadir capitulo a la temporada de una serie",()=>{
-            //Añadimos a la temporada 2, al no esta la 1 creada debe fallar
-            var errorD = () => serie_nueva.aniadirCapitulo(capitulo_prueba,2);
-            expect(errorD).toThrow();
-            // Si añadimos a una temporada que aun no se ha confirmado debe dar error
-            //es decir stranger thins tiene 4 temporadas confirmadas, no podemos añadir a la 5 o a la 6
-            errorD = () => serie_nueva.aniadirCapitulo(capitulo_prueba,6);
-            expect(errorD).toThrow();
-
-            //Si añdimos a la temporada 1 se creará y no habra problema
-            serie_nueva.aniadirCapitulo(capitulo_prueba,1);
-            expect(serie_nueva.getTemporadas().length).toBe(1);
-
-        });
-
-        test("Obtener lista capitulos de una temporada" , ()=>{
-            //si intentamos acceder a los capitulos de una temporada que aun no se ha generado da error
-            //por ejemplo en stranger thing tenemos 1 capitulo de la temporada 1 en la temporada 2 no hemos puesto nada
-            var errorD = () => serie_nueva.obtenerListaCapitulos(2);
-            expect(errorD).toThrow();
-            //si intento obtenerlo de una temporada no confirmada tambien dará error
-            errorD = ()=> serie_nueva.obtenerListaCapitulos(5);
-            var capitulos_obtenidos = serie_nueva.obtenerListaCapitulos(1);
-            expect(capitulos_obtenidos[0]).toBe(capitulo_prueba);
-        });
+       
     });
 
         
