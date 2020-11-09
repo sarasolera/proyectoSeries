@@ -234,7 +234,39 @@ class Serie{
         this.comentarios.push(com);
     }
 
+    /**
+     * Añadir capitulo a una temporada
+     * @param {int} num_temporada 
+     * @param {Capitulo} capitulo 
+     */
+    aniadirCapitulo(capitulo,num_temporada){
+        //Añadir capitulo a una temporada, si no ha sido creada aun la temporada se crea
+        //comprobamos si existe la temporada
+        if(this.temporadas.length >= num_temporada){
+            this.temporadas[num_temporada-1].aniadirCapitulo(capitulo);
+        }
+        //si queremos añadir a una nueva temporada comprobamos que exista en num_temporadas y que existan las anteriores
+        else if(num_temporada <= this.numero_temporadas){
+            //si ha sido notificado en el numero de temporadas
+            //comprobamos que las anteriores se hallan creado
+            if(this.temporadas.length == num_temporada - 1){
+                //si voy a crear la tem2, la tem1 debe estar creada, por lo que el tamaño debe ser num_temporada - 1
+                var tem = new Temporada();
+                tem.aniadirCapitulo(capitulo);
+                //creamos la temporada siguiente
+                this.temporadas.push(tem);
+            }
+            else{
+                throw  new Error("No es posible añadir esta temporada,es necesario crear las anteriores");
+            }
+            
+        }
+        else{
+            throw  new Error("Error al añadir capitulo, temporada inválida");
 
+        }
+        
+    }
     
 }
 
