@@ -37,6 +37,9 @@ Cómo clona por defecto:
 [Introducción a AppVeyor para linux](https://www.appveyor.com/docs/getting-started-with-appveyor-for-linux/#quick-start).
 
 [Configuración](https://www.appveyor.com/docs/build-configuration/#build-matrix).
+
+## ¿Para qué voy a usar este sistema?
+Como ya he realizado las pruebas con travis, en este caso usaré AppVeyor con docker, su justificación se encuentra enlazada en el README, y el fichero final de appveyor.yml en el contenedor, será el actualizado con docker.
     
 
 
