@@ -3,8 +3,8 @@ Con appveyor la configuración inicial la hice para ejecutar los test de la mism
 
 Dado que con travis dejo definitivamente las pruebas de las versiones y la ejecución de los test, con AppVeyor voy a ejecutar mi contenedor.
  
-Aun así para no perder el fichero de configuración incial de appveyor lo he metido en una carpeta y lo podemos encontrar [aqui](https://github.com/sarasolera/proyectoSeries/blob/master/docs/ficheros_originales/
-appveyor_sin_docker.yml). 
+Aun así para no perder el fichero de configuración incial de appveyor lo he metido en un
+[fichero](https://github.com/sarasolera/proyectoSeries/blob/master/docs/ficheros_originales/appveyor_sin_docker.yml).
 
 Fichero de configuración aprovechando docker:
 
