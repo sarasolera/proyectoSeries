@@ -144,41 +144,7 @@ class Catalogo{
             throw new Error("Serie no válida");
     }
 
-    mostrarListaCapitulos(indice,num_t){
-        var listado = "";
-        if(this.existeSerie(indice)){
-            var cap =  this.series[indice].obtenerListaCapitulos(num_t);
-            
-            cap.forEach(element=>{
-                listado = listado + element.getNombre() + "\n";
-            })
-            
-            return listado;
-        }else{
-            throw new Error("No existe esa serie");
-        }
-        
-    }
 
-    mostrarDatosCapitulo(indice , num_t , num_cap){
-        var datos = "";
-        //Damos por hecho que los capitulos empiezan desde el 1 y no desde el 0, asi que habrá que restar 1
-        if( this.existeSerie(indice)){
-            var lista = this.series[indice].obtenerListaCapitulos(num_t);
-            if(num_cap - 1 <= lista.length){
-                var datos_capitulo = lista[num_cap - 1];
-                datos = "Nombre: " +  datos_capitulo.getNombre() + " \nDuración:"+datos_capitulo.getDuracion() + "\nSinopsis:"+datos_capitulo.getSinopsis();
-                
-                return datos;
-            }
-            else{
-                throw new Error("No existe ese capitulo");
-            }
-            
-        }
-       
-
-    }
 }
 
 
