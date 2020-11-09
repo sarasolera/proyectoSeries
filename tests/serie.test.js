@@ -174,6 +174,18 @@ describe('Testeando clase Serie' , ()=>{
 
         });
 
+
+        test("Obtener lista capitulos de una temporada" , ()=>{
+            //si intentamos acceder a los capitulos de una temporada que aun no se ha generado da error
+            //por ejemplo en stranger thing tenemos 1 capitulo de la temporada 1 en la temporada 2 no hemos puesto nada
+            var errorD = () => serie_nueva.obtenerListaCapitulos(2);
+            expect(errorD).toThrow();
+            //si intento obtenerlo de una temporada no confirmada tambien dará error
+            errorD = ()=> serie_nueva.obtenerListaCapitulos(5);
+            var capitulos_obtenidos = serie_nueva.obtenerListaCapitulos(1);
+            expect(capitulos_obtenidos[0]).toBe(capitulo_prueba);
+        });
+
        
     });
 
