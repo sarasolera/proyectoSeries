@@ -10,9 +10,6 @@ El objetivo es crear un microservicio que almacene información sobre series, co
  - Como sistema adicional he optado por "AppVeyor", también tenemos su [explicación y justificación](https://github.com/sarasolera/proyectoSeries/blob/master/docs/sistema_adicional.md)
  - Utilizamos grunt para ejecutar los test en todo momento, tanto con docker como sin docker, abajo encontraremos el enlace a los ficheros de configuración.
  - [Aprovechando docker para CI](https://github.com/sarasolera/proyectoSeries/blob/master/docs/aprovechando_docker.md).
- - TRAVIS 
-    - [Fichero inicial de configuración sin docker](https://github.com/sarasolera/proyectoSeries/blob/master/docs/ficheros_originales/travis_sin_docker.yml)
-    - [Fichero de configuración con docker](https://github.com/sarasolera/proyectoSeries/blob/master/.travis.yml)
  - APPVEYOR 
     - [Fichero inicial de configuración sin docker](https://github.com/sarasolera/proyectoSeries/blob/master/docs/ficheros_originales/appveyor_sin_docker.yml)
     - [Fichero de configuración con docker](https://github.com/sarasolera/proyectoSeries/blob/master/appveyor.yml)
