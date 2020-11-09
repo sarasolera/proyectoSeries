@@ -165,7 +165,21 @@ describe('Testeando clase Catalogo' , ()=>{
             expect(recibido).toBe(esperado);
         });
 
+        test('Mostrar Lista de los capitulos de una serie',()=>{
+            cat.series[1].aniadirCapitulo(capitulo,1);
+            cat.series[1].aniadirCapitulo(capitulo2,1);
 
+            const string_esperado = capitulo.getNombre() + "\n" + capitulo2.getNombre() + "\n";
+            const obtenido = cat.mostrarListaCapitulos(1,1);
+
+            expect(obtenido).toBe(string_esperado);
+
+            //si buscamos en una serie que no existe
+            var errorD = () => cat.mostrarListaCapitulos(12,1);
+            expect(errorD).toThrow();
+
+            
+        });
     });
 
     
