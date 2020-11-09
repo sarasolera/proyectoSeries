@@ -30,7 +30,7 @@ En travis tenemos .travis.yml, este fichero está alojado en la raíz. Voy a exp
 
     - Language: Según le indiquemos travis preparará la máquina para un lenguaje u otro, en mi caso travis creará una máquina virtual para ejecutar node.
     - NodeJS: en esta etiqueta es donde voy a indicar las diferentes versiones a probar.
-    - Before install: en mi caso quiero ejecutar los test, para ello es necesario npm install para instalar dependencias necesarias, e instalar mi gestor de tareas grunt y el software con el que hago los test "jest".
+    - Before install: en mi caso quiero ejecutar los test, para ello es necesario  instalar mi gestor de tareas grunt y el software con el que hago los test "jest".
     -Script: aquí vamos a indicar los comando sque queremos que se ejecuten en el entorno que nos genera travis. En mi caso grunt test, lo que hace que mis gestor de tareas ejecute los test.
 
 ## Comprobando las versiones.
