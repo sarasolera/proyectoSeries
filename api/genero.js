@@ -1,8 +1,8 @@
-const data = require("./data")
-const Serie  = require("../src/serie")
-const Catalogo = require("../src/catalogo")
+const data = require("./data");
+const Serie  = require("../src/serie");
+const Catalogo = require("../src/catalogo");
 
-module.expots = (req,res) =>{
+module.exports = (req,res) =>{
     //Captaremos de la URL el genero del que queremos consultar las series
     //Si no obtenemos ningun por defecto valor "Vacio" para generar el resultado correspondiente
 
