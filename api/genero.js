@@ -24,6 +24,8 @@ module.expots = (req,res) =>{
 
     }
 
+    var datosJSON = []
+    var objetoJSON = {}
     // Una vez generado el catalogo podemos captar las series por género, con la función que tenemos implementada
     // Voy a meter las series en una lista de diccionarios para pasarlos a json
     // Si obtenemos un genero en la petición captamos las series de ese género
