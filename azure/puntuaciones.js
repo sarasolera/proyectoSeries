@@ -1,0 +1,1 @@
+module.exports.puntuaciones ={"La casa de papel":[9.7,7.6,4.5,4,8],"Stranger things":[8.5,7,9,7.5,8],"Barry":[7,6.5,7.3,8,5.5],"La casa de las flores":[5.6,5.7,8,9.8,6],"La maldición de Hill Haunting":[5.5,8.4,9.5,6.4,8.6],'The Walking Dead':[6.5,7.8,9.1,6.3,9.6],'YOU':[7.7,5.6,4.5,6,6.5],'Riverdale':[5.7,9.3,4.4,7,6.6]}
