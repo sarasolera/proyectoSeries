@@ -8,7 +8,7 @@ module.exports = async (req,res) =>{
             var result = JSON.stringify(req.body)
         }
 
-        var objetoJSON ={text : result,method : "sendMessage",chat_id : id_chat}
+        var objetoJSON ={text : result,method : "sendMessage",chat_id : IDchat}
         res.setHeader("Content-Type","application/json");
         res.status(200).json(objetoJSON)
     }
