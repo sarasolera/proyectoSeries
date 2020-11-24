@@ -59,7 +59,7 @@ module.exports = async (req,res) =>{
             result+=JSON.stringify(req.body)
         }
         else{
-            result="Para consultar las series por cada genero tiene disponibles:\nxGeneroMIEDO\nxGeneroACCION\nxGeneroCOMEDIA\nxGeneroDRAMA"
+            result="Para consultar las series por cada genero tiene disponibles:\n/xGeneroMIEDO\n/xGeneroACCION\n/xGeneroCOMEDIA\n/xGeneroDRAMA"
         }
         
         // Devolvemos 
