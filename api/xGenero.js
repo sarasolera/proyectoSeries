@@ -36,7 +36,7 @@ module.exports = async (req,res) =>{
         var IDchat = req.body.message.chat.id
         //Captamos contenido de mensaje
         var text = req.body.message.text
-
+        var result = ""
         // Según el contenido obtenemos una lista de series u otra
         if(text == "/xGeneroMIEDO"){
             result="Buscando series de Miedo....\n";
