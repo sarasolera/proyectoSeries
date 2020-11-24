@@ -52,5 +52,5 @@ En el ejemplo de JJ podemos ver que es necesario:
 Tras ello finalmente tenemos nuestro boot configurado, cada línea del código está explicada.
 
 ## Funcionamiento
-![](pic/funcionamiento.jpeg)
+![](pic/funcionamiento1.jpeg)
 ![](pic/funcionamiento2.jpeg)
