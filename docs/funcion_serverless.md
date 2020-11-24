@@ -1,5 +1,5 @@
 # Más allá de un simple ejemplo.
-Para no quedarme en el ejemplo, he querido avanzar en la HU04 que permite al usuario consultar series de un mismo género. 
+Para no quedarme en el ejemplo, he querido avanzar en la HU04 que permite al usuario consultar series de un mismo género, de esta misma función haré el bot de telegram.
 
 Para ello y fijandome en el ejemplo de JJ [netlify-covid](https://github.com/JJ/netlify-covid-and), he realizado un fichero de datos con las diferentes series, incluyendo nombre de la serie, sinópsis, número de temporadas actuales y por supuesto género al que pertenecen.
 
