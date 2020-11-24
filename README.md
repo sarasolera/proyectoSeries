@@ -5,6 +5,21 @@ Cuando eres seguidor de varias series, a veces cuesta estar informado de cuándo
 
 El objetivo es crear un microservicio que almacene información sobre series, como puede ser la sinopsis, los actores y actrices, las temporadas, y algunas noticias relacionadas con ellas. Además, éste enviará notificaciones a los clientes para mantenerlos informados de los próximos estrenos.
 
+## FUNCIONES SERVERLESS
+- [Despliegue correcto y funcionando](https://github.com/sarasolera/proyectoSeries/blob/master/docs/vercel.md).
+- Implementacion de la función integrada con el proyecto:
+    - [Mini-documentacion](https://github.com/sarasolera/proyectoSeries/blob/master/docs/funcion_serverless.md).
+    - [Fichero código](https://github.com/sarasolera/proyectoSeries/blob/master/api/genero.js).
+    - La url de prueba la encontramos en [iv.yaml](https://github.com/sarasolera/proyectoSeries/blob/master/iv.yaml)
+    - Resultado esperado en [5.json](https://github.com/sarasolera/proyectoSeries/blob/master/5.json)
+- Función serverles con azure:
+    - [Documentación](https://github.com/sarasolera/proyectoSeries/blob/master/docs/azure.md)
+    - [Carpeta proyecto azure](https://github.com/sarasolera/proyectoSeries/tree/master/azure)
+    - [Fichero index.js](https://github.com/sarasolera/proyectoSeries/blob/master/azure/porPuntuaciones/index.js) contiene la función nueva integrada con mi proyecto.
+- Bot de telegram:
+    - [Documentación con imágenes](https://github.com/sarasolera/proyectoSeries/blob/master/docs/botSeries.md).
+    -  [Enlace hacia botSeries](https://t.me/xGenero_bot).
+
 ## INTEGRACIÓN CONTINUA
 - El primer sistema que he utilizado es Travis y aquí podemos encontrar su [explicación y justificación](https://github.com/sarasolera/proyectoSeries/blob/master/docs/integracion_continua.md)
  - Como sistema adicional he optado por "AppVeyor", también tenemos su [explicación y justificación](https://github.com/sarasolera/proyectoSeries/blob/master/docs/sistema_adicional.md)
