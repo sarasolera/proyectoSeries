@@ -40,7 +40,7 @@ module.exports = async (req,res) =>{
 
         if(series_captadas == true){
             for(var j = 0; j< captadas.series.length ; j++){
-                result+= j + ":" + captadas.series[i] + "\n";
+                result+= j + ":" + captadas.series[j] + "\n";
             }
         }
         // Devolvemos 
