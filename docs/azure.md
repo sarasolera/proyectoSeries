@@ -1,6 +1,6 @@
 # Desplegando en Azure
 Para pobrar distintas plataformas decidí probar con Azure Functions.
-Para ello seguí este [tutorial](https://dev.to/akhromieiev/building-a-telegram-bot-with-azure-functions-and-node-js-28b), solo la parte de despliege.
+Para ello seguí este [tutorial](https://dev.to/akhromieiev/building-a-telegram-bot-with-azure-functions-and-node-js-28b), solo la parte de despliegue.
 
 Lo diferente de Azure functions es que compila y depura a nivel local sin ninguna configuración adicional.
 ## ¿Qué necesitamos?
