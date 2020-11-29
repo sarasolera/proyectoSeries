@@ -8,7 +8,7 @@ El objetivo es crear un microservicio que almacene información sobre series, co
 ## FUNCIONES SERVERLESS
 - Despliegue correcto y funcionando junto con implementación de una función de mi proyecto.
     - [Documentación](https://github.com/sarasolera/proyectoSeries/blob/master/docs/vercel.md).
-    - [Código fuente de la función común al bot y a la función implementada](https://github.com/sarasolera/proyectoSeries/blob/master/api/funcion_genero.js)
+    - [Código fuente ](https://github.com/sarasolera/proyectoSeries/blob/master/api/funcion_genero.js)de la función común al bot y a la función principal.
     - [Fichero código de la función serverless](https://github.com/sarasolera/proyectoSeries/blob/master/api/genero.js).
     - La url de prueba la encontramos en [iv.yaml](https://github.com/sarasolera/proyectoSeries/blob/master/iv.yaml).
     - Resultado esperado en [5.json](https://github.com/sarasolera/proyectoSeries/blob/master/5.json).
