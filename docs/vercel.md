@@ -106,9 +106,6 @@ Vamos a ver la implementación de dicha función:
 Aquí como vemos, importamos aquellas clases que vamos a utilizar y obtenemos los datos de *data.js*. El parámetro de la función es el género del cual queremos obtener las series del catálogo, simplemente generamos las series y el catálogo a partir del fichero que nos proporciona información.
 Una vez tenemos el catálogo procedemos a captar las series en función del género demandado. Para ello recurrimos a nuestra función *mostrarSeriesGenero*, perteneciente a la clase catálogo, que guardará en la variable *seriesGenero* todas las series cuyo género corresponda al pasado por parámetro. Con todas ellas formamos un JSON que devolvemos.Para formar el JSON me he fijado en [stackoverflow](https://es.stackoverflow.com/questions/150520/crear-un-json-en-javascript) con un ejemplo, en definitiva hay que crear una lista con los diccionarios de las series que queremos obtener, cada diccionario contiene el nombre de la serie.
 
-
-
-
 Ahora explicaré la función desplegada en Vercel, que hará uso de la función explicada anteriormente y como he comentado al principio, está relacionada con la [HU04](https://github.com/sarasolera/proyectoSeries/issues/20)
 
  ![](pic/genero.png)
@@ -116,9 +113,9 @@ Ahora explicaré la función desplegada en Vercel, que hará uso de la función 
 
 Aquí simplemente importamos la función generada. Debemos fijarnos en que si el usuario no introduce ningún valor para el parámetro *género*, tomaremos por defecto "Vacío" y en este caso le mostraremos un mensaje indicándole que debe indicar algún género, para ello devolvemos el código 400 . Por otro lado, si el género que indica no corresponde a ninguno de los permitidos, es decir, a 'miedo', 'comedia', 'acción' o 'drama', le mostraremos un mensaje indicándole que dicho género no está disponible, para ello error 404 que significa que no se encuentra el contenido solicitado, en caso de ser un género válido, llamamos a la función y devolvemos las series pertenecientes a él.
 
- Finalmente, devolvemos el resultado que corresponda a la petición realizada por el usuario.
+Finalmente, devolvemos el resultado que corresponda a la petición realizada por el usuario.
 
- Aquí dejo un listado con diferentes enlaces y el resultado que obtenemos de ellos:
+Aquí dejo un listado con diferentes enlaces y el resultado que obtenemos de ellos:
  - [Pasándole MIEDO como género.](https://proyecto-series-i0ab2i95j.vercel.app/api/genero.js?genero=MIEDO)
 
    ![](pic/resultado1.png)
