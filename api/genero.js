@@ -3,7 +3,6 @@ const funcion = require("./funcion_genero.js")
 module.exports = (req,res) =>{
     //Captaremos de la URL el genero del que queremos consultar las series
     //Si no obtenemos ningun por defecto valor "Vacio" para generar el resultado correspondiente
-
     const{genero="Vacio"} = req.query
 
     // Si obtenemos un genero en la petición captamos las series de ese género
