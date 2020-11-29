@@ -15,7 +15,6 @@ module.exports = (req,res) =>{
         result={"Error 400":"debe indicar un género"} 
         codigo = 400
     
-           
     }
     else{
         result={"Error 404" : "género no disponible. Los géneros disponibles por el momento son: MIEDO ACCION DRAMA COMEDIA"};
