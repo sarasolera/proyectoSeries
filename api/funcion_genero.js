@@ -21,8 +21,18 @@ function devolverSeriesGenero(genCaptado){
     var result = ""
     //Tras ello captamos la series por genero
     seriesGenero = catalogo.mostrarSeriesGenero(genCaptado)
-    for(var j = 0; j < seriesGenero.length ; j++){
-        result += j + ":" + seriesGenero[j].getNombre() + "\n"
+    var datosJSON = []
+    var objetoJSON = {}
+    
+    seriesGenero.forEach(element => {
+        datosJSON.push({
+            "Nombre serie ": element.getNombre()
+        });
+            
+    });
+    // FORMAMOS EL JSON
+    objetoJSON.series = datosJSON;
+    result = JSON.stringify(objetoJSON)
     }
 
     return result
