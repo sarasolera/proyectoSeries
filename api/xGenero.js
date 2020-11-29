@@ -13,22 +13,22 @@ module.exports = async (req,res) =>{
         if(text == "/xGeneroMIEDO"){
             result="Buscando series de Miedo....\n";
             series_captadas = true;
-            captadas=funcion.devolverSeriesGenero("MIEDO")
+            captadas_json =funcion.devolverSeriesGenero("MIEDO")
         }
         else if(text == "/xGeneroCOMEDIA"){
             result = "Buscando series de Comedia...\n"
             series_captadas = true;
-            captadas = funcion.devolverSeriesGenero("COMEDIA")
+            captadas_json = funcion.devolverSeriesGenero("COMEDIA")
         }
         else if(text == "/xGeneroDRAMA"){
             result="Buscando series de Drama... \n"
             series_captadas = true;
-            captadas=funcion.devolverSeriesGenero("DRAMA")
+            captadas_json=funcion.devolverSeriesGenero("DRAMA")
         }
         else if(text == "/xGeneroACCION"){
             result="Buscando series de Acción...\n"
             series_captadas = true;
-            captadas=funcion.devolverSeriesGenero("ACCION")
+            captadas_json=funcion.devolverSeriesGenero("ACCION")
             
         }
         else if(text == "/muestraBody"){
@@ -39,6 +39,7 @@ module.exports = async (req,res) =>{
         }
 
         if(series_captadas == true){
+            captadas = JSON.parse(captadas_json)
             for(var j = 0; j< captadas.series.length ; j++){
                 result+= j + ":" + captadas.series[j] + "\n";
             }
