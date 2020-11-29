@@ -12,11 +12,13 @@ module.exports = (req,res) =>{
     }
     //Si es Vacio significa que no se ha recibido nada
     else if(genero == "Vacio"){
-        result="Error: debe indicar un género";
+        result={"Error 400":"debe indicar un género"} 
         codigo = 400
+    
+           
     }
     else{
-        result="Error: género no disponible. Los géneros disponibles por el momento son: MIEDO ACCION DRAMA COMEDIA";
+        result={"Error 404" : "género no disponible. Los géneros disponibles por el momento son: MIEDO ACCION DRAMA COMEDIA"};
         codigo = 404
 
     }
