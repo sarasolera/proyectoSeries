@@ -33,8 +33,7 @@ function devolverSeriesGenero(genCaptado){
     // FORMAMOS EL JSON
     objetoJSON.series = datosJSON;
     result = JSON.stringify(objetoJSON)
-    }
-
+    
     return result
 }
 
