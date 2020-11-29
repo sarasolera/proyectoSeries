@@ -4,4 +4,4 @@ test:
     - tests/serie.test.js
     - tests/catalogo.test.js
 taskfile: package.json
-URL: https://proyecto-series-ay6l7yxr2.vercel.app/api/genero.js?genero=ACCION
+URL: https://proyecto-series-i0ab2i95j.vercel.app/api/genero.js?genero=ACCION
