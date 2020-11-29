@@ -25,9 +25,7 @@ function devolverSeriesGenero(genCaptado){
     var objetoJSON = {}
     
     seriesGenero.forEach(element => {
-        datosJSON.push({
-            "Nombre serie ": element.getNombre()
-        });
+        datosJSON.push(element.getNombre());
             
     });
     // FORMAMOS EL JSON
