@@ -39,6 +39,9 @@ module.exports = async (req,res) =>{
         }
 
         if(series_captadas == true){
+            // La función nos devuelve el resultado en JSON.stringfy
+            // debemos hacer json.parse para captar los datos como si fuera un
+            // obtejo json.
             captadas = JSON.parse(captadas_json)
             for(var j = 0; j< captadas.series.length ; j++){
                 result+= j + ":" + captadas.series[j] + "\n";
