@@ -7,6 +7,7 @@ class Controlador{
         this.catalogo = captarDatos.generarCatalogo();
     }
     
+    
     obtenerSeries(){
         // captamos todas las series del catalogo
         var catCompleto = [];
@@ -29,7 +30,7 @@ class Controlador{
             var indice = this.catalogo.buscarSerie(nombre_serie);
             var serie = this.catalogo.consultarSerie(indice);
             var listaDatos = []
-            listaDatos.push({"Nombre":serie.getNombre(),"Sinopsis":serie.getSinopsis()});
+            listaDatos.push({"Nombre":serie.getNombre(),"Sinopsis":serie.getSinopsis(),"Numero Temporadas":serie.getNumTemporadas(),"Genero":serie.getGenero()});
             
             return listaDatos;
         }
@@ -37,6 +38,24 @@ class Controlador{
             throw new ErrorPropio("Esa serie no existe",404);
         }
     }
+
+
+    obtenerSeriesPuntuación(){
+        //obtenemos las series por puntuación, generamos un listado con el nombre, la puntación media
+        var seriesOrdenadas = this.catalogo.mostrarSeriesPuntuacion();
+
+        var listaDatos = [];
+
+        seriesOrdenadas.forEach(element =>{
+            listaDatos.push({"Nombre":element.getNombre(),"Numero Temporadas":element.getNumTemporadas(),"Puntuación":element.getMediaPuntuacion()})
+        });
+
+        return listaDatos;
+
+    }
+
+
+    
 
     
 }
