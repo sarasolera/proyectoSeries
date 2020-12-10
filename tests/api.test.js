@@ -54,3 +54,18 @@ test('Deberia mostrar una serie del catalogo',async function(){
     expect(data.statusCode).toBe(404);
 
 });
+
+
+test('Deberia mostrar las series del catalogo ordenadas por puntuación', async function () {
+    const options = {
+        method:'GET',
+        url:'/catalogo/porPuntuacion'
+    };
+
+    const data = await server.inject(options);
+
+    tipo = data.headers['content-type'].split(';')
+    expect(data.statusCode).toBe(200);
+    expect(tipo[0]).toBe('application/json');
+    
+});
