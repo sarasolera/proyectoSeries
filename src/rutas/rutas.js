@@ -1,7 +1,8 @@
 const Controlador = require("../controlador/controladorSeries");
 const Boom = require('@hapi/boom');
 const controlador_s = new Controlador();
-
+//para el fichero de log
+var fs = require('fs');
 module.exports = {
     name: 'ApiRutas',
     register: async(server,options) => {
@@ -60,17 +61,25 @@ module.exports = {
             //timestamp lo captamos de event
             var fecha = new Date(event.timestamp).toDateString("en-US")
             var horas = new Date(event.timestamp).toLocaleTimeString("en-US")
+            var log = "guardando"
             // Si hay un error, en tag se pone el booleano error a true
             if(tags.error){
-                console.log('<--' + fecha + " " + horas + ` Server error: ${event.error ? event.error.message : 'unknown'} `);
-                
+                //console.log('<--' + fecha + " " + horas + ` Server error: ${event.error ? event.error.message : 'unknown'} `);
+                log = '<--' + fecha + " " + horas + ` Server error: ${event.error ? event.error.message : 'unknown'} `;
             }
             else{
                 // Si no hay error se muestra el mensaje que generamos a través de req.log
                 mensaje  = event.data
-                console.log("<-- " + fecha + " " + horas + " " + " "+ mensaje); 
-                
-            } 
+                //console.log("<-- " + fecha + " " + horas + " " + " "+ mensaje); 
+                log = "<-- " + fecha + " " + horas + " " + " "+ mensaje;
+            }
+
+
+            fs.appendFile('./log.txt',log + "\n",(err)=>{
+                if(err)throw err;
+               
+            });
+            
             
         });
 
@@ -81,7 +90,12 @@ module.exports = {
             metodo = request.method.toUpperCase();
             ruta = request.path;
             codigo = request.response.statusCode
-            console.log(local + ': ' + metodo + ' ' + ruta + ' --> ' + codigo);
+            //console.log(local + ': ' + metodo + ' ' + ruta + ' --> ' + codigo);
+            log = local + ': ' + metodo + ' ' + ruta + ' --> ' + codigo;
+            fs.appendFile('./log.txt',log + "\n",(err)=>{
+                if(err)throw err;
+                console.log('Fichero de log actualizado!')
+            });
         });
 
 
