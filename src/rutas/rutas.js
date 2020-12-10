@@ -82,6 +82,22 @@ module.exports = {
                     return response ;
                                    
                 }
+            },
+            {
+                method:'POST',
+                path:'/catalogo/{nombre}/{comentario}',
+                handler:function(req,res){
+                    //captamos los datos de req
+                    req.log("Insertando","Añadiendo comentario a catalogo")
+                    const nombre = req.params.nombre;
+                    const comentario = req.params.comentario;
+                    controlador_s.comentarSerie(nombre,comentario)
+                    var mensaje = "Comentario:" + comentario + " añadido a " + nombre ;
+                    response = res.response({"Éxito":mensaje})
+                    response.code(200);
+                    return response;
+                }
+
             }
 
         ]);
