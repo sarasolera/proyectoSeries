@@ -54,6 +54,27 @@ module.exports = {
 
         ]);
 
+        // Añadimos server.events.on ara escuchar los eventos evento de petición
+        server.events.on('request', (request, event, tags) => {
+            //pasamos de timestam a hora minutos y segundos
+            //timestamp lo captamos de event
+            var fecha = new Date(event.timestamp).toDateString("en-US")
+            var horas = new Date(event.timestamp).toLocaleTimeString("en-US")
+            // Si hay un error, en tag se pone el booleano error a true
+            if(tags.error){
+                console.log('<--' + fecha + " " + horas + ` Server error: ${event.error ? event.error.message : 'unknown'} `);
+                
+            }
+            else{
+                // Si no hay error se muestra el mensaje que generamos a través de req.log
+                mensaje  = event.data
+                console.log("<-- " + fecha + " " + horas + " " + " "+ mensaje); 
+                
+            } 
+            
+        });
+
+
     }
 }
 
