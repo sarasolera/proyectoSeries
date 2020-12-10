@@ -13,10 +13,10 @@ module.exports = {
             //Si el objeto request.response es tipo boom significa que ocurrió un error
             //Captamos el mensaje y el codigo (generados a con mis clase error)
             if(res.isBoom){
-                console.log(res)
                 if(res.mensaje){
+                    error = {"Error":res.mensaje}
                     //si existe mensaje, es que la excepcion fue mandada a traves de mi clase error asi que captamos mensaje y codigo
-                    return reply.response(res.mensaje).code(res.codigo);
+                    return reply.response(error).code(res.codigo);
                 }
                 else{
                     //si no podemos coger del cuerpo que proporciona res
@@ -110,7 +110,7 @@ module.exports = {
             log = local + ': ' + metodo + ' ' + ruta + ' --> ' + codigo;
             fs.appendFile('./log.txt',log + "\n",(err)=>{
                 if(err)throw err;
-                console.log('Fichero de log actualizado!')
+                //console.log('Fichero de log actualizado!')
             });
         });
 
