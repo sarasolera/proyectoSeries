@@ -12,7 +12,7 @@ const iniciarServer = async () => {
     try {
       await server.register(rutas);
       await server.start();
-      //console.log(`Servidor corriendo en: ${server.info.uri}`);
+      console.log(`Servidor corriendo en: ${server.info.uri}`);
     } catch (err) {
       console.log('Error al iniciar el servidor Hapi');
       //throw Boom.badRequest(err)
