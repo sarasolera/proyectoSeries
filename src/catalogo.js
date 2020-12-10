@@ -113,7 +113,7 @@ class Catalogo{
             this.series[indice].aniadirComentario(comentario);
         }
         else
-            throw new Error("Serie no válida");
+            throw new Error("Esa serie no está disponible en nuestro catálogo");
     }
     
     puntuarSerie(puntuacion,indice){
