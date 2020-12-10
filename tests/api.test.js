@@ -31,4 +31,26 @@ test('Deberia mostrar el catalogo completo', async function () {
     expect(data.statusCode).toBe(200);
     expect(tipo[0]).toBe('application/json');
     
-})       
+});
+
+test('Deberia mostrar una serie del catalogo',async function(){
+    var options = {
+        method:'GET',
+        url:'/catalogo/Barry'
+    }
+    var data = await server.inject(options);
+    tipo = data.headers['content-type'].split(';')
+    expect(data.statusCode).toBe(200);
+    expect(tipo[0]).toBe('application/json');
+
+
+    //Una serie que no esté en el catalogo, va a devolver error 404
+    options = {
+        method:'GET',
+        url:'/catalogo/No existe'
+    }
+    data = await server.inject(options);
+    tipo = data.headers['content-type'].split(';')
+    expect(data.statusCode).toBe(404);
+
+});
