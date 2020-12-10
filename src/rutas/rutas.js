@@ -66,9 +66,21 @@ module.exports = {
                     response = res.response(datos);
                     response.code(200);
                     return response 
-                   
-                   
-                    
+                                   
+                }
+            },
+            {
+                method:'GET',
+                path:'/catalogo/porPuntuacion',
+                handler:function(req,res){
+                    //generamos log para esa consulta
+                    req.log("Consulta","Consultando series por orden de puntuacion")
+                    datos = {}
+                    datos.series = controlador_s.obtenerSeriesPuntuación();
+                    response = res.response(datos);
+                    response.code(200);
+                    return response ;
+                                   
                 }
             }
 
