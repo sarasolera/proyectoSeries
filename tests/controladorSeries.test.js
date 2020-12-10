@@ -40,5 +40,15 @@ describe("Testeando clase Controlador", ()=>{
 
         expect(lista).toBeInstanceOf(Array);
         expect(lista.length).toBe(tam_catalogo);
+    });
+
+    test("Método para añadir comentario a una serie, dado el nombre",()=>{
+        //El tamaño de array de comentario es 1
+        var tam_antes = controlador.catalogo.series[4].getComentarios().length
+        //Comentamos la serie
+        controlador.comentarSerie("Barry","Me gusta mucho esta serie");
+        var tam_despues =controlador.catalogo.series[4].getComentarios().length
+        var esp = tam_antes + 1;
+        expect(tam_despues).toBe(esp)
     })
 })
