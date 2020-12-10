@@ -132,13 +132,13 @@ class Catalogo{
     
     mostrarComentarios(indice){
         if(this.existeSerie(indice)){
-            var comentariosAlmacenados = "";
-            var c = this.series[indice].getComentarios();
-            c.forEach(element=>{
-                comentariosAlmacenados +=  element +  "\n";
-            })
+            // var comentariosAlmacenados = "";
+            // var c = this.series[indice].getComentarios();
+            // c.forEach(element=>{
+            //     comentariosAlmacenados +=  element +  "\n";
+            // })
 
-            return comentariosAlmacenados;
+            return this.series[indice].getComentarios();
 
         }
         else
