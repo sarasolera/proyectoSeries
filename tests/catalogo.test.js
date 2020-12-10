@@ -191,6 +191,17 @@ describe('Testeando clase Catalogo' , ()=>{
             expect(errorD).toThrow();
 
         });
+
+        test('Buscar series' , () =>{
+            const posEsperada = 2;
+            const recibido = cat.buscarSerie(cat.series[2].getNombre());
+            expect(posEsperada).toBe(recibido);
+
+            //si accedemos a una serie que no tenemos en el catalogo debe dar error
+            var errorD = () => cat.buscarSerie("Serie innexistente")
+            expect(errorD).toThrow();
+    
+        });
     });
 
     
