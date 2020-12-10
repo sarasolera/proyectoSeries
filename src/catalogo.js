@@ -137,7 +137,7 @@ class Catalogo{
             // c.forEach(element=>{
             //     comentariosAlmacenados +=  element +  "\n";
             // })
-
+            
             return this.series[indice].getComentarios();
 
         }
