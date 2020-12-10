@@ -74,6 +74,16 @@ module.exports = {
             
         });
 
+        //Añadimos server.events.on para escuchar el evento tras la respuesta al cliente,
+        //de el podemos captar el localhost, metodo usado, la ruta y el código generado
+        server.events.on('response', function (request) {
+            local = request.info.remoteAddress;
+            metodo = request.method.toUpperCase();
+            ruta = request.path;
+            codigo = request.response.statusCode
+            console.log(local + ': ' + metodo + ' ' + ruta + ' --> ' + codigo);
+        });
+
 
     }
 }
