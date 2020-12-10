@@ -181,6 +181,28 @@ class Catalogo{
        
 
     }
+
+    //Generamos la función para encontrar el indice de una serie en el catalogo, dando su nombre
+    buscarSerie(nombre){
+        var pos = -1;
+
+        //buscamos una serie cuyo nombre coincida con el argumento
+        for( var k= 0; k<this.series.length;k++){
+            if(nombre == this.series[k].getNombre()){
+                pos = k;
+            }
+        }
+
+
+        if(pos == -1){
+            throw new Error("No existe esa serie");
+        }
+        else{
+            return pos;
+        }
+        
+        
+    }
 }
 
 
