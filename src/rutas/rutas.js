@@ -41,7 +41,8 @@ module.exports = {
                 method: 'GET',
                 path: '/catalogo',
                 handler:async(req,res) => {
-                    
+                        //AÑADIMOS EL EVENTO DE PETICIÓN
+                        req.log("Consulta","Consultando series disponibles en el catalogo")
                         datos = {}
                         datos.series = controlador_s.obtenerSeries();
                         response = res.response(datos);
@@ -61,7 +62,6 @@ module.exports = {
             //timestamp lo captamos de event
             var fecha = new Date(event.timestamp).toDateString("en-US")
             var horas = new Date(event.timestamp).toLocaleTimeString("en-US")
-            var log = "guardando"
             // Si hay un error, en tag se pone el booleano error a true
             if(tags.error){
                 //console.log('<--' + fecha + " " + horas + ` Server error: ${event.error ? event.error.message : 'unknown'} `);
@@ -74,12 +74,10 @@ module.exports = {
                 log = "<-- " + fecha + " " + horas + " " + " "+ mensaje;
             }
 
-
             fs.appendFile('./log.txt',log + "\n",(err)=>{
                 if(err)throw err;
                
             });
-            
             
         });
 
