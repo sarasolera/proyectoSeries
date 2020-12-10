@@ -20,7 +20,7 @@ describe("Testeando clase Controlador", ()=>{
         //Obtenemos los datos de la serie Barry.
         const n_serie = "Barry"
         var listaDatos = controlador.obtenerSerie(n_serie);
-        var dic = {"Nombre":controlador.catalogo.series[2].getNombre(),"Sinopsis":controlador.catalogo.series[2].getSinopsis()};
+        var dic = {"Nombre":controlador.catalogo.series[2].getNombre(),"Sinopsis":controlador.catalogo.series[2].getSinopsis(),"Numero Temporadas":controlador.catalogo.series[2].getNumTemporadas(),"Genero":controlador.catalogo.series[2].getGenero()};
         const listaEsperada = [];
         listaEsperada.push(dic);
         expect(listaDatos).toStrictEqual(listaEsperada);
@@ -29,5 +29,16 @@ describe("Testeando clase Controlador", ()=>{
         expect(errorObtenido).toThrow(errorEsperado);
         
 
+    });
+
+    test("Método para obtener las series de mayor a menor puntuación",()=>{
+        //EN la funcion de catalogo ya comprobamos que ordene bien el vecto
+        //comprobamos que esta función devuelve una lista, y que tiene el mismo
+        //numero de elementos que series haya en el catalogo.
+        var tam_catalogo = controlador.catalogo.series.length;
+        var lista = controlador.obtenerSeriesPuntuación();
+
+        expect(lista).toBeInstanceOf(Array);
+        expect(lista.length).toBe(tam_catalogo);
     })
 })
