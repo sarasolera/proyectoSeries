@@ -69,3 +69,17 @@ test('Deberia mostrar las series del catalogo ordenadas por puntuación', async 
     expect(tipo[0]).toBe('application/json');
     
 });
+
+
+test("Deberia añadir un comentario a la serie que indiquemos",async function(){
+    const options = {
+        method:'POST',
+        url:'/catalogo/Barry/Es muy buena serie'
+    };
+
+    const data = await server.inject(options);
+
+    tipo = data.headers['content-type'].split(';')
+    expect(data.statusCode).toBe(200);
+    expect(tipo[0]).toBe('application/json');
+});
