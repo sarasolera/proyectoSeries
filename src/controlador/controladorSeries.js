@@ -54,7 +54,17 @@ class Controlador{
 
     }
 
-
+    //Añadimos funcion para añadir comentario a una serie
+    comentarSerie(nombre_serie,comentario){
+        try{
+            var indice = this.catalogo.buscarSerie(nombre_serie);
+            this.catalogo.comentarSerie(comentario,indice);
+        }
+        catch(err){
+            throw new ErrorPropio("Esa serie no existe" ,404);
+        }
+        
+    }
     
 
     
