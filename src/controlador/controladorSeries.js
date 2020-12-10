@@ -24,6 +24,20 @@ class Controlador{
         return listaDatos;
     }
 
+    obtenerSerie(nombre_serie){
+        try{
+            var indice = this.catalogo.buscarSerie(nombre_serie);
+            var serie = this.catalogo.consultarSerie(indice);
+            var listaDatos = []
+            listaDatos.push({"Nombre":serie.getNombre(),"Sinopsis":serie.getSinopsis()});
+            
+            return listaDatos;
+        }
+        catch(err){
+            throw new ErrorPropio("Esa serie no existe",404);
+        }
+    }
+
     
 }
 
