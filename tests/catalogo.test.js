@@ -130,7 +130,6 @@ describe('Testeando clase Catalogo' , ()=>{
         test('Comentando series',()=>{
             
             cat.comentarSerie(comentario,0);
-
             const recibido = cat.series[0].getComentarios();
 
             expect(recibido[0]).toBe(comentario);
@@ -157,12 +156,13 @@ describe('Testeando clase Catalogo' , ()=>{
 
         test('Consultar comentarios',()=>{
             cat.comentarSerie(comentario2,0);
-
-            const esperado = "" + cat.series[0].comentarios[0] + "\n" +cat.series[0].comentarios[1] + "\n";
+            var esperado = [];
+            esperado.push(cat.series[0].comentarios[0]);
+            esperado.push(cat.series[0].comentarios[1] );
 
             const recibido = cat.mostrarComentarios(0);
 
-            expect(recibido).toBe(esperado);
+            expect(recibido).toStrictEqual(esperado);
         });
 
         test('Mostrar Lista de los capitulos de una serie',()=>{
