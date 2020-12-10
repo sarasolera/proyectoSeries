@@ -101,6 +101,7 @@ class Serie{
      * @return devuelve el array de los comentarios
      */
     getComentarios(){
+
         return this.comentarios;
     }
     
