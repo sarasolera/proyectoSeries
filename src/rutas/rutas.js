@@ -52,6 +52,24 @@ module.exports = {
                     
                    
                 }
+            },
+
+            {
+                method: 'GET',
+                path:'/catalogo/{nombre_serie}',
+                handler:function(req,res){
+                    //generamos log para esa consulta
+                    req.log("Consulta","Consultando serie de catalogo")
+                    n_serie = req.params.nombre_serie
+                    datos = {}
+                    datos.serie = controlador_s.obtenerSerie(n_serie);
+                    response = res.response(datos);
+                    response.code(200);
+                    return response 
+                   
+                   
+                    
+                }
             }
 
         ]);
