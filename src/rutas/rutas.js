@@ -98,6 +98,22 @@ module.exports = {
                     return response;
                 }
 
+            },
+            {
+                method:'GET',
+                path:'/catalogo/{nombre}/comentarios',
+                handler:function(req,res){
+                    //generamos log para esa consulta
+                    req.log("Consulta","Consultando comentarios de una serie")
+                    const nombre = req.params.nombre;
+                    datos = {}
+                    datos.comentarios = controlador_s.consultarComentarios(nombre);
+                    
+                    response = res.response(datos);
+                    response.code(200);
+                    return response ;
+                                   
+                }
             }
 
         ]);
