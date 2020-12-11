@@ -202,6 +202,13 @@ describe('Testeando clase Catalogo' , ()=>{
             expect(errorD).toThrow();
     
         });
+
+        test("Modificar comentario ",()=>{
+        
+            cat.series[cat.buscarSerie("La casa de papel")].modificarComentario(0,"No es una serie graciosa")
+            comentarioAc = cat.series[0].getComentarios();
+            expect(comentarioAc[0]).toBe("No es una serie graciosa")
+        });
     });
 
     
