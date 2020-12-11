@@ -94,6 +94,16 @@ class Controlador{
         }
     }
 
+    eliminarComentario(nombre_serie,indice_comentario){
+        try{
+            
+            this.catalogo.eliminarComentario(nombre_serie,indice_comentario)
+        }
+        catch(err){
+            throw new ErrorPropio(err.message,404);
+        }
+    }
+
     
 }
 
