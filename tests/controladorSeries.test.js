@@ -50,5 +50,15 @@ describe("Testeando clase Controlador", ()=>{
         var tam_despues =controlador.catalogo.series[4].getComentarios().length
         var esp = tam_antes + 1;
         expect(tam_despues).toBe(esp)
+    });
+
+    test("Método para obtener los comentarios de una serie",()=>{
+        //Añadimos el comentario
+        //Comprobamos que se genera 0:Me gusta mucho esta serie
+        var esperado = {0:"Me gusta mucho esta serie"}
+        var coments= controlador.consultarComentarios("Barry")
+        var recibido = coments[0];
+        console.log(coments[0])
+        expect(recibido).toStrictEqual(esperado);
     })
 })
