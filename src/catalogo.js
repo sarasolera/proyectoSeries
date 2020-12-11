@@ -214,6 +214,17 @@ class Catalogo{
             throw new Error(err.message)
         }
     }
+
+    eliminarComentario(nombre_serie,indice_comentario){
+        try{
+            var indice = this.buscarSerie(nombre_serie);
+            this.series[indice].eliminarComentario(indice_comentario)
+        }
+        catch(err){
+            
+            throw new Error(err.message)
+        }
+    }
 }
 
 
