@@ -1,21 +1,12 @@
 const server = require('../src/app.js')
 
-// Antes de todo abrimos conexión
+//Esperamos que se inicie el servidor escuchando el evento start
 beforeAll((done) => {
     server.events.on('start',()=>{
+        //si entramos es que se ha inicia asi que ya está hecho
         done();
     })
-});
-
-// Tras realizar los test lo adecuado es cerrar la conexion
-
-afterAll((done) => {
-    server.events.on('stop',()=>{
-        done();
-    });
-    server.stop();
-});
-
+})
 // COMENZAMOS CON LOS TESTEOS
 test('Deberia mostrar el catalogo completo', async function () {
     const options = {
@@ -129,3 +120,13 @@ test('Deberia eliminar el comentario de la serie indicada',async function(){
     expect(data.statusCode).toBe(404);
     expect(tipo[0]).toBe('application/json');
 });
+
+
+// Una vez terminados detenemos el servidor, no es necesario que esté al final
+// pero me gusta para que quede mas claro
+afterAll((done) => {
+    server.events.on('stop',()=>{
+        done();
+    })
+    server.stop();
+})
