@@ -67,6 +67,26 @@ class Controlador{
     }
     
 
+    consultarComentarios(nombre_serie){
+        try{
+            var indice = this.catalogo.buscarSerie(nombre_serie);
+            var listaComentarios = this.catalogo.mostrarComentarios(indice);
+            var listaResultado = []
+            var  k = 0;
+            var dic = {}
+            listaComentarios.forEach(element=>{
+                dic[k] = element;
+                listaResultado.push(dic)
+                k+=1;
+            })
+            
+
+            return listaResultado;
+        }catch(err){
+            throw new ErrorPropio(err,404)
+        }
+    }
+
     
 }
 
