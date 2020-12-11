@@ -196,6 +196,16 @@ describe('Testeando clase Serie' , ()=>{
 
             errorD = () => serie_nueva.modificarComentario(5,nuevoComentario);
             expect(errorD).toThrow();
+        });
+
+        test("Eliminar comentario de la serie", ()=>{
+            var tam_coment = serie_nueva.getComentarios().length
+            
+            serie_nueva.eliminarComentario(0);
+
+            var tam_coment_final = serie_nueva.getComentarios().length 
+
+            expect(tam_coment_final).toBe(tam_coment - 1)
         })
 
        
