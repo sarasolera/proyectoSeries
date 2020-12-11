@@ -209,7 +209,22 @@ describe('Testeando clase Catalogo' , ()=>{
             comentarioAc = cat.series[0].getComentarios();
             expect(comentarioAc[0]).toBe("No es una serie graciosa")
         });
+
+        test("Eliminar comentario" , ()=>{
+            var comentarios  = cat.series[0].getComentarios();
+            comentarioAnt = comentarios[1];
+            cat.eliminarComentario("La casa de papel",0)
+
+            comenarios = cat.series[0].getComentarios();
+
+            comentarioNue = comentarios[0];
+
+            //al eliminar el 0, el 1 pasa a ser el 0
+            expect(comentarioNue).toBe(comentarioAnt);
+
+        });
     });
+
 
     
 });
