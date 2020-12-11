@@ -79,5 +79,33 @@ describe("Testeando clase Controlador", ()=>{
         expect(errorObtenido).toThrow(errorEsperado);
 
         
+    });
+
+    test("Método para eliminar comentario de una serie" , ()=>{
+        //Añado un par de comentarios a la serie de indice 0
+        var c1 = "Me encata, tiene accion, comedia, drama, es genial";
+        var c2 = "A mi me aburre un poco"
+        controlador.catalogo.comentarSerie(c1,0)
+        controlador.catalogo.comentarSerie(c2,0)
+
+        //Si eliminamos la 2, al obtener los comentarios solo nos quedará una lista con c1
+        var esperado = []
+        esperado.push(c2)
+        nombre_serie = controlador.catalogo.series[0].getNombre();
+        //BOrramos comentario1
+        controlador.eliminarComentario(nombre_serie,0)
+        recibido = controlador.catalogo.series[0].getComentarios();
+       
+
+        expect(recibido).toStrictEqual(esperado);
+        
+        // //si eliminamos un comentario que no existe, por ejemplo Barry no tiene 10 comentarios, si metemos el indice 10
+        // var errorObtenido = () => controlador.eliminarComentario("La casa de papel",10)
+        // var errorEsperado =  new ErrorPropio("No existe ese comentario",404);
+        // expect(errorObtenido).toThrow(errorEsperado);
+
+        
     })
+
+
 })
