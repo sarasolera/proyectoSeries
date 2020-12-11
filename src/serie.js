@@ -297,6 +297,14 @@ class Serie{
             throw new Error("No existe ese comentario")
         }
     }
+
+    eliminarComentario(indice_comentario){
+        if(indice_comentario < this.comentarios.length)
+            this.comentarios.splice(indice_comentario,1)
+        else{
+            throw new Error("No existe ese comentario")
+        }
+    }
     
 }
 
