@@ -114,7 +114,22 @@ module.exports = {
                     return response ;
                                    
                 }
-            }
+            },
+            {
+                method: 'PUT',
+                path: '/catalogo/{nombre_s}/{indice_comentario}/{comentario_nuevo}',
+                handler: async (req, res) => {
+                  req.log("Modificando", "Modificando comentario de una serie");
+                  serie = req.params.nombre_s
+                  indice = req.params.indice_comentario
+                  comentarioNuevo = req.params.comentario_nuevo
+                  controlador_s.modificarComentario(serie,indice,comentarioNuevo);
+                  mensaje = "Comentario actualizado";
+                  response = res.response({"Éxito":mensaje});
+                  response.code(200);
+                  return response;
+                }
+              },
 
         ]);
 
