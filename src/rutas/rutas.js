@@ -85,7 +85,7 @@ module.exports = {
             },
             {
                 method:'POST',
-                path:'/catalogo/{nombre}/{comentario}',
+                path:'/catalogo/{nombre}/comentarios/{comentario}',
                 handler:function(req,res){
                     //captamos los datos de req
                     req.log("Insertando","Añadiendo comentario a catalogo")
@@ -117,7 +117,7 @@ module.exports = {
             },
             {
                 method: 'PUT',
-                path: '/catalogo/{nombre_s}/{indice_comentario}/{comentario_nuevo}',
+                path: '/catalogo/{nombre_s}/comentarios/{indice_comentario}/{comentario_nuevo}',
                 handler: async (req, res) => {
                   req.log("Modificando", "Modificando comentario de una serie");
                   serie = req.params.nombre_s
@@ -130,6 +130,21 @@ module.exports = {
                   return response;
                 }
               },
+              {
+                  method:'DELETE',
+                  path:'/catalogo/{nombre_s}/comentarios/{indice_comentario}',
+                  handler: async (req, res) => {
+                    req.log("Eliminando", "Eliminando comentario serie");
+                    serie = req.params.nombre_s
+                    indice = req.params.indice_comentario
+                    controlador_s.eliminarComentario(serie,indice);
+                    mensaje = "Comentario eliminado";
+                    response = res.response({"Éxito":mensaje});
+                    response.code(200);
+                    return response;
+                  }
+
+              }
 
         ]);
 
