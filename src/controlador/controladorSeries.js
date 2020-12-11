@@ -73,14 +73,11 @@ class Controlador{
             var listaComentarios = this.catalogo.mostrarComentarios(indice);
             var listaResultado = []
             var  k = 0;
-            var dic = {}
             listaComentarios.forEach(element=>{
-                dic[k] = element;
-                listaResultado.push(dic)
+                listaResultado.push(k + ":"+element);
                 k+=1;
             })
-            
-
+ 
             return listaResultado;
         }catch(err){
             throw new ErrorPropio(err,404)
