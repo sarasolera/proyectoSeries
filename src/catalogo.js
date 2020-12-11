@@ -206,7 +206,7 @@ class Catalogo{
 
     modificarComentario(nombre_serie,indice_comentario,comentarioNuevo){
         try{
-            indice = this.buscarSerie(nombre_serie);
+            var indice = this.buscarSerie(nombre_serie);
             this.series[indice].modificarComentario(indice_comentario,comentarioNuevo)
         }
         catch(err){
