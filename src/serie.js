@@ -287,6 +287,16 @@ class Serie{
         }
 
     }
+
+    modificarComentario(indice_comentario,comentarioNuevo){
+        
+        if(indice_comentario < this.comentarios.length)
+            this.comentarios[indice_comentario] = comentarioNuevo;
+        
+        else{
+            throw new Error("No existe ese comentario")
+        }
+    }
     
 }
 
