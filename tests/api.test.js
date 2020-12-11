@@ -83,3 +83,26 @@ test("Deberia añadir un comentario a la serie que indiquemos",async function(){
     expect(data.statusCode).toBe(200);
     expect(tipo[0]).toBe('application/json');
 });
+
+
+test('Deberia editar el comentario de la serie indicada',async function(){
+    var options = {
+        method: 'PUT',
+        url: '/catalogo/Barry/0/Realmente es de mis serie favoritas'
+    };
+
+    var data = await server.inject(options);
+    tipo = data.headers['content-type'].split(';')
+    expect(data.statusCode).toBe(200);
+    expect(tipo[0]).toBe('application/json');
+
+    // si indicamos un indice de comentarioq que no existe obtenemos codigo 404
+    options = {
+        method: 'PUT',
+        url: '/catalogo/Barry/5/Realmente es de mis serie favoritas'
+    };
+    var data = await server.inject(options);
+    tipo = data.headers['content-type'].split(';')
+    expect(data.statusCode).toBe(404);
+    expect(tipo[0]).toBe('application/json');
+})
