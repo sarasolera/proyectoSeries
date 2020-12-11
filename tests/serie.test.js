@@ -186,6 +186,18 @@ describe('Testeando clase Serie' , ()=>{
             expect(capitulos_obtenidos[0]).toBe(capitulo_prueba);
         });
 
+        test("Modificar comentario de la lista", () =>{
+            //vamos a modificar un comentario que hayamos añadido
+            var nuevoComentario = "A mi realmente me gustó";
+            serie_nueva.modificarComentario(0,nuevoComentario);
+            recibido = serie_nueva.getComentarios();
+            expect(recibido[0]).toBe(nuevoComentario);
+
+
+            errorD = () => serie_nueva.modificarComentario(5,nuevoComentario);
+            expect(errorD).toThrow();
+        })
+
        
     });
 
