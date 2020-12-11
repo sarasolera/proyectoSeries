@@ -203,6 +203,17 @@ class Catalogo{
         
         
     }
+
+    modificarComentario(nombre_serie,indice_comentario,comentarioNuevo){
+        try{
+            indice = this.buscarSerie(nombre_serie);
+            this.series[indice].modificarComentario(indice_comentario,comentarioNuevo)
+        }
+        catch(err){
+            
+            throw new Error(err.message)
+        }
+    }
 }
 
 
