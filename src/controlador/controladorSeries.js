@@ -81,6 +81,16 @@ class Controlador{
             return listaResultado;
         }catch(err){
             throw new ErrorPropio(err,404)
+        
+        }
+    }
+
+    modificarComentario(nombre_serie,indice_comentario,comentarioNuevo){
+        try{
+            this.catalogo.modificarComentario(nombre_serie,indice_comentario,comentarioNuevo);
+        }
+        catch(err){
+            throw new ErrorPropio(err.message,404);
         }
     }
 
