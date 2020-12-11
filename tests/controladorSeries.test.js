@@ -59,5 +59,25 @@ describe("Testeando clase Controlador", ()=>{
         var coments= controlador.consultarComentarios("Barry")
         var recibido = coments[0];
         expect(recibido).toStrictEqual(esperado);
+    });
+
+    test("Método para modificar el comentario de una serie" , ()=>{
+        //damos el nombre de la serie, el indice del comentario, y el comentario nuevo
+        //anteriormente hemos añadido un comentario a Barry justo en el test anterior
+        //vamos a modificar ese comentario
+        const nuevoC ="Está perdiendo fuerza por temporadas"
+        const nombreSerie = "Barry"
+        const indice = 0
+        controlador.modificarComentario(nombreSerie,indice,nuevoC);
+        comentarios = controlador.catalogo.series[4].getComentarios()
+
+        expect(comentarios[indice]).toBe(nuevoC)
+        
+        //si modificamos un comentario que no existe, por ejemplo Barry no tiene 10 comentarios, si metemos el indice 10
+        var errorObtenido = () => controlador.modificarComentario(nombreSerie,10,nuevoC)
+        var errorEsperado =  new ErrorPropio("No existe ese comentario",404);
+        expect(errorObtenido).toThrow(errorEsperado);
+
+        
     })
 })
