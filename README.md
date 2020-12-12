@@ -5,7 +5,7 @@ Cuando eres seguidor de varias series, a veces cuesta estar informado de cuándo
 
 El objetivo es crear un microservicio que almacene información sobre series, como puede ser la sinopsis, los actores y actrices, las temporadas, y algunas noticias relacionadas con ellas. Además, éste enviará notificaciones a los clientes para mantenerlos informados de los próximos estrenos.
 
-## MICROSERVICIO
+## MICROSERVICIOS
 - Justiciación del [framework elegido](https://github.com/sarasolera/proyectoSeries/blob/master/docs/frameworks.md).
     - [Fichero](https://github.com/sarasolera/proyectoSeries/blob/master/src/ejemploBasico.js) de ejemplo básico con HapiJS
 - Diseño general de la API.
