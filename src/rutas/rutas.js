@@ -166,7 +166,7 @@ module.exports = {
                 log = "<-- " + fecha + " " + horas + " " + " "+ mensaje;
             }
 
-            fs.appendFile('./log.txt',log + "\n",(err)=>{
+            fs.appendFile('./log/log.txt',log + "\n",(err)=>{
                 if(err)throw err;
                
             });
@@ -182,7 +182,7 @@ module.exports = {
             codigo = request.response.statusCode
             //console.log(local + ': ' + metodo + ' ' + ruta + ' --> ' + codigo);
             log = local + ': ' + metodo + ' ' + ruta + ' --> ' + codigo;
-            fs.appendFile('./log.txt',log + "\n",(err)=>{
+            fs.appendFile('./log/log.txt',log + "\n",(err)=>{
                 if(err)throw err;
                 //console.log('Fichero de log actualizado!')
             });
