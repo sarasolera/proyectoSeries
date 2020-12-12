@@ -186,9 +186,7 @@ En este log voy a mostrar:
 Log que obtengo:
 ![](pic/resultado_log.png)
 
-Lo más adecuado sería ir guandando esos log en un fichero de texto.
-
-Usando la biblioteca fs, incorporo al [fichero log.txt](https://github.com/sarasolera/proyectoSeries/blob/master/log/log.txt), y en lugar de hacer console.log ejecuto la función appendFile para añadir la linea de log al final del código.
+Por cada petición obtendremos el mensaje log correspondiente y se mostrará en la terminal.
 
 # Resto de HU
 
