@@ -5,6 +5,26 @@ Cuando eres seguidor de varias series, a veces cuesta estar informado de cuándo
 
 El objetivo es crear un microservicio que almacene información sobre series, como puede ser la sinopsis, los actores y actrices, las temporadas, y algunas noticias relacionadas con ellas. Además, éste enviará notificaciones a los clientes para mantenerlos informados de los próximos estrenos.
 
+## MICROSERVICIO
+- Justiciación del [framework elegido](https://github.com/sarasolera/proyectoSeries/blob/master/docs/frameworks.md).
+    - [Fichero](https://github.com/sarasolera/proyectoSeries/blob/master/src/ejemploBasico.js) de ejemplo básico con HapiJS
+- Diseño general de la API.
+    - [Documentación](https://github.com/sarasolera/proyectoSeries/blob/master/docs/uso_hapijs.md) que incluye explicación rutas, test, middleware y log. Además de buenas prácticas e historias de usuario enlazadas.
+    - Fichero añadidos y necesarios:
+        - [app.js](https://github.com/sarasolera/proyectoSeries/blob/master/src/app.js)
+        - [rutas.js](https://github.com/sarasolera/proyectoSeries/blob/master/src/rutas/rutas.js) 
+        - [app.test.js](https://github.com/sarasolera/proyectoSeries/blob/master/tests/api.test.js)
+
+        - [controladorSeries.js](https://github.com/sarasolera/proyectoSeries/blob/master/src/controlador/controladorSeries.js)
+        - [controladorSeries.test.js](https://github.com/sarasolera/proyectoSeries/blob/master/tests/controladorSeries.test.js)
+
+        - [catalogo.js](https://github.com/sarasolera/proyectoSeries/blob/master/src/catalogo.js)
+        - [catalogo.test.js](https://github.com/sarasolera/proyectoSeries/blob/master/tests/catalogo.test.js)
+
+        - [serie.js](https://github.com/sarasolera/proyectoSeries/blob/master/src/serie.js)
+        - [serie.test.js](https://github.com/sarasolera/proyectoSeries/blob/master/tests/serie.test.js)
+
+        - [Fichero log](https://github.com/sarasolera/proyectoSeries/blob/master/log/log.txt)
 ## FUNCIONES SERVERLESS
 - Despliegue correcto y funcionando junto con implementación de una función de mi proyecto.
     - [Documentación](https://github.com/sarasolera/proyectoSeries/blob/master/docs/vercel.md).
