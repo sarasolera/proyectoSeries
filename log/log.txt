@@ -278,3 +278,29 @@
 <-- Sat Dec 12 2020 10:32:04 AM  Eliminando comentario serie
 <--Sat Dec 12 2020 10:32:04 AM Server error: No existe ese comentario 
 127.0.0.1: DELETE /catalogo/Barry/comentarios/5 --> 404
+<-- Sat Dec 12 2020 5:39:56 PM  Consultando series por orden de puntuacion
+127.0.0.1: GET /catalogo/porPuntuacion --> 200
+<-- Sat Dec 12 2020 5:44:26 PM  Añadiendo comentario a catalogo
+127.0.0.1: POST /catalogo/Barry/comentarios/Esta%20serie%20es%20mi%20favorita --> 200
+<-- Sat Dec 12 2020 6:01:06 PM  Consultando comentarios de una serie
+127.0.0.1: GET /catalogo/Barry/comentarios --> 200
+<-- Sat Dec 12 2020 6:02:05 PM  Añadiendo comentario a catalogo
+127.0.0.1: POST /catalogo/Barry/comentarios/Esta%20serie%20es%20mi%20favorita --> 200
+<-- Sat Dec 12 2020 6:03:00 PM  Consultando comentarios de una serie
+127.0.0.1: GET /catalogo/Barry/comentarios --> 200
+<-- Sat Dec 12 2020 6:03:46 PM  Modificando comentario de una serie
+127.0.0.1: PUT /catalogo/Barry/comentarios/0/No%20me%20gusta%20nada%20esta%20serie --> 200
+<-- Sat Dec 12 2020 6:04:39 PM  Consultando comentarios de una serie
+127.0.0.1: GET /catalogo/Barry/comentarios --> 200
+<-- Sat Dec 12 2020 6:05:24 PM  Modificando comentario de una serie
+<--Sat Dec 12 2020 6:05:24 PM Server error: No existe ese comentario 
+127.0.0.1: PUT /catalogo/Barry/comentarios/2/Esta%20serie%20era%20mi%20favorita --> 404
+<-- Sat Dec 12 2020 6:08:27 PM  Eliminando comentario serie
+<--Sat Dec 12 2020 6:08:27 PM Server error: No existe ese comentario 
+127.0.0.1: DELETE /catalogo/Barry/comentarios/2 --> 404
+<-- Sat Dec 12 2020 6:09:46 PM  Consultando comentarios de una serie
+127.0.0.1: GET /catalogo/Barry/comentarios --> 200
+<-- Sat Dec 12 2020 6:10:15 PM  Eliminando comentario serie
+127.0.0.1: DELETE /catalogo/Barry/comentarios/0 --> 200
+<-- Sat Dec 12 2020 6:10:52 PM  Consultando comentarios de una serie
+127.0.0.1: GET /catalogo/Barry/comentarios --> 200
