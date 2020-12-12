@@ -128,5 +128,6 @@ afterAll((done) => {
     server.events.on('stop',()=>{
         done();
     })
+    //cerramos servidor
     server.stop();
 })
