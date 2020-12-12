@@ -10,7 +10,7 @@ RUN mkdir /node_modules
 ## usr local lib node_modules y jest y grunt los encontramos en bin 
 ## por lo que voy a darle permisos al usuario por defecto node
 # Dando los permisos adecuados
-RUN chown -R node /node_modules && chown -R node /usr/local/lib/node_modules && chown -R node /usr/local/bin && chown -R log/log.txt 
+RUN chown -R node /node_modules && chown -R node /usr/local/lib/node_modules && chown -R node /usr/local/bin && chmod 777 log/log.txt 
 
 #Copiamos el fichero de configuración de grunt, su documentación se encuentra enlazada en el readme
 COPY  Gruntfile.js ./
