@@ -5,3 +5,4 @@ test:
     - tests/catalogo.test.js
 taskfile: package.json
 URL: https://proyecto-series-i0ab2i95j.vercel.app/api/genero.js?genero=ACCION
+make: grunt
