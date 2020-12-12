@@ -24,7 +24,6 @@ El objetivo es crear un microservicio que almacene información sobre series, co
         - [serie.js](https://github.com/sarasolera/proyectoSeries/blob/master/src/serie.js)
         - [serie.test.js](https://github.com/sarasolera/proyectoSeries/blob/master/tests/serie.test.js)
 
-        - [Fichero log](https://github.com/sarasolera/proyectoSeries/blob/master/log/log.txt)
 ## FUNCIONES SERVERLESS
 - Despliegue correcto y funcionando junto con implementación de una función de mi proyecto.
     - [Documentación](https://github.com/sarasolera/proyectoSeries/blob/master/docs/vercel.md).
