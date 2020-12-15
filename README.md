@@ -11,9 +11,8 @@ El objetivo es crear un microservicio que almacene información sobre series, co
 - Diseño general de la API.
     - [Documentación](https://github.com/sarasolera/proyectoSeries/blob/master/docs/uso_hapijs.md) que incluye explicación rutas, test, middleware y log. Además de buenas prácticas e historias de usuario enlazadas.
     - Fichero añadidos y necesarios:
-        - [app.js](https://github.com/sarasolera/proyectoSeries/blob/master/src/app.js)
         - [rutas.js](https://github.com/sarasolera/proyectoSeries/blob/master/src/rutas/rutas.js) 
-        - [app.test.js](https://github.com/sarasolera/proyectoSeries/blob/master/tests/api.test.js)
+        - [api.test.js](https://github.com/sarasolera/proyectoSeries/blob/master/tests/api.test.js)
 
         - [controladorSeries.js](https://github.com/sarasolera/proyectoSeries/blob/master/src/controlador/controladorSeries.js)
         - [controladorSeries.test.js](https://github.com/sarasolera/proyectoSeries/blob/master/tests/controladorSeries.test.js)
