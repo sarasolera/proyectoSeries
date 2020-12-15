@@ -1,11 +1,22 @@
 const Controlador = require("../controlador/controladorSeries");
 const Boom = require('@hapi/boom');
 const controlador_s = new Controlador();
+const Hapi = require('hapi')
+
+//Creamos el servidor, para ello simplemente establecemos el puerto, y el host
+//son atributos obligatorios
+const server = Hapi.server({
+    host: 'localhost',
+    port: process.env.PORT || 8000
+});
+
+
+
 //para el fichero de log
 //var fs = require('fs');
-module.exports = {
-    name: 'ApiRutas',
-    register: async(server,options) => {
+// module.exports = {
+//     name: 'ApiRutas',
+//     register: async(server,options) => {
         //generamos el complemento que sera lanzado antes de enviar la respuesta
         server.ext('onPreResponse', function (request, reply){
             var res = request.response;
@@ -190,8 +201,9 @@ module.exports = {
         });
 
 
-    }
-}
+//     }
+// }
 
 
+module.exports = server
 
