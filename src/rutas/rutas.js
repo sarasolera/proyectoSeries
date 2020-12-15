@@ -10,14 +10,7 @@ const server = Hapi.server({
     port: process.env.PORT || 8000
 });
 
-
-
-//para el fichero de log
-//var fs = require('fs');
-// module.exports = {
-//     name: 'ApiRutas',
-//     register: async(server,options) => {
-        //generamos el complemento que sera lanzado antes de enviar la respuesta
+//generamos el complemento que sera lanzado antes de enviar la respuesta
         server.ext('onPreResponse', function (request, reply){
             var res = request.response;
             var req = request.raw.req;
@@ -199,11 +192,6 @@ const server = Hapi.server({
             //     //console.log('Fichero de log actualizado!')
             // });
         });
-
-
-//     }
-// }
-
 
 module.exports = server
 
