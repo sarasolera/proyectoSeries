@@ -7,9 +7,7 @@ Lo primero es instalar hapijs como dependencia en nuestro proyecto.
 
 Hapi tiene una completa documentación que podemos encontrar en su página [oficial](https://hapi.dev/).
 
-Una vez tenemos la dependencia agregada es necesario levantar un servidor que nos permita recibir peticiones, por lo que crearemos un [fichero app.js]().
-
-
+Vamos a crear el fichero [rutas](https://github.com/sarasolera/proyectoSeries/blob/master/src/rutas/rutas.js) donde añadiremos la instancia del servidor y las rutas.
 
 **Buena práctica** meter el puerto en una variable de entorno, para ello usamos las variables de entorno en node, si no encontramos ningun puerto en process.env.PORT, en su defecto, si no se encuentra valor para esta variable, el puerto será 8000.
 
@@ -17,25 +15,17 @@ Una vez tenemos la dependencia agregada es necesario levantar un servidor que no
 
 Ademas del server es necesario el atributo host, ambos son obligatorios.
 
-Ya tenemos la  instancia del servidor.
-Tras ello, generamos la función inciarServer para levantar el servidor.
-
-
-![](pic/levantar_servidor.png)
-
-
-Para ejecutarlo, aunque sea para ver la prueba hacemos **PORT=tal node api.js**. 
 
 ## Siguiente paso. Rutas
-Comenzamos con las rutas, podemos definir las rutas en nuestro fichero app.js o en un fichero aparte.
+Comenzamos con las rutas, podemos definir las rutas en nuestro fichero donde levantariamos el servidor, o en un fichero aparte.
 
-Una **buena práctica** es realizar módulos, es decir, separar lo posible, para asi permitir la reutilización en un futuro. Por lo que crearé un [fichero rutas](https://github.com/sarasolera/proyectoSeries/blob/master/src/rutas/rutas.js).
+Una **buena práctica** es realizar módulos, es decir, separar lo posible, para asi permitir la reutilización en un futuro. 
 
 Las rutas permiten las peticiones HTTP a nuestro microservicio.
 
 ![](pic/ruta_inicial.png)
 
-Para generar modulos o plugin en hapijs es necesario:
+En un futuro, este fichero lo generaré como modulo para ello en hapijs tendremos:
 
     - name ~ será unico en nuestra aplicación, no podemos tener más de un pluggin con el mismo nombre.
     - register ~ basicamente contiene la lógica para registrar el plugin en el servidor.
@@ -47,9 +37,6 @@ Declaramos una ruta para el servidor, indicando el método, como ya sabemos los 
  - PUT para cambiar parte de un recurso.
  - DELETE para eliminar.
 
-En la imagen anterior, cuando accedamos a http://localhost:port/
-
-Nos mostrará el mensaje "Comenzamos con nuestra Api";
 
 En path indicamos la ruta, si queremos añadir un parametro lo debemos poner con {}, y añadir ? si es optativo.
 
@@ -70,24 +57,13 @@ Para realizar los test, se puede usar **lab** que es parte de la familia de hapi
 
 Documentación [testing de la página oficial](https://hapi.dev/tutorials/testing/?lang=en_US)
 
-Según la documentación indicada, al testear una ruta,  llamamos a init para configurar el servidor,y es una buena práctica llamar a server.stop para limpiar y deterner el servidor. La documentación oficial utiliza lab por lo que yo busqué una documentación adicional con [jest](https://rockyj.in/2017/03/25/hapijs-jest.html), que también he consultado.
+La documentación oficial utiliza lab por lo que yo busqué una documentación adicional con [jest](https://rockyj.in/2017/03/25/hapijs-jest.html), que también he consultado.
 
-En esta página propone iniciar el servidor antes de realizar todo y pararlo cuando se hayan realizado todos los test. Con server.on escuchamos los eventos, esto será explicado más adelante.
-
-Con before all esperamos a que se inicie el servidor antes de ejecutar las pruebas, escuchamos el evento start, una vez escuchado, pasa a ejecutar los test.
-Con after all una vez realizados los test, detenemos el servidor.
-
-La documentación de los eventos de hapi podemos encontrarla [aquí](https://github.com/hapijs/hapi/blob/master/API.md)
-
-![](pic/before_all.png)
-
-
-![](pic/after_all.png)
 
 Para realizar el test:
 
     - Creo una variable options que incluye el método y el path de la petición de ejemplo que vamos a usar para testear. 
-    - Con server.inject generamos la petición en el controlador de la ruta, esta es la manera de probar los métodos HTTP, la respuesta la guardamos en data.
+    - Con server.inject generamos la petición en el controlador de la ruta, esta es la manera de probar los métodos HTTP, la respuesta la guardamos en data. Este metodo es utilizado para evitar llamar a server.start() y tener que abrir sus puertos.
     - Con expected indicamos que respuesta esperamos, que el tipo sea JSON y que el código sea 200, de éxito o 404 NotFound.
 
 ![](pic/catalogo.png)
@@ -144,6 +120,11 @@ Para ello en el fichero [rutas.js]() incluyo, en server.route, el metodo GET y l
 Pasamos los test: 
 
 ![](pic/pas_test.png)
+
+**NOTA IMPORTANTE** :
+
+    Los ejemplos que vienen a continuación se hicieron antes de la corrección de eliminar el levantamiento de servidor innecesario, por lo que, realmente ahora mismo no se podrían hacer.
+    ¿Por qué los he dejado? Simplemente me parece una forma muy sencilla de ver el funcionamiento si tuviera el servidor iniciado, y  no me gustaría borrar el trabajo que conllevaron.
 
 Podemos ver que nos devuelve la petición mediante:
 
